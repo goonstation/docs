@@ -21,7 +21,9 @@ jobs:
           touch goonstation/+secret/__secret.dme
 
       - name: Run dmdoc
-        run: ~/dmdoc
+        run: |
+          cd goonstation
+          ~/dmdoc
 
       - name: Deploy Documentation
         uses: JamesIves/github-pages-deploy-action@3.5.9
