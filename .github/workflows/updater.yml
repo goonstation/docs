@@ -16,8 +16,11 @@ jobs:
             submodules: true
 
         - run: |
-            git config user.name robuddybot
-            git config user.email 65057909+robuddybot@users.noreply.github.com
+            git config --local user.name robuddybot
+            git config --local user.email 65057909+robuddybot@users.noreply.github.com
             git submodule update --remote --merge
-            git commit -m "Updated Submodule"
-            git push -f
+            git commit -m "Updated Submodule" -a
+
+        - uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
