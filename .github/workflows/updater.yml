@@ -16,6 +16,8 @@ jobs:
             submodules: true
 
         - run: |
-            git add .
+            git config user.name robuddybot
+            git config user.email 65057909+robuddybot@users.noreply.github.com
+            git submodule update --remote --merge
             git commit -m "Updated Submodule"
             git push -f
