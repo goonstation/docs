@@ -10,10 +10,10 @@ jobs:
     update:
       runs-on: ubuntu-latest
       steps:
-
         - uses: actions/checkout@v2
           with:
             submodules: true
+            fetch-depth: 0
 
         - run: |
             git config --local user.name robuddybot
