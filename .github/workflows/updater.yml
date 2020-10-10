@@ -1,0 +1,17 @@
+# Updates the Goonstation submodule
+
+name: "Update Submodule"
+
+on:
+  schedule:
+  - cron: "*/5 * * * *"
+
+jobs:
+    update:
+      runs-on: ubuntu-latest
+      steps:
+        - run: |
+            git submodule update
+            git add .
+            git commit -m "Updated Submodule"
+            git push -f

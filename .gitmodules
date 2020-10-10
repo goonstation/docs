@@ -1,0 +1,3 @@
+[submodule "goonstation"]
+	path = goonstation
+	url = https://github.com/goonstation/goonstation.git
