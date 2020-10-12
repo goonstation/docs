@@ -5,6 +5,7 @@ name: "Update Submodule"
 on:
   schedule:
   - cron: "*/20 * * * *"
+  workflow_dispatch:
 
 jobs:
     update:
@@ -23,4 +24,10 @@ jobs:
 
         - uses: ad-m/github-push-action@master
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+            github_token: ${{ secrets.ROBUDDYBOT_PAT }}
+
+        - name: Repository Dispatch
+          uses: peter-evans/repository-dispatch@v1
+          with:
+            token: ${{ secrets.ROBUDDYBOT_PAT }}
+            event-type: update-documentation
