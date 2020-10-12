@@ -29,5 +29,5 @@ jobs:
         - name: Repository Dispatch
           uses: peter-evans/repository-dispatch@v1
           with:
-            token: ${{ secrets.ROBUDDYBOT_PAT }}
+            token: ${{ secrets.ROBUDDYBOT_PAT_FULL }}
             event-type: update-documentation
