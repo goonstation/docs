@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;atom - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="atom.html#var">Var Details</a> - <a href="atom.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="atom.html">atom</a><aside> inherits /<a href="datum.html">datum</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 6"/></h1>
+
+<p>The base type for nearly all physical objects in SS13</p>
+<p>Lots of functionality resides in this type.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="atom.html#var/chat_text">chat_text</a></th><td>Anything can speak... if it can speak</td></tr>
+            <tr><th><a href="atom.html#var/mat_appearances_to_ignore">mat_appearances_to_ignore</a></th><td>if a material is listed in here then we don't take on its color/alpha (maybe, if this works)</td></tr>
+            <tr><th><a href="atom.html#var/mat_changeappearance">mat_changeappearance</a></th><td>Change the appearance of this atom when a material is applied?</td></tr>
+            <tr><th><a href="atom.html#var/mat_changedesc">mat_changedesc</a></th><td>Change the desc of this atom when a material is applied?</td></tr>
+            <tr><th><a href="atom.html#var/mat_changename">mat_changename</a></th><td>Change the name of this atom when a material is applied?</td></tr>
+            <tr><th><a href="atom.html#var/open_to_sound">open_to_sound</a></th><td>If hear_talk is triggered on this object, make my contents hear_talk as well</td></tr>
+            <tr><th><a href="atom.html#var/reagents">reagents</a></th><td>Chemistry.</td></tr>
+            <tr><th><a href="atom.html#var/rest_mult">rest_mult</a></th><td>A multiplier that changes how an atom stands up from resting. Yes.</td></tr>
+            <tr><th><a href="atom.html#var/statusEffects">statusEffects</a></th><td>List of status effects</td></tr>
+            <tr><th><a href="atom.html#var/texture_size">texture_size</a></th><td>Override for the texture size used by setTexture.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="atom.html#proc/add_sm_light">add_sm_light</a></th><td>light.pixel_x = (vx * min(dist,light.dist) * 32) - 32</td></tr>
+            <tr><th><a href="atom.html#proc/attackby">attackby</a></th><td>( istype(W, /obj/item/grab)  || istype(W, /obj/item/spraybottle) || istype(W, /obj/item/card/emag)))</td></tr>
+            <tr><th><a href="atom.html#proc/blob_act">blob_act</a></th><td>BLOB RELATED PROCS</td></tr>
+            <tr><th><a href="atom.html#proc/changeStatus">changeStatus</a></th><td>If atom has status with {statusId}, change by {duration}.</td></tr>
+            <tr><th><a href="atom.html#proc/clean_name">clean_name</a></th><td>Gets the atoms name with all the ugly prefixes things remove</td></tr>
+            <tr><th><a href="atom.html#proc/contains">contains</a></th><td>Returns true if the given atom is within src's contents (deeply/recursively)</td></tr>
+            <tr><th><a href="atom.html#proc/contents_ui_distance">contents_ui_distance</a></th><td>public</td></tr>
+            <tr><th><a href="atom.html#proc/damage_blunt">damage_blunt</a></th><td>Does x blunt damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/damage_cold">damage_cold</a></th><td>Does x cold damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/damage_corrosive">damage_corrosive</a></th><td>Does x corrosive damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/damage_electricity">damage_electricity</a></th><td>Does x electricity damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/damage_heat">damage_heat</a></th><td>does x heat damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/damage_piercing">damage_piercing</a></th><td>Does x piercing damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/damage_radiation">damage_radiation</a></th><td>Does x radiation damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/damage_slashing">damage_slashing</a></th><td>Does x slashing damage to the atom</td></tr>
+            <tr><th><a href="atom.html#proc/delStatus">delStatus</a></th><td>Deletes the given status from the atom.</td></tr>
+            <tr><th><a href="atom.html#proc/getStatusDuration">getStatusDuration</a></th><td>Returns duration of status with given {statusId}, or null if not found.</td></tr>
+            <tr><th><a href="atom.html#proc/getStatusList">getStatusList</a></th><td>Returns a list of all the datum/statusEffect on source atom.</td></tr>
+            <tr><th><a href="atom.html#proc/hasStatus">hasStatus</a></th><td>Returns first status with given {statusId} or null if not found.</td></tr>
+            <tr><th><a href="atom.html#proc/is_open_container">is_open_container</a></th><td>Convenience proc to see if a container is open for chemistry handling</td></tr>
+            <tr><th><a href="atom.html#proc/onMaterialChanged">onMaterialChanged</a></th><td>Called AFTER the material of the object was changed.</td></tr>
+            <tr><th><a href="atom.html#proc/removeMaterial">removeMaterial</a></th><td>Simply removes a material from an object.</td></tr>
+            <tr><th><a href="atom.html#proc/safe_name">safe_name</a></th><td>clean_name(), but encoded too since everything ever uses HTML in the game.</td></tr>
+            <tr><th><a href="atom.html#proc/setMaterial">setMaterial</a></th><td>Sets the material of an object. PLEASE USE THIS TO SET MATERIALS UNLESS YOU KNOW WHAT YOU'RE DOING.</td></tr>
+            <tr><th><a href="atom.html#proc/setStatus">setStatus</a></th><td>If atom has status with {statusId}, set it to {duration}.</td></tr>
+            <tr><th><a href="atom.html#proc/special_desc">special_desc</a></th><td></td></tr>
+            <tr><th><a href="atom.html#proc/updateStatusUi">updateStatusUi</a></th><td>Stub. Override for objects that need to update their ui with status effect information.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/chat_text"><aside class="declaration">var </aside>chat_text
+            <aside>&ndash; /<a href="obj.html">obj</a>/chat_maptext_holder</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 26"/></h3>
+        <p>Anything can speak... if it can speak</p><h3 id="var/mat_appearances_to_ignore"><aside class="declaration">var </aside>mat_appearances_to_ignore
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 141"/></h3>
+        <p>if a material is listed in here then we don't take on its color/alpha (maybe, if this works)</p><h3 id="var/mat_changeappearance"><aside class="declaration">var </aside>mat_changeappearance
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 139"/></h3>
+        <p>Change the appearance of this atom when a material is applied?</p><h3 id="var/mat_changedesc"><aside class="declaration">var </aside>mat_changedesc
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 136"/></h3>
+        <p>Change the desc of this atom when a material is applied?</p><h3 id="var/mat_changename"><aside class="declaration">var </aside>mat_changename
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 133"/></h3>
+        <p>Change the name of this atom when a material is applied?</p><h3 id="var/open_to_sound"><aside class="declaration">var </aside>open_to_sound
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 21"/></h3>
+        <p>If hear_talk is triggered on this object, make my contents hear_talk as well</p><h3 id="var/reagents"><aside class="declaration">var </aside>reagents
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 145"/></h3>
+        <p>Chemistry.</p><h3 id="var/rest_mult"><aside class="declaration">var </aside>rest_mult
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 29"/></h3>
+        <p>A multiplier that changes how an atom stands up from resting. Yes.</p><h3 id="var/statusEffects"><aside class="declaration">var </aside>statusEffects
+            <aside>&ndash; /list/datum/statusEffect</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 103"/></h3>
+        <p>List of status effects</p><h3 id="var/texture_size"><aside class="declaration">var </aside>texture_size
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 18"/></h3>
+        <p>Override for the texture size used by setTexture.</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_sm_light"><aside class="declaration">proc </aside>add_sm_light<aside>(id, /list/rgba, medium, directional) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;SimpleLight.dm 391"/></aside>
+        </h3>
+        <p>light.pixel_x = (vx * min(dist,light.dist) * 32) - 32</p><h3 id="proc/attackby"><aside class="declaration">proc </aside>attackby<aside>(/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/W, /<a href="mob.html">mob</a>/user, params, is_special) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 636"/></aside>
+        </h3>
+        <p>( istype(W, /obj/item/grab)  || istype(W, /obj/item/spraybottle) || istype(W, /obj/item/card/emag)))</p><h3 id="proc/blob_act"><aside class="declaration">proc </aside>blob_act<aside>(power) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;blob.dm 1269"/></aside>
+        </h3>
+        <p>BLOB RELATED PROCS</p><h3 id="proc/changeStatus"><aside class="declaration">proc </aside>changeStatus<aside>(statusId, duration, optional) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 118"/></aside>
+        </h3>
+        <p>If atom has status with {statusId}, change by {duration}.</p>
+<p>(The change is relative to the current value, think +=)
+If atom does not have status, add it with given {duration}.
+In both cases {optional} will be passed into either .onAdd or .onChange on the status effect. Useful for custom behaviour.</p>
+<ul>
+<li>Returns: The changed/added status effect or null on errors.</li>
+</ul><h3 id="proc/clean_name"><aside class="declaration">proc </aside>clean_name<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 32"/></aside>
+        </h3>
+        <p>Gets the atoms name with all the ugly prefixes things remove</p><h3 id="proc/contains"><aside class="declaration">proc </aside>contains<aside>(/<a href="atom.html">atom</a>/A) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2418"/></aside>
+        </h3>
+        <p>Returns true if the given atom is within src's contents (deeply/recursively)</p><h3 id="proc/contents_ui_distance"><aside class="declaration">proc </aside>contents_ui_distance<aside>(src_object, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states.dm 102"/></aside>
+        </h3>
+        <p>public</p>
+<p>Check the distance for a living mob.
+Really only used for checks outside the context of a mob.
+Otherwise, use shared_living_ui_distance().</p>
+<p>required src_object The object which owns the UI.
+required user mob The mob who opened/is using the UI.</p>
+<p>return UI_state The state of the UI.</p><h3 id="proc/damage_blunt"><aside class="declaration">proc </aside>damage_blunt<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 936"/></aside>
+        </h3>
+        <p>Does x blunt damage to the atom</p><h3 id="proc/damage_cold"><aside class="declaration">proc </aside>damage_cold<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 957"/></aside>
+        </h3>
+        <p>Does x cold damage to the atom</p><h3 id="proc/damage_corrosive"><aside class="declaration">proc </aside>damage_corrosive<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 945"/></aside>
+        </h3>
+        <p>Does x corrosive damage to the atom</p><h3 id="proc/damage_electricity"><aside class="declaration">proc </aside>damage_electricity<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 948"/></aside>
+        </h3>
+        <p>Does x electricity damage to the atom</p><h3 id="proc/damage_heat"><aside class="declaration">proc </aside>damage_heat<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 954"/></aside>
+        </h3>
+        <p>does x heat damage to the atom</p><h3 id="proc/damage_piercing"><aside class="declaration">proc </aside>damage_piercing<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 939"/></aside>
+        </h3>
+        <p>Does x piercing damage to the atom</p><h3 id="proc/damage_radiation"><aside class="declaration">proc </aside>damage_radiation<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 951"/></aside>
+        </h3>
+        <p>Does x radiation damage to the atom</p><h3 id="proc/damage_slashing"><aside class="declaration">proc </aside>damage_slashing<aside>(amount) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 942"/></aside>
+        </h3>
+        <p>Does x slashing damage to the atom</p><h3 id="proc/delStatus"><aside class="declaration">proc </aside>delStatus<aside>(status) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 280"/></aside>
+        </h3>
+        <p>Deletes the given status from the atom.</p>
+<p>{status} can either be a reference to a status effect or a status effect ID.</p><h3 id="proc/getStatusDuration"><aside class="declaration">proc </aside>getStatusDuration<aside>(statusId) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 236"/></aside>
+        </h3>
+        <p>Returns duration of status with given {statusId}, or null if not found.</p><h3 id="proc/getStatusList"><aside class="declaration">proc </aside>getStatusList<aside>(optionalArgs) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 268"/></aside>
+        </h3>
+        <p>Returns a list of all the datum/statusEffect on source atom.</p>
+<p>{optionalArgs} can be passed in for additional checks that are handled in the effects .onCheck proc.
+Useful if you want to check some custom conditions on status effects.</p><h3 id="proc/hasStatus"><aside class="declaration">proc </aside>hasStatus<aside>(statusId, optionalArgs) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 250"/></aside>
+        </h3>
+        <p>Returns first status with given {statusId} or null if not found.</p>
+<p>{optionalArgs} can be passed in for additional checks that are handled in the effects .onCheck proc.
+Useful if you want to check some custom conditions on status effects.</p><h3 id="proc/is_open_container"><aside class="declaration">proc </aside>is_open_container<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 195"/></aside>
+        </h3>
+        <p>Convenience proc to see if a container is open for chemistry handling</p>
+<ul>
+<li>returns true if open, false if closed</li>
+</ul><h3 id="proc/onMaterialChanged"><aside class="declaration">proc </aside>onMaterialChanged<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 94"/></aside>
+        </h3>
+        <p>Called AFTER the material of the object was changed.</p><h3 id="proc/removeMaterial"><aside class="declaration">proc </aside>removeMaterial<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 103"/></aside>
+        </h3>
+        <p>Simply removes a material from an object.</p><h3 id="proc/safe_name"><aside class="declaration">proc </aside>safe_name<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 36"/></aside>
+        </h3>
+        <p>clean_name(), but encoded too since everything ever uses HTML in the game.</p><h3 id="proc/setMaterial"><aside class="declaration">proc </aside>setMaterial<aside>(/<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/mat1, appearance, setname, copy, use_descriptors) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 155"/></aside>
+        </h3>
+        <p>Sets the material of an object. PLEASE USE THIS TO SET MATERIALS UNLESS YOU KNOW WHAT YOU'RE DOING.</p><h3 id="proc/setStatus"><aside class="declaration">proc </aside>setStatus<aside>(statusId, duration, optional) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 152"/></aside>
+        </h3>
+        <p>If atom has status with {statusId}, set it to {duration}.</p>
+<p>(The change is absolute, think =)</p>
+<p>If atom does not have status, add it with given {duration}.</p>
+<p>In both cases {optional} will be passed into either .onAdd or .onChange on the status effect. Useful for custom behaviour.</p>
+<ul>
+<li>Returns: The changed/added status effect or null on errors.</li>
+</ul><h3 id="proc/special_desc"><aside class="declaration">proc </aside>special_desc<aside>(dist, /<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;atom.dm 587"/></aside>
+        </h3>
+        <ul>
+<li>a proc to completely override the standard formatting for examine text
+<ul>
+<li>to prevent more copy paste</li>
+</ul>
+</li>
+</ul><h3 id="proc/updateStatusUi"><aside class="declaration">proc </aside>updateStatusUi<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 107"/></aside>
+        </h3>
+        <p>Stub. Override for objects that need to update their ui with status effect information.</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

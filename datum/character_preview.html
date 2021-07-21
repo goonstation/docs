@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;character_preview - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/character_preview.html#var">Var Details</a> - <a href="datum/character_preview.html#proc">Proc Details</a></header>
+<main>
+<h1>Character Preview <aside>/<a href="datum.html">datum</a>/<a href="datum/character_preview.html">character_preview</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;character_preview.dm 13"/></h1>
+
+<p>Essentially, it creates a human on a 1x1 map and lets you set the appearance of that human.</p>
+<p>This parent type is for use in single-client windows.
+See <a href="datum/character_preview/window.html" title="/datum/character_preview/window">datum/character_preview/window</a> for a detatched window and and <a href="datum/character_preview/multiclient.html" title="/datum/character_preview/multiclient">datum/character_preview/multiclient</a> for a multi-client variant.</p>
+<p>Use winset() to position the control within the window.</p>
+<p>See the default code for an example - places it at 0,0 and makes it 128x128 pixels.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/character_preview.html#var/preview_id">preview_id</a></th><td>The map ID for use with winset().</td></tr>
+            <tr><th><a href="datum/character_preview.html#var/preview_mob">preview_mob</a></th><td>The human mob shown in the preview.
+May be useful to access directly if you want to put clothes on it or whatever.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/character_preview.html#proc/update_appearance">update_appearance</a></th><td>Sets the appearance, mutant race, and facing direction of the human mob.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/preview_id"><aside class="declaration">var </aside>preview_id
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;character_preview.dm 16"/></h3>
+        <p>The map ID for use with winset().</p><h3 id="var/preview_mob"><aside class="declaration">var </aside>preview_mob
+            <aside>&ndash; /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/<a href="mob/living/carbon/human.html">carbon/human</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;character_preview.dm 22"/></h3>
+        <p>The human mob shown in the preview.
+May be useful to access directly if you want to put clothes on it or whatever.</p><h2 id="proc">Proc Details</h2><h3 id="proc/update_appearance"><aside class="declaration">proc </aside>update_appearance<aside>(/<a href="datum.html">datum</a>/<a href="datum/appearanceHolder.html">appearanceHolder</a>/AH, /<a href="datum.html">datum</a>/<a href="datum/mutantrace.html">mutantrace</a>/MR, direction, name) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;character_preview.dm 125"/></aside>
+        </h3>
+        <p>Sets the appearance, mutant race, and facing direction of the human mob.</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

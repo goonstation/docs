@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;appearanceHolder - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/appearanceHolder.html#var">Var Details</a></header>
+<main>
+<h1>/<a href="datum.html">datum</a>/<a href="datum/appearanceHolder.html">appearanceHolder</a>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 17"/></h1>
+
+<p>Holds all the appearance information.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/body_icon">body_icon</a></th><td>tells update_body() which DMI to use for rendering the chest/groin, torso-details, and oversuit tails</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/body_icon_state">body_icon_state</a></th><td>for mutant races that are rendered using a static icon. Ignored if BUILT_FROM_PIECES is set in mob_appearance_flags</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/customization_first">customization_first</a></th><td>The hair style / detail thing that gets displayed on your spaceperson</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/customization_first_color">customization_first_color</a></th><td>The color that gets used for determining your colors</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/customization_first_color_original">customization_first_color_original</a></th><td>The color that was set by the player's preferences</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/customization_first_offset_y">customization_first_offset_y</a></th><td>The Y offset to display this image</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/customization_first_original">customization_first_original</a></th><td>The hair style / detail thing that was set by the player in their settings</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/customization_icon">customization_icon</a></th><td>What DMI holds the mob's hair sprites</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/e_icon">e_icon</a></th><td>Eye icon</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/e_offset_y">e_offset_y</a></th><td>How far up or down to move the eyes</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/e_state">e_state</a></th><td>Eye icon state</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/head_icon">head_icon</a></th><td>What DMI holds the mob's head sprite</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/head_icon_state">head_icon_state</a></th><td>What icon state is our mob's head?</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/mob_appearance_flags">mob_appearance_flags</a></th><td></td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/mob_detail_1_color_ref">mob_detail_1_color_ref</a></th><td>Which of the three customization colors to use (CUST_1, CUST_2, CUST_3)</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/mob_detail_1_icon">mob_detail_1_icon</a></th><td>Intended for extra, non-head body features that may or may not be hair (just not on their head)
+An image to be overlaid on the mob just above their skin</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/mob_oversuit_1_color_ref">mob_oversuit_1_color_ref</a></th><td>Which of the three customization colors to use (CUST_1, CUST_2, CUST_3)</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/mob_oversuit_1_icon">mob_oversuit_1_icon</a></th><td>An image to be overlaid on the mob between their outer-suit and backpack
+Not to be used to define a tail oversuit, that's done by the tail organ.
+This is for things like the cow having a muzzle that shows up over their outer-suit</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/mutant_race">mutant_race</a></th><td>Used by changelings to determine which type of limbs their victim had</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/special_hair_1_color_ref">special_hair_1_color_ref</a></th><td>Which of the three customization colors to use (CUST_1, CUST_2, CUST_3)</td></tr>
+            <tr><th><a href="datum/appearanceHolder.html#var/special_hair_1_icon">special_hair_1_icon</a></th><td>Intended for extra head features that may or may not be hair</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/body_icon"><aside class="declaration">var </aside>body_icon
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 30"/></h3>
+        <p>tells update_body() which DMI to use for rendering the chest/groin, torso-details, and oversuit tails</p><h3 id="var/body_icon_state"><aside class="declaration">var </aside>body_icon_state
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 32"/></h3>
+        <p>for mutant races that are rendered using a static icon. Ignored if BUILT_FROM_PIECES is set in mob_appearance_flags</p><h3 id="var/customization_first"><aside class="declaration">var </aside>customization_first
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/customization_style.html">customization_style</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 46"/></h3>
+        <p>The hair style / detail thing that gets displayed on your spaceperson</p><h3 id="var/customization_first_color"><aside class="declaration">var </aside>customization_first_color
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 42"/></h3>
+        <p>The color that gets used for determining your colors</p><h3 id="var/customization_first_color_original"><aside class="declaration">var </aside>customization_first_color_original
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 44"/></h3>
+        <p>The color that was set by the player's preferences</p><h3 id="var/customization_first_offset_y"><aside class="declaration">var </aside>customization_first_offset_y
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 50"/></h3>
+        <p>The Y offset to display this image</p><h3 id="var/customization_first_original"><aside class="declaration">var </aside>customization_first_original
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 48"/></h3>
+        <p>The hair style / detail thing that was set by the player in their settings</p><h3 id="var/customization_icon"><aside class="declaration">var </aside>customization_icon
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 39"/></h3>
+        <p>What DMI holds the mob's hair sprites</p><h3 id="var/e_icon"><aside class="declaration">var </aside>e_icon
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 105"/></h3>
+        <p>Eye icon</p><h3 id="var/e_offset_y"><aside class="declaration">var </aside>e_offset_y
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 109"/></h3>
+        <p>How far up or down to move the eyes</p><h3 id="var/e_state"><aside class="declaration">var </aside>e_state
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 107"/></h3>
+        <p>Eye icon state</p><h3 id="var/head_icon"><aside class="declaration">var </aside>head_icon
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 34"/></h3>
+        <p>What DMI holds the mob's head sprite</p><h3 id="var/head_icon_state"><aside class="declaration">var </aside>head_icon_state
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 36"/></h3>
+        <p>What icon state is our mob's head?</p><h3 id="var/mob_appearance_flags"><aside class="declaration">var </aside>mob_appearance_flags
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 26"/></h3>
+        <ul>
+<li>
+<p>Mob Appearance Flags - used to modify how the mob is drawn</p>
+<ul>
+<li>
+<p>These flags help define what features get drawn when the mob's sprite is assembled</p>
+</li>
+<li>
+<p>For instance, WEARS_UNDERPANTS tells update_icon.dm to draw the mob's underpants</p>
+</li>
+<li>
+<p>SEE: appearance.dm for more flags and details!</p>
+</li>
+</ul>
+</li>
+</ul><h3 id="var/mob_detail_1_color_ref"><aside class="declaration">var </aside>mob_detail_1_color_ref
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 87"/></h3>
+        <p>Which of the three customization colors to use (CUST_1, CUST_2, CUST_3)</p><h3 id="var/mob_detail_1_icon"><aside class="declaration">var </aside>mob_detail_1_icon
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 84"/></h3>
+        <p>Intended for extra, non-head body features that may or may not be hair (just not on their head)
+An image to be overlaid on the mob just above their skin</p><h3 id="var/mob_oversuit_1_color_ref"><aside class="declaration">var </aside>mob_oversuit_1_color_ref
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 96"/></h3>
+        <p>Which of the three customization colors to use (CUST_1, CUST_2, CUST_3)</p><h3 id="var/mob_oversuit_1_icon"><aside class="declaration">var </aside>mob_oversuit_1_icon
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 93"/></h3>
+        <p>An image to be overlaid on the mob between their outer-suit and backpack
+Not to be used to define a tail oversuit, that's done by the tail organ.
+This is for things like the cow having a muzzle that shows up over their outer-suit</p><h3 id="var/mutant_race"><aside class="declaration">var </aside>mutant_race
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/mutantrace.html">mutantrace</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 100"/></h3>
+        <p>Used by changelings to determine which type of limbs their victim had</p><h3 id="var/special_hair_1_color_ref"><aside class="declaration">var </aside>special_hair_1_color_ref
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 68"/></h3>
+        <p>Which of the three customization colors to use (CUST_1, CUST_2, CUST_3)</p><h3 id="var/special_hair_1_icon"><aside class="declaration">var </aside>special_hair_1_icon
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;medical&#x2F;genetics&#x2F;bioHolder.dm 65"/></h3>
+        <p>Intended for extra head features that may or may not be hair</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

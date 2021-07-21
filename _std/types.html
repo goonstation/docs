@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>_std&#x2F;types.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="_std/types.html#define">Define Details</a></header>
+<main>
+<h1>_std/types.dm 
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th>/proc/<a href="global.html#proc/concrete_typesof">concrete_typesof</a></th>
+                <td>typesof() but only for concrete (not abstract) types,
+it caches the result so you don't need to worry about doing that manually
+so subsequent calls on the same type will be very fast.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/filtered_concrete_typesof">filtered_concrete_typesof</a></th>
+                <td>The same thing but now you can filter the types using a proc. Also cached.
+The filter proc takes a type and should return 1 if we want to include it and 0 otherwise.
+That proc should also be pure (always return the same thing for the same arguments) because of the caching.
+If you want to use non-pure proc do the filtering manually yourself and don't use this.
+Note that the first call to filtered_concrete_typesof with a given type and filter will be (possibly a lot)
+<em>slower</em> than doing it manually. The benefit of this proc only shows itself for future calls which are
+very fast due to caching.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/get_singleton">get_singleton</a></th>
+                <td>Gets the instance of a singleton type (or a non-singleton type if you decide to use it on one).</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/predecessor_path_in_list">predecessor_path_in_list</a></th>
+                <td>Find predecessor of a type</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/maximal_subtype">maximal_subtype</a></th>
+                <td>Returns the maximal subtype (i.e. the most subby) in a list of given types</td></tr>
+        <tr><th>/var/<a href="global.html#var/by_type">by_type</a></th>
+                <td>contains lists of objects indexed by their type based on START_TRACKING / STOP_TRACKING</td></tr>
+        <tr><th><a href="_std/types.html#define/for_by_tcl">for_by_tcl</a></th><td>Performs a typecheckless for loop with var/iterator over by_type[_type]</td></tr>
+        <tr><th>/var/<a href="global.html#var/by_cat">by_cat</a></th>
+                <td>contains lists of objects indexed by a category string based on START_TRACKING_CAT / STOP_TRACKING_CAT</td></tr></table><h2 id="define">Define Details</h2>
+<h3 id="define/for_by_tcl"><aside class="declaration">#define </aside>for_by_tcl
+            <aside>(_iterator, _type)</aside>
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 163"/>
+    </h3>
+    <p>Performs a typecheckless for loop with var/iterator over by_type[_type]</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

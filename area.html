@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;area - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="area.html#var">Var Details</a> - <a href="area.html#proc">Proc Details</a></header>
+<main>
+<h1>area <aside>/<a href="area.html">area</a></aside><aside> inherits /<a href="atom.html">atom</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 23"/></h1>
+
+<p>A grouping of tiles into a logical space. The sworn enemy of mappers.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="area.html#var/active">active</a></th><td>TRUE if a dude is here (DOES NOT APPLY TO THE &quot;SPACE&quot; AREA)</td></tr>
+            <tr><th><a href="area.html#var/being_captured">being_captured</a></th><td>Is the area currently being captured/tagged in gang mode</td></tr>
+            <tr><th><a href="area.html#var/blocked">blocked</a></th><td>set to TRUE to inhibit entrance into this area, may not work completely yet.</td></tr>
+            <tr><th><a href="area.html#var/blocked_waypoint">blocked_waypoint</a></th><td>if set and a blocked person makes their way into here via Bad Ways, they'll be teleported here instead of nullspace. use a path!</td></tr>
+            <tr><th><a href="area.html#var/do_not_irradiate">do_not_irradiate</a></th><td></td></tr>
+            <tr><th><a href="area.html#var/filler_turf">filler_turf</a></th><td>if set, replacewithspace in this area instead replaces with this turf type</td></tr>
+            <tr><th><a href="area.html#var/gang_base">gang_base</a></th><td>is this a gang's base (uncaptureable)?</td></tr>
+            <tr><th><a href="area.html#var/gang_owners">gang_owners</a></th><td>gang that owns this area in gang mode</td></tr>
+            <tr><th><a href="area.html#var/irradiated">irradiated</a></th><td>space blowouts use this, should always be 0</td></tr>
+            <tr><th><a href="area.html#var/is_centcom">is_centcom</a></th><td>for escape checks</td></tr>
+            <tr><th><a href="area.html#var/machines">machines</a></th><td>Local list of obj/machines found in the area</td></tr>
+            <tr><th><a href="area.html#var/map_generator">map_generator</a></th><td>This datum, if set, allows terrain generation behavior to be ran on world/proc/init()</td></tr>
+            <tr><th><a href="area.html#var/may_eat_here_in_restricted_z">may_eat_here_in_restricted_z</a></th><td>If the area is on a restricted z leve, this controls if people can eat within it. (The reason for this might shock you!)</td></tr>
+            <tr><th><a href="area.html#var/permarads">permarads</a></th><td>Blowouts don't set irradiated on this area back to zero.</td></tr>
+            <tr><th><a href="area.html#var/population">population</a></th><td>List of all dudes who are here</td></tr>
+            <tr><th><a href="area.html#var/sanctuary">sanctuary</a></th><td>set to TRUE to inhibit attacks in this area.</td></tr>
+            <tr><th><a href="area.html#var/sound_environment">sound_environment</a></th><td>default environment for sounds - see sound datum vars documentation for the presets.</td></tr>
+            <tr><th><a href="area.html#var/storming">storming</a></th><td>for Battle Royale gamemode</td></tr>
+            <tr><th><a href="area.html#var/teleport_blocked">teleport_blocked</a></th><td>Cannot teleport into this area without some explicit set_loc thing. 1 for most things, 2 for definitely everything.</td></tr>
+            <tr><th><a href="area.html#var/workplace">workplace</a></th><td>Do people work here?</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="area.html#proc/Entered">Entered</a></th><td>Gets called when a movable atom enters an area.</td></tr>
+            <tr><th><a href="area.html#proc/Exited">Exited</a></th><td>Gets called when a movable atom exits an area.</td></tr>
+            <tr><th><a href="area.html#proc/clear_usage">clear_usage</a></th><td>sets all current usage of power to 0</td></tr>
+            <tr><th><a href="area.html#proc/find_middle">find_middle</a></th><td>Returns the turf in the middle of the area. Returns null if none can be found.</td></tr>
+            <tr><th><a href="area.html#proc/firealert">firealert</a></th><td>Causes a fire alert in the area if there is not one already set. Notifies AIs.</td></tr>
+            <tr><th><a href="area.html#proc/firereset">firereset</a></th><td>Resets the fire alert in the area. Notifies AIs.</td></tr>
+            <tr><th><a href="area.html#proc/power_change">power_change</a></th><td>Called when power status changes. Updates machinery and the icon of the area.</td></tr>
+            <tr><th><a href="area.html#proc/poweralert">poweralert</a></th><td>Causes a power alert in the area. Notifies AIs.</td></tr>
+            <tr><th><a href="area.html#proc/powered">powered</a></th><td>Determines is an area is powered or not.</td></tr>
+            <tr><th><a href="area.html#proc/updateicon">updateicon</a></th><td>Updates the icon of the area. Mainly used for flashing it red or blue. See: old party lights</td></tr>
+            <tr><th><a href="area.html#proc/usage">usage</a></th><td>Returns the current usage of the specified channel</td></tr>
+            <tr><th><a href="area.html#proc/use_power">use_power</a></th><td>Uses the specified ammount of power for the specified channel</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/active"><aside class="declaration">var </aside>active
+            <aside>&ndash; /tmp</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 26"/></h3>
+        <p>TRUE if a dude is here (DOES NOT APPLY TO THE &quot;SPACE&quot; AREA)</p><h3 id="var/being_captured"><aside class="declaration">var </aside>being_captured
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 104"/></h3>
+        <p>Is the area currently being captured/tagged in gang mode</p><h3 id="var/blocked"><aside class="declaration">var </aside>blocked
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 135"/></h3>
+        <p>set to TRUE to inhibit entrance into this area, may not work completely yet.</p><h3 id="var/blocked_waypoint"><aside class="declaration">var </aside>blocked_waypoint
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 138"/></h3>
+        <p>if set and a blocked person makes their way into here via Bad Ways, they'll be teleported here instead of nullspace. use a path!</p><h3 id="var/do_not_irradiate"><aside class="declaration">var </aside>do_not_irradiate
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 95"/></h3>
+        <ul>
+<li>
+<p>Don't irradiate this place during the blowout event</p>
+<ul>
+<li>
+<p>Definitely DO NOT var-edit areas in the map editor because it apparently causes individual tiles</p>
+</li>
+<li>
+<p>to become detached from the parent area.</p>
+</li>
+<li>
+<p>Example: APCs belonging to medbay or whatever that are in adjacent maintenance tunnels,</p>
+</li>
+<li>
+<p>not in the same room they're powering.</p>
+</li>
+<li>
+<p>If you set the d_n_i flag, it will render them useless.</p>
+</li>
+</ul>
+</li>
+</ul><h3 id="var/filler_turf"><aside class="declaration">var </aside>filler_turf
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 107"/></h3>
+        <p>if set, replacewithspace in this area instead replaces with this turf type</p><h3 id="var/gang_base"><aside class="declaration">var </aside>gang_base
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 101"/></h3>
+        <p>is this a gang's base (uncaptureable)?</p><h3 id="var/gang_owners"><aside class="declaration">var </aside>gang_owners
+            <aside>&ndash; /<a href="datum.html">datum</a>/gang</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 98"/></h3>
+        <p>gang that owns this area in gang mode</p><h3 id="var/irradiated"><aside class="declaration">var </aside>irradiated
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 79"/></h3>
+        <p>space blowouts use this, should always be 0</p><h3 id="var/is_centcom"><aside class="declaration">var </aside>is_centcom
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 45"/></h3>
+        <p>for escape checks</p><h3 id="var/machines"><aside class="declaration">var </aside>machines
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 147"/></h3>
+        <p>Local list of obj/machines found in the area</p><h3 id="var/map_generator"><aside class="declaration">var </aside>map_generator
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/map_generator.html">map_generator</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 150"/></h3>
+        <p>This datum, if set, allows terrain generation behavior to be ran on world/proc/init()</p><h3 id="var/may_eat_here_in_restricted_z"><aside class="declaration">var </aside>may_eat_here_in_restricted_z
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 63"/></h3>
+        <p>If the area is on a restricted z leve, this controls if people can eat within it. (The reason for this might shock you!)</p><h3 id="var/permarads"><aside class="declaration">var </aside>permarads
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 82"/></h3>
+        <p>Blowouts don't set irradiated on this area back to zero.</p><h3 id="var/population"><aside class="declaration">var </aside>population
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 29"/></h3>
+        <p>List of all dudes who are here</p><h3 id="var/sanctuary"><aside class="declaration">var </aside>sanctuary
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 132"/></h3>
+        <p>set to TRUE to inhibit attacks in this area.</p><h3 id="var/sound_environment"><aside class="declaration">var </aside>sound_environment
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 129"/></h3>
+        <p>default environment for sounds - see sound datum vars documentation for the presets.</p><h3 id="var/storming"><aside class="declaration">var </aside>storming
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 142"/></h3>
+        <p>for Battle Royale gamemode</p><h3 id="var/teleport_blocked"><aside class="declaration">var </aside>teleport_blocked
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 110"/></h3>
+        <p>Cannot teleport into this area without some explicit set_loc thing. 1 for most things, 2 for definitely everything.</p><h3 id="var/workplace"><aside class="declaration">var </aside>workplace
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 113"/></h3>
+        <p>Do people work here?</p><h2 id="proc">Proc Details</h2><h3 id="proc/Entered">Entered<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/A, /<a href="atom.html">atom</a>/oldloc) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 167"/></aside>
+        </h3>
+        <p>Gets called when a movable atom enters an area.</p><h3 id="proc/Exited">Exited<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/A) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 226"/></aside>
+        </h3>
+        <p>Gets called when a movable atom exits an area.</p><h3 id="proc/clear_usage"><aside class="declaration">proc </aside>clear_usage<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3675"/></aside>
+        </h3>
+        <p>sets all current usage of power to 0</p><h3 id="proc/find_middle"><aside class="declaration">proc </aside>find_middle<aside>(mustbeinside) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 265"/></aside>
+        </h3>
+        <p>Returns the turf in the middle of the area. Returns null if none can be found.</p><h3 id="proc/firealert"><aside class="declaration">proc </aside>firealert<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3576"/></aside>
+        </h3>
+        <p>Causes a fire alert in the area if there is not one already set. Notifies AIs.</p><h3 id="proc/firereset"><aside class="declaration">proc </aside>firereset<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3598"/></aside>
+        </h3>
+        <p>Resets the fire alert in the area. Notifies AIs.</p><h3 id="proc/power_change"><aside class="declaration">proc </aside>power_change<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3649"/></aside>
+        </h3>
+        <p>Called when power status changes. Updates machinery and the icon of the area.</p><h3 id="proc/poweralert"><aside class="declaration">proc </aside>poweralert<aside>(state, source) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3559"/></aside>
+        </h3>
+        <p>Causes a power alert in the area. Notifies AIs.</p><h3 id="proc/powered"><aside class="declaration">proc </aside>powered<aside>(chan) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3634"/></aside>
+        </h3>
+        <p>Determines is an area is powered or not.</p>
+<ul>
+<li>
+<p>chan - the power channel, possibilities: (EQUIP, LIGHT, ENVIRON)</p>
+</li>
+<li>
+<p>return true if the area has power to given channel, false otherwise, null if channel was not specified</p>
+</li>
+</ul><h3 id="proc/updateicon"><aside class="declaration">proc </aside>updateicon<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3615"/></aside>
+        </h3>
+        <p>Updates the icon of the area. Mainly used for flashing it red or blue. See: old party lights</p><h3 id="proc/usage"><aside class="declaration">proc </aside>usage<aside>(chan) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3661"/></aside>
+        </h3>
+        <p>Returns the current usage of the specified channel</p>
+<ul>
+<li>required - chan - the power channel, possibilities: (EQUIP, LIGHT, ENVIRON, TOTAL)</li>
+</ul><h3 id="proc/use_power"><aside class="declaration">proc </aside>use_power<aside>(amount, chan) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;area.dm 3687"/></aside>
+        </h3>
+        <p>Uses the specified ammount of power for the specified channel</p>
+<ul>
+<li>
+<p>required - amount - the amt. of power to use</p>
+</li>
+<li>
+<p>required - chan - the power channel, possibilities: (EQUIP, LIGHT, ENVIRON)</p>
+</li>
+</ul></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

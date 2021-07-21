@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>(global) - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="global.html#var">Var Details</a> - <a href="global.html#proc">Proc Details</a></header>
+<main>
+<h1>(global)
+        
+    
+        <img src="git.png" width="16" height="16" title="(unknown)"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="global.html#var/RARITY_COLOR">RARITY_COLOR</a></th><td>Global static list of rarity color associations</td></tr>
+            <tr><th><a href="global.html#var/Z4_ACTIVE">Z4_ACTIVE</a></th><td>Centcom / Earth Stuff
+Contents:
+Areas:
+Main Area
+Outside
+Offices
+Lobby
+Lounge
+Garden
+Power Supply</td></tr>
+            <tr><th><a href="global.html#var/action_names">action_names</a></th><td>Used to translate internal action names to human-readable names.</td></tr>
+            <tr><th><a href="global.html#var/action_verbs">action_verbs</a></th><td>Used for literal input of actions</td></tr>
+            <tr><th><a href="global.html#var/all_valid_random_right_arms">all_valid_random_right_arms</a></th><td>Number of tiles where it should try to make a splatter</td></tr>
+            <tr><th><a href="global.html#var/area_list_is_up_to_date">area_list_is_up_to_date</a></th><td>The station_areas list is up to date. If something changes an area, make sure to set this to 0</td></tr>
+            <tr><th><a href="global.html#var/biomes">biomes</a></th><td>All possible biomes in assoc list as type || instance</td></tr>
+            <tr><th><a href="global.html#var/by_cat">by_cat</a></th><td>contains lists of objects indexed by a category string based on START_TRACKING_CAT / STOP_TRACKING_CAT</td></tr>
+            <tr><th><a href="global.html#var/by_type">by_type</a></th><td>contains lists of objects indexed by their type based on START_TRACKING / STOP_TRACKING</td></tr>
+            <tr><th><a href="global.html#var/cached_colors">cached_colors</a></th><td>paint cans</td></tr>
+            <tr><th><a href="global.html#var/chessboard">chessboard</a></th><td></td></tr>
+            <tr><th><a href="global.html#var/ehjax">ehjax</a></th><td>EHJAX - Like ajax but for ~byond~
+A framework for browser popups to interact with the byond server, async (client-side)</td></tr>
+            <tr><th><a href="global.html#var/fishing_spots">fishing_spots</a></th><td>initialised on world/New(), associative list with the format (fishing_atom_type = /datum/fishing_spot)</td></tr>
+            <tr><th><a href="global.html#var/ircbot">ircbot</a></th><td>Procs for handling ircbot connectivity and data transfer</td></tr>
+            <tr><th><a href="global.html#var/is_blank_string_regex">is_blank_string_regex</a></th><td>Returns true if given string is just space characters
+The explicitly defined entries are various blank unicode characters that don't get included as white space by \s</td></tr>
+            <tr><th><a href="global.html#var/key_names">key_names</a></th><td>Used to translate bitflags of hotkeys into human-readable names</td></tr>
+            <tr><th><a href="global.html#var/keybind_styles">keybind_styles</a></th><td>This file is intended to hold all data pertaining to keybind_style datums and related functionality</td></tr>
+            <tr><th><a href="global.html#var/light_update_queue">light_update_queue</a></th><td>List of items that want to be deleted</td></tr>
+            <tr><th><a href="global.html#var/material_category_names">material_category_names</a></th><td>Material category names as displayed in fabricators
+see match_material_pattern() for exact definitions</td></tr>
+            <tr><th><a href="global.html#var/named_color_cache">named_color_cache</a></th><td>global cache of all named colors once fetched with a color rgba</td></tr>
+            <tr><th><a href="global.html#var/named_colors">named_colors</a></th><td>global list of all named colors</td></tr>
+            <tr><th><a href="global.html#var/opt_inactive">opt_inactive</a></th><td>EXPERIMENTAL STUFF</td></tr>
+            <tr><th><a href="global.html#var/oven_recipes">oven_recipes</a></th><td>COOKING RECODE</td></tr>
+            <tr><th><a href="global.html#var/phrase_log">phrase_log</a></th><td>This system keeps a logged list of player-created phrases of various categories. The lists are cross-round.
+Useful for stuff like hallucinations etc. If the number of phrases in a category exceeds src.max_length
+random phrases get thrown out to reduce the size when saving.
+Currently logged categories:
+say - people talking
+whisper - people whispering
+pda - pda messages
+deadsay - ghosts talking
+ailaw - custom AI laws
+record - custom radio station record names
+emote - custom emotes
+prayer - prayers
+name-X - player chosen name for X where X is from the set {blob, ai, cyborg, clown, mime, wizard, ...}
+vehicle - vehicle names (via a bottle of Champagne)
+sing - people singing
+pill - custom pill name
+bottle - custom obttle name
+voice-mimic - voices used by the changeling mimic voice ability
+voice-radiostation - voices used by the radio station voice synthesizer
+telepathy - messages sent through the telepathy genetics ability
+bot-X - custom bot name, X is from the set {camera, fire, guard, med, sec} (I bet you didn't even know you could rename bots with a pen, huh)
+name-bee - custom bee / bee larva name
+name-critter - custom critter name (you can rename those with a pen too, whoa)
+seed - custom botany seed name</td></tr>
+            <tr><th><a href="global.html#var/portable_machinery">portable_machinery</a></th><td>Remote parent</td></tr>
+            <tr><th><a href="global.html#var/sb_tricks">sb_tricks</a></th><td>Types of sounds: AMBIENCE_LOOPING, AMBIENCE_FX_1, and AMBIENCE_FX_2
+Holds the associated sound channel we want
+Determines if we are repeating or not
+Should the sound set the wait var?
+pool of precached sounds</td></tr>
+            <tr><th><a href="global.html#var/special_admin_observing_verbs">special_admin_observing_verbs</a></th><td>proc/possess,
+client/proc/generate_poster,
+client/proc/addpathogens,
+client/proc/debug_check_possible_reactions,
+client/proc/dbg_itemspecial,
+client/proc/dbg_objectprop,</td></tr>
+            <tr><th><a href="global.html#var/station_areas">station_areas</a></th><td>All the accessible areas on the station in one convenient place</td></tr>
+            <tr><th><a href="global.html#var/statusGroupLimits">statusGroupLimits</a></th><td>Simple global list of groupname : amount, that tells the system how many effects of a group we can have active at most.
+See exclusiveGroup. Buffs above the max will not be applied.</td></tr>
+            <tr><th><a href="global.html#var/tgui_admin_state">tgui_admin_state</a></th><td>tgui state: admin_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_always_state">tgui_always_state</a></th><td>tgui state: always_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_broken_state">tgui_broken_state</a></th><td>tgui state: broken</td></tr>
+            <tr><th><a href="global.html#var/tgui_conscious_state">tgui_conscious_state</a></th><td>tgui state: conscious_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_contained_state">tgui_contained_state</a></th><td>tgui state: contained_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_deep_inventory_state">tgui_deep_inventory_state</a></th><td>tgui state: deep_inventory_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_default_state">tgui_default_state</a></th><td>tgui state: default_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_hands_state">tgui_hands_state</a></th><td>tgui state: hands_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_human_adjacent_state">tgui_human_adjacent_state</a></th><td>tgui state: human_adjacent_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_inventory_state">tgui_inventory_state</a></th><td>tgui state: inventory_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_not_incapacitated_state">tgui_not_incapacitated_state</a></th><td>tgui state: not_incapacitated_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_not_incapacitated_turf_state">tgui_not_incapacitated_turf_state</a></th><td>tgui state: not_incapacitated_turf_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_notcontained_state">tgui_notcontained_state</a></th><td>tgui state: notcontained_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_observer_state">tgui_observer_state</a></th><td>tgui state: observer_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_physical_obscured_state">tgui_physical_obscured_state</a></th><td>tgui state: physical_obscured_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_physical_state">tgui_physical_state</a></th><td>tgui state: physical_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_process">tgui_process</a></th><td>tgui process</td></tr>
+            <tr><th><a href="global.html#var/tgui_self_state">tgui_self_state</a></th><td>tgui state: self_state</td></tr>
+            <tr><th><a href="global.html#var/tgui_z_state">tgui_z_state</a></th><td>tgui state: z_state</td></tr>
+            <tr><th><a href="global.html#var/the_automaton">the_automaton</a></th><td>cogwerks spooky automaton thing that kinda just sits there being weird and ominous</td></tr>
+            <tr><th><a href="global.html#var/triggerVars">triggerVars</a></th><td>This contains the names of the trigger lists on materials. Required for copying materials. Remember to keep this updated if you add new triggers.</td></tr>
+            <tr><th><a href="global.html#var/vcs_revision">vcs_revision</a></th><td>OPTIONS TO GO FAST
+PROFILING OPTIONS
+DEBUGGING TOGGLES
+MAP OVERRIDES
+HOLIDAYS AND OTHER SUCH TOGGLES</td></tr>
+            <tr><th><a href="global.html#var/waterflow_enabled">waterflow_enabled</a></th><td>Fluid Object</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="global.html#proc/AuxSortLT">AuxSortLT</a></th><td>pivot</td></tr>
+            <tr><th><a href="global.html#proc/ClearBadsmokeRefs">ClearBadsmokeRefs</a></th><td>SMOKE SYSTEMS</td></tr>
+            <tr><th><a href="global.html#proc/FindPromotionCandidates">FindPromotionCandidates</a></th><td>COMMAND PROMOTIONS</td></tr>
+            <tr><th><a href="global.html#proc/GetRandomPerimeterTurf">GetRandomPerimeterTurf</a></th><td>Returns a turf at the edge of a squared circle of specified radius around a thing</td></tr>
+            <tr><th><a href="global.html#proc/IsGuestKey">IsGuestKey</a></th><td>Returns true if the given key is a guest key</td></tr>
+            <tr><th><a href="global.html#proc/SortList">SortList</a></th><td>pivot</td></tr>
+            <tr><th><a href="global.html#proc/add_color">add_color</a></th><td>adds a named color to the global list
+given name and RGB color</td></tr>
+            <tr><th><a href="global.html#proc/affine_color_mapping_matrix">affine_color_mapping_matrix</a></th><td>The same thing as [proc/color_mapping_matrix] but with 4 mapped colors.
+The first color is used as the origin in the affine transform.</td></tr>
+            <tr><th><a href="global.html#proc/angle2text">angle2text</a></th><td>Returns the given degree converted to a text string in the form of a direction</td></tr>
+            <tr><th><a href="global.html#proc/angle_to_dir">angle_to_dir</a></th><td>Transforms a given angle to a cardinal/ordinal direction</td></tr>
+            <tr><th><a href="global.html#proc/angle_to_vector">angle_to_vector</a></th><td>Transforms a given angle to vec2 in a list</td></tr>
+            <tr><th><a href="global.html#proc/applyCableMaterials">applyCableMaterials</a></th><td>Yes hello apparently we need a proc for this because theres a million types of different wires and cables.</td></tr>
+            <tr><th><a href="global.html#proc/ass_explosion_limb_success">ass_explosion_limb_success</a></th><td>First try to sever their butt
+If that didn't work, try severing a limb or tail
+Dont want your tail removed? Keep all your limbs intact!
+Returns 0 if it cant be severed like this, 1 if it always gets severed, or 2 if it <em>sometimes</em> gets severed</td></tr>
+            <tr><th><a href="global.html#proc/ass_explosion_message">ass_explosion_message</a></th><td>Returns if the limb is not ass-severable, and a message to the owner about why not
+returns some flufftext as to why their limb didnt come off. Or came off anyway.</td></tr>
+            <tr><th><a href="global.html#proc/attack_particle">attack_particle</a></th><td>obj/attackby(var/obj/item/I as obj, mob/user as mob)</td></tr>
+            <tr><th><a href="global.html#proc/attenuate_for_location">attenuate_for_location</a></th><td>returns 0 to 1 based on air pressure in turf</td></tr>
+            <tr><th><a href="global.html#proc/bash_explode">bash_explode</a></th><td>BASH explode: Splits a string into string pieces the same way BASH handles this.</td></tr>
+            <tr><th><a href="global.html#proc/blend_skintone">blend_skintone</a></th><td>Blends given rgb values with old human mob skin color (#ffca95) to return a new rgb value</td></tr>
+            <tr><th><a href="global.html#proc/borkborkbork_parse">borkborkbork_parse</a></th><td>!!!
+!!!</td></tr>
+            <tr><th><a href="global.html#proc/can_act">can_act</a></th><td>Returns true if not incapicitated and unhandcuffed (by default)</td></tr>
+            <tr><th><a href="global.html#proc/checkTurfPassable">checkTurfPassable</a></th><td>Returns false if there is a dense atom on the turf, unless a custom hueristic is passed.</td></tr>
+            <tr><th><a href="global.html#proc/check_whitelist">check_whitelist</a></th><td>Removes non-whitelisted reagents from the reagents of TA</td></tr>
+            <tr><th><a href="global.html#proc/checktraitor">checktraitor</a></th><td>ADMIN HELPER PROCS</td></tr>
+            <tr><th><a href="global.html#proc/color_mapping_matrix">color_mapping_matrix</a></th><td>Takes two lists, inp=list(i1, i2, i3), out=(o1, o2, o3).
+Creates a color matrix which maps color i1 to o2, i2 to o2, i3 to o3. (Ignores alpha values.)
+Keep the i1, i2, i3 vectors linearly independent.
+The colors can be either be color hex strings or lists as returned from hex_to_rgb_list.
+You need to supply all arguments. If you don't care about the third just set i3 = o3 to something linearly independent of i1 and i2.</td></tr>
+            <tr><th><a href="global.html#proc/concrete_typesof">concrete_typesof</a></th><td>typesof() but only for concrete (not abstract) types,
+it caches the result so you don't need to worry about doing that manually
+so subsequent calls on the same type will be very fast.</td></tr>
+            <tr><th><a href="global.html#proc/copyMaterial">copyMaterial</a></th><td>Returns a copy of a given material.</td></tr>
+            <tr><th><a href="global.html#proc/create_named_colors">create_named_colors</a></th><td>called at world startup
+populates the color list</td></tr>
+            <tr><th><a href="global.html#proc/csound">csound</a></th><td>Soundcache
+NEVER use these sounds for modifying.
+This should only be used for sounds that are played unaltered to the user.
+@param text name the name of the sound that will be returned
+@return sound</td></tr>
+            <tr><th><a href="global.html#proc/dead_player_list">dead_player_list</a></th><td>Returns a list of eligible dead players to be respawned as an antagonist or whatever (Convair880).
+Text messages: 1: alert | 2: alert (chatbox) | 3: alert acknowledged (chatbox) | 4: no longer eligible (chatbox) | 5: waited too long (chatbox)</td></tr>
+            <tr><th><a href="global.html#proc/dir_to_angle">dir_to_angle</a></th><td>Transforms a cardinal/ordinal direction to an angle</td></tr>
+            <tr><th><a href="global.html#proc/doAssetParse">doAssetParse</a></th><td>CDN PROCS FOR LIVE SERVERS</td></tr>
+            <tr><th><a href="global.html#proc/english_list">english_list</a></th><td>Given a list, returns a text string representation of the list's contents.</td></tr>
+            <tr><th><a href="global.html#proc/filter_is_character_setup_ringtone">filter_is_character_setup_ringtone</a></th><td>type filter for ringtones that're suposed to be selectable at roundstart</td></tr>
+            <tr><th><a href="global.html#proc/filtered_concrete_typesof">filtered_concrete_typesof</a></th><td>The same thing but now you can filter the types using a proc. Also cached.
+The filter proc takes a type and should return 1 if we want to include it and 0 otherwise.
+That proc should also be pure (always return the same thing for the same arguments) because of the caching.
+If you want to use non-pure proc do the filtering manually yourself and don't use this.
+Note that the first call to filtered_concrete_typesof with a given type and filter will be (possibly a lot)
+<em>slower</em> than doing it manually. The benefit of this proc only shows itself for future calls which are
+very fast due to caching.</td></tr>
+            <tr><th><a href="global.html#proc/find_ghost_by_key">find_ghost_by_key</a></th><td>find a ghost mob (or a ghost respawned as critter in vr/afterlife bar)</td></tr>
+            <tr><th><a href="global.html#proc/find_player">find_player</a></th><td>returns a reference to a player datum based on the ckey you put into it</td></tr>
+            <tr><th><a href="global.html#proc/flockBasedGarbleText">flockBasedGarbleText</a></th><td>Returns given text replaced by nonsense but its based off of a modifier + flock's garblyness</td></tr>
+            <tr><th><a href="global.html#proc/gas_text_color">gas_text_color</a></th><td>Enables debug overlay which counts process_cell() calls per turf (viewable through info-overlays)
+Enables debug overlay which counts all atmos operations per turf (viewable through info-overlays)
+Puts a list of turfs which get processed a lot into <code>global.hotly_processed_turf</code> for debugging
+Returns the color of a given gas ID.</td></tr>
+            <tr><th><a href="global.html#proc/getClientFromCkey">getClientFromCkey</a></th><td>Finds a client by ckey, throws exception if not found</td></tr>
+            <tr><th><a href="global.html#proc/getFusedMaterial">getFusedMaterial</a></th><td>Merges two materials and returns result as new material.</td></tr>
+            <tr><th><a href="global.html#proc/getFusedTriggers">getFusedTriggers</a></th><td>Fuses two material trigger lists.</td></tr>
+            <tr><th><a href="global.html#proc/getIconSize">getIconSize</a></th><td>Handles the two states icon_size can be in: basic number, or string in WxH format</td></tr>
+            <tr><th><a href="global.html#proc/getInterpolatedName">getInterpolatedName</a></th><td>Merges two material names into one.</td></tr>
+            <tr><th><a href="global.html#proc/getItemIcon">getItemIcon</a></th><td>Generates item icons for manufacturers and other things, used in UI dialogs. Sends to client if needed.</td></tr>
+            <tr><th><a href="global.html#proc/getLineMatrix">getLineMatrix</a></th><td>Returns the line matrix from a start atom to an end atom, used in creating line objects</td></tr>
+            <tr><th><a href="global.html#proc/getMatFailString">getMatFailString</a></th><td>Returns a string for when a material fail or breaks depending on its material flags.</td></tr>
+            <tr><th><a href="global.html#proc/getMatFlagString">getMatFlagString</a></th><td>Translates a material flag into a string.</td></tr>
+            <tr><th><a href="global.html#proc/getMaterial">getMaterial</a></th><td>Returns one of the base materials by id.</td></tr>
+            <tr><th><a href="global.html#proc/getOreQualityName">getOreQualityName</a></th><td>*** MISC ***</td></tr>
+            <tr><th><a href="global.html#proc/getQualityName">getQualityName</a></th><td>Simply returns a string for a given quality. Used as prefix for objects.</td></tr>
+            <tr><th><a href="global.html#proc/getRole">getRole</a></th><td>Returns a string based on the current job and antag role of the mob e.g. <code>&quot;Staff Assistant [Traitor]&quot;</code></td></tr>
+            <tr><th><a href="global.html#proc/getTimeInSecondsSinceTime">getTimeInSecondsSinceTime</a></th><td>Returns the time in seconds since a given timestamp</td></tr>
+            <tr><th><a href="global.html#proc/get_adjacent_floor">get_adjacent_floor</a></th><td>Returns the turf facing the fab for cardinal directions (which should also be the user's turf),
+but for diagonals it returns a neighbouring turf depending on where you click
+Just in case you're attacking a corner diagonally. (made initially for lamp manufacturers, probably behaves funky above range 1)</td></tr>
+            <tr><th><a href="global.html#proc/get_alive_antags_percentage">get_alive_antags_percentage</a></th><td>returns a decimal representing the percentage of alive crew that are also antags</td></tr>
+            <tr><th><a href="global.html#proc/get_all_accesses">get_all_accesses</a></th><td>/ Heads of staff
+/ Security
+/ Medical
+/ Science
+Engineering
+/ Civilian
+Other or gimmick</td></tr>
+            <tr><th><a href="global.html#proc/get_all_character_setup_ringtones">get_all_character_setup_ringtones</a></th><td>sets up the list of ringtones players can select through character setup</td></tr>
+            <tr><th><a href="global.html#proc/get_all_mobs_in">get_all_mobs_in</a></th><td>Returns list of all mobs within an atom. Not cheap! (unlike ur mum)</td></tr>
+            <tr><th><a href="global.html#proc/get_angle">get_angle</a></th><td>Returns the angle between two given atoms</td></tr>
+            <tr><th><a href="global.html#proc/get_assets">get_assets</a></th><td>Returns either the already-created asset or creates a new one and returns it</td></tr>
+            <tr><th><a href="global.html#proc/get_dead_crew_percentage">get_dead_crew_percentage</a></th><td>returns a decimal representing the percentage of dead crew (non-observers) to all crew</td></tr>
+            <tr><th><a href="global.html#proc/get_hud_style">get_hud_style</a></th><td>Returns hud style preferences of given client/mob</td></tr>
+            <tr><th><a href="global.html#proc/get_image_group">get_image_group</a></th><td>Returns the client image group for a given &quot;key&quot; argument. If one doesn't yet exist, creates it.</td></tr>
+            <tr><th><a href="global.html#proc/get_nearest_color">get_nearest_color</a></th><td>returns the name of the color nearest to the given color RGB</td></tr>
+            <tr><th><a href="global.html#proc/get_nearest_color_datum">get_nearest_color_datum</a></th><td>returns the named_color datum that is nearest to the given color RGB</td></tr>
+            <tr><th><a href="global.html#proc/get_singleton">get_singleton</a></th><td>Gets the instance of a singleton type (or a non-singleton type if you decide to use it on one).</td></tr>
+            <tr><th><a href="global.html#proc/get_standard_skintone">get_standard_skintone</a></th><td>Given user, will proompt user to select skin color from list (or custom) and returns skin tone after blending</td></tr>
+            <tr><th><a href="global.html#proc/gradientText">gradientText</a></th><td>Returns span with a color gradient between two given colors of given message</td></tr>
+            <tr><th><a href="global.html#proc/handleTriggerGenerations">handleTriggerGenerations</a></th><td>Increases generations on material triggers and handles removal if over the generation cap.</td></tr>
+            <tr><th><a href="global.html#proc/hasParentMaterial">hasParentMaterial</a></th><td>Searches the parent materials of the given material, up to a given generation, for an id.</td></tr>
+            <tr><th><a href="global.html#proc/hex2color_name">hex2color_name</a></th><td>Given hex color, returns string name of nearest named color</td></tr>
+            <tr><th><a href="global.html#proc/hsv_transform_color_matrix">hsv_transform_color_matrix</a></th><td>Generates a color matrix which performs an approximation of the HSV-space transform.
+Hue is in degrees and is applied additively.
+Saturation is in a 0-1 range and is applied multiplicatively.
+Value is in a 0-1 range and is applied multiplicatively.</td></tr>
+            <tr><th><a href="global.html#proc/illiterateGarbleText">illiterateGarbleText</a></th><td>Returns given text replaced entirely by nonsense chars</td></tr>
+            <tr><th><a href="global.html#proc/in_cone_of_vision">in_cone_of_vision</a></th><td>This proc checks if one atom is in the cone of vision of another one.</td></tr>
+            <tr><th><a href="global.html#proc/in_interact_range">in_interact_range</a></th><td>For interacting with stuff.</td></tr>
+            <tr><th><a href="global.html#proc/initialise_fishing_spots">initialise_fishing_spots</a></th><td>run on world/New(), clears global.fishing_spots (if it exists) and fills it with the format (fishing_atom_type = /datum/fishing_spot)</td></tr>
+            <tr><th><a href="global.html#proc/initialize_biomes">initialize_biomes</a></th><td>Initialize all biomes, assoc as type || instance</td></tr>
+            <tr><th><a href="global.html#proc/isUpper">isUpper</a></th><td>Returns true if the char you feed it is uppercase.</td></tr>
+            <tr><th><a href="global.html#proc/isVowel">isVowel</a></th><td>Returns true if the given string has a vowel</td></tr>
+            <tr><th><a href="global.html#proc/is_hex">is_hex</a></th><td>Returns true if given value is a hex value</td></tr>
+            <tr><th><a href="global.html#proc/is_incapacitated">is_incapacitated</a></th><td>Returns true if the given mob is incapacitated</td></tr>
+            <tr><th><a href="global.html#proc/isadmin">isadmin</a></th><td>Returns true if given mob/client/mind is an admin</td></tr>
+            <tr><th><a href="global.html#proc/jobban_isbanned">jobban_isbanned</a></th><td>Can be provided with a mob, a raw cache list, or a ckey. Prefer providing a cache if you can't use a mob, as that reduces API load.</td></tr>
+            <tr><th><a href="global.html#proc/lerp">lerp</a></th><td>Linear interpolation</td></tr>
+            <tr><th><a href="global.html#proc/log_tgui">log_tgui</a></th><td>Appends a tgui-related log entry. All arguments are optional.</td></tr>
+            <tr><th><a href="global.html#proc/make_fake_explosion">make_fake_explosion</a></th><td>obj/item/tank/plasma = 2</td></tr>
+            <tr><th><a href="global.html#proc/make_player">make_player</a></th><td>returns a reference to a player datum, but it tries to make a new one if it cant an already existing one (this is how it persists between connections)</td></tr>
+            <tr><th><a href="global.html#proc/matchesMaterialRecipe">matchesMaterialRecipe</a></th><td>Checks if a material matches a recipe and returns the recipe if a match is found. returns null if nothing matches it.</td></tr>
+            <tr><th><a href="global.html#proc/maximal_subtype">maximal_subtype</a></th><td>Returns the maximal subtype (i.e. the most subby) in a list of given types</td></tr>
+            <tr><th><a href="global.html#proc/mult_color_matrix">mult_color_matrix</a></th><td>Takes two 20-length lists, turns them into 5x4 matrices, multiplies them together, and returns a 20-length list</td></tr>
+            <tr><th><a href="global.html#proc/normalize_color_to_matrix">normalize_color_to_matrix</a></th><td>Takes a possible value of the <code>color</code> var and returns a length 20 color matrix doing the same thing.
+Available inputs:
+null, &quot;#rgb&quot;, &quot;#rrggbb&quot;, &quot;#rgba&quot;, &quot;#rrggbbaa&quot;, all forms of color matrices</td></tr>
+            <tr><th><a href="global.html#proc/o_clock_time">o_clock_time</a></th><td>Returns the current timeofday in o'clock format</td></tr>
+            <tr><th><a href="global.html#proc/placeAllPrefabs">placeAllPrefabs</a></th><td></td></tr>
+            <tr><th><a href="global.html#proc/playsound_global">playsound_global</a></th><td>Plays a sound to some clients without caring about its source location and stuff.
+<code>target</code> can be either a list of clients or a list of mobs or <code>world</code> or an area.</td></tr>
+            <tr><th><a href="global.html#proc/predecessor_path_in_list">predecessor_path_in_list</a></th><td>Find predecessor of a type</td></tr>
+            <tr><th><a href="global.html#proc/qdel">qdel</a></th><td>qdel</td></tr>
+            <tr><th><a href="global.html#proc/radioGarbleText">radioGarbleText</a></th><td>Returns given text replaced by nonsense chars, on a 40% or given % basis</td></tr>
+            <tr><th><a href="global.html#proc/random_emoji">random_emoji</a></th><td>Generates a random Unicode emoji that will look ok in the chat</td></tr>
+            <tr><th><a href="global.html#proc/random_hex">random_hex</a></th><td>Returns random hex value of length given</td></tr>
+            <tr><th><a href="global.html#proc/resource">resource</a></th><td>GENERIC HELPERS FOR BOTH SYSTEMS</td></tr>
+            <tr><th><a href="global.html#proc/round_start_data">round_start_data</a></th><td>FOR EXPORTING DATA TO A SERVER</td></tr>
+            <tr><th><a href="global.html#proc/s_es">s_es</a></th><td>Returns the plural based on a number provided.</td></tr>
+            <tr><th><a href="global.html#proc/sanitize_frequency">sanitize_frequency</a></th><td>Returns f, ensured that it's a valid frequency</td></tr>
+            <tr><th><a href="global.html#proc/sendItemIcons">sendItemIcons</a></th><td>Sends all of the item icons to a client. Kinda gross, but whatever.</td></tr>
+            <tr><th><a href="global.html#proc/sendItemIconsToAll">sendItemIconsToAll</a></th><td>Sends all item icons to all clients. Used at world startup to preload things.</td></tr>
+            <tr><th><a href="global.html#proc/send_assets">send_assets</a></th><td>Sends the list of asset files to client if they're needed</td></tr>
+            <tr><th><a href="global.html#proc/separate_radio_prefix_and_message">separate_radio_prefix_and_message</a></th><td>Given a message, returns a list containing the radio prefix and the message,
+so that the message can be manipulated seperately in various functions.</td></tr>
+            <tr><th><a href="global.html#proc/showLine">showLine</a></th><td>Creates and shows a line object. Line object has an &quot;affected&quot; var that contains the cross tiles.</td></tr>
+            <tr><th><a href="global.html#proc/showadminlist">showadminlist</a></th><td>Shows the calling client admins.txt</td></tr>
+            <tr><th><a href="global.html#proc/smilify">smilify</a></th><td>!!!
+!!!</td></tr>
+            <tr><th><a href="global.html#proc/sonic_attack_environmental_effect">sonic_attack_environmental_effect</a></th><td>Given center turf/atom, range, and list of things to smash, will damage said objects within range of center.
+Used for sonic grenades and similar. Avoiding C&amp;P Code.</td></tr>
+            <tr><th><a href="global.html#proc/soviet_parse">soviet_parse</a></th><td>!!!
+!!!
+!!!
+!!!</td></tr>
+            <tr><th><a href="global.html#proc/statlog_ticket">statlog_ticket</a></th><td>FOR LOGGING TO STATS FILE</td></tr>
+            <tr><th><a href="global.html#proc/stripTextMacros">stripTextMacros</a></th><td>Removes the special data inserted via use of \improper etc in strings</td></tr>
+            <tr><th><a href="global.html#proc/test_disposal_system">test_disposal_system</a></th><td>Clothing properties stuff</td></tr>
+            <tr><th><a href="global.html#proc/tgui_Topic">tgui_Topic</a></th><td>Middleware for /client/Topic.</td></tr>
+            <tr><th><a href="global.html#proc/tgui_alert">tgui_alert</a></th><td>Creates a TGUI alert window and returns the user's response.</td></tr>
+            <tr><th><a href="global.html#proc/tgui_alert_async">tgui_alert_async</a></th><td>Creates an asynchronous TGUI alert window with an associated callback.</td></tr>
+            <tr><th><a href="global.html#proc/tgui_input_list">tgui_input_list</a></th><td>Creates a TGUI input list window and returns the user's response.</td></tr>
+            <tr><th><a href="global.html#proc/tgui_input_list_async">tgui_input_list_async</a></th><td>Creates an asynchronous TGUI input list window with an associated callback.</td></tr>
+            <tr><th><a href="global.html#proc/time_to_text">time_to_text</a></th><td>Returns the passed decisecond-format time in the form of a text string</td></tr>
+            <tr><th><a href="global.html#proc/tomatogibs">tomatogibs</a></th><td>You will appear adjacent to Hastur.</td></tr>
+            <tr><th><a href="global.html#proc/ucfirst">ucfirst</a></th><td>Uppercases first letter</td></tr>
+            <tr><th><a href="global.html#proc/ucfirsts">ucfirsts</a></th><td>Uppercases first letter of every word</td></tr>
+            <tr><th><a href="global.html#proc/uwutalk">uwutalk</a></th><td>uwutalk</td></tr>
+            <tr><th><a href="global.html#proc/vector_magnitude">vector_magnitude</a></th><td>Returns the vector magnitude of an x value and a y value</td></tr>
+            <tr><th><a href="global.html#proc/vector_to_dir">vector_to_dir</a></th><td>Transforms a supplied vector x &amp; y to a direction</td></tr>
+            <tr><th><a href="global.html#proc/whodead">whodead</a></th><td>Finds whoever's dead.</td></tr>
+            <tr><th><a href="global.html#proc/whois">whois</a></th><td>Looks up a player based on a string. Searches a shit load of things ~whoa~. Returns a list of mob refs.</td></tr>
+            <tr><th><a href="global.html#proc/whois_ckey_to_mob_reference">whois_ckey_to_mob_reference</a></th><td>A universal ckey -&gt; mob reference lookup proc, adapted from whois() (Convair880).</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/RARITY_COLOR"><aside class="declaration">var </aside>RARITY_COLOR
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;materials.dm 21"/></h3>
+        <p>Global static list of rarity color associations</p><h3 id="var/Z4_ACTIVE"><aside class="declaration">var </aside>Z4_ACTIVE
+            <aside>&ndash; /static</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;z_adventurezones&#x2F;earth.dm 16"/></h3>
+        <p>Centcom / Earth Stuff
+Contents:
+Areas:
+Main Area
+Outside
+Offices
+Lobby
+Lounge
+Garden
+Power Supply</p>
+<pre><code>Turfs: Outside Concrete &amp; Grass
+</code></pre><h3 id="var/action_names"><aside class="declaration">var </aside>action_names
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;action_associations.dm 3"/></h3>
+        <p>Used to translate internal action names to human-readable names.</p><h3 id="var/action_verbs"><aside class="declaration">var </aside>action_verbs
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;action_associations.dm 93"/></h3>
+        <p>Used for literal input of actions</p><h3 id="var/all_valid_random_right_arms"><aside class="declaration">var </aside>all_valid_random_right_arms
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;mob_parts.dm 401"/></h3>
+        <p>Number of tiles where it should try to make a splatter</p><h3 id="var/area_list_is_up_to_date"><aside class="declaration">var </aside>area_list_is_up_to_date
+            <aside>&ndash; /static</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;global.dm 89"/></h3>
+        <p>The station_areas list is up to date. If something changes an area, make sure to set this to 0</p><h3 id="var/biomes"><aside class="declaration">var </aside>biomes
+            <aside>&ndash; /list/datum/biome</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mapgen&#x2F;_MapGenerator.dm 2"/></h3>
+        <p>All possible biomes in assoc list as type || instance</p><h3 id="var/by_cat"><aside class="declaration">var </aside>by_cat
+            <aside>&ndash; /list/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 176"/></h3>
+        <p>contains lists of objects indexed by a category string based on START_TRACKING_CAT / STOP_TRACKING_CAT</p><h3 id="var/by_type"><aside class="declaration">var </aside>by_type
+            <aside>&ndash; /list/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 160"/></h3>
+        <p>contains lists of objects indexed by their type based on START_TRACKING / STOP_TRACKING</p><h3 id="var/cached_colors"><aside class="declaration">var </aside>cached_colors
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;paint.dm 251"/></h3>
+        <p>paint cans</p><h3 id="var/chessboard"><aside class="declaration">var </aside>chessboard
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;WorkInProgress&#x2F;chess.dm 22"/></h3>
+        <hr />
+<p>|\   <em><strong><em>|\  |\  |\  ___ \ |\   __<strong>\ |\   <em><strong><em>|\   _ \  _   |\   __  |\   <strong><strong>|_</strong>   <em><strong>\  ___ \ |\   __  \    |\   ____\ |\   <strong><strong>\  / __  |_</strong></strong>  \<br />
+\ \  _</strong>|\ \  \\  \ \   <strong>/|\ \  _</strong>|</em>\ \  _</strong>|\ \  \_</em>\ \  \ \  |\  \ \  _</strong>||</em></strong> \  _\ \   <strong>/|\ \  |\  \   \ \  _</strong>|</em>\ \  _</strong>|</em>|/<em>|\  |</em><strong><em>|\ /</em><br />
+\ \  \    \ \   __  \ \  _|/<em>\ _</em></strong>_  \ _____  \ \  \|__| \  \ \   __  \ _____  \   \ \  \ \ \  _|/<em>\ \   _  <em>\   \ _</em></em>__  \ _____  |/ \ \  \    |\  \<br />
+\ \  _<em><strong>\ \  \ \  \ \  _|\ |</strong></em><em>|\  \|</em><em><strong>|\  \ \  \    \ \  \ \  \ \  |</strong></em><em>|\  \   \ \  \ \ \  _|\ \ \  \  | __|</em><em><strong>|\  \|</strong></em><em>|\  \   \ \  \  <strong>_\  \<br />
+\ _</strong></em>__<em>\ _</em>\ _<em>\ _</em>__<em><strong>_</strong></em>_\  \ __<em><em>_\  \ _</em>\    \ _</em>\ _<em>\ _</em>_<strong><em>_\  \   \ _</em>\ \ _</strong><em><strong><em>\ _</em>\ <em>|_</em>_</strong></em>_\  \ <em><strong><em>_\  \   \ _</em>|_</strong></em><em><strong>\<br />
+|</strong></em>____||<strong>||</strong>||_______|_<strong><strong><strong><strong>\</strong></strong></strong></strong>_|<strong>|     |</strong>||<strong>||</strong>|_<strong><strong><strong><strong>\   |</strong>|  |</strong></strong></strong>_||<strong>||</strong>|<strong>|_</strong><strong><strong><strong>\</strong></strong></strong><em><strong>\   |</strong>||</em><strong><strong><strong>|<br />
+|</strong></strong></strong><em><strong>|</strong></em><strong><strong><strong>|                       |</strong></strong></strong><em><strong>|                                 |</strong></em><strong><strong><strong>|</strong></strong></strong>___|</p>
+<hr />
+<p>|\   _<em><strong>|\   __  |\   __  |\  \  /  /|\   __  |\  |\   <strong><strong>|\  |\  |_</strong>   _<strong>\  /  ___  |\   __  |\   __  |\   ____\    |\  \     |\  |\   __  |\   __  |\   ____\<br />
+\ \  _</strong>|\ \  |\  \ \  |\  \ \  /  / | \  |\  \ \  \ \  _</strong>|\ \  \\  |</strong></em> \  _| /__/|_/  /\ \  |\  \ \  |\  \ \  _<strong>|    \ \  \    \ \  \ \  |\  \ \  |\  \ \  _</strong>|<br />
+\ \  \    \ \  \\  \ \   <strong><strong>\ \    / / \ \   _  <em>\ \  \ \  \  <strong>\ \   __  \   \ \  \  |</strong>|//  / /\ \  \\  \ \  \\  \ \  _</em></strong>    \ \  \  <strong>\ \  \ \   __  \ \   _  <em>\ \  \<br />
+\ \  _</em></strong>\ \  \\  \ \  _</strong>|/  /  /   \ \  \  \ \  \ \  |\  \ \  \ \  \   \ \  \ ___ /  /_/__\ \  \\  \ \  \\  \ \  ___  \ <strong>\ \  |_<em>_\  \ \  \ \  \ \  \  \ \  _</em></strong><br />
+\ _<strong><strong><strong>\ _</strong></strong></strong>\ _<em>\ __/  / /      \ _</em>\ <em>\ _</em>\ ______<em>\ _</em>\ _<em>\   \ _</em>\<strong>\</strong><strong><strong><strong>\ _</strong></strong></strong>\ _<strong><strong><strong>\ _</strong></strong></strong>\<strong>\ _</strong>________<em>\ _</em>\ _<em>\ _</em>\ <em>\ _</em>_____<br />
+|<em><strong><strong><strong>||</strong></strong></strong></em>||<strong>||_</strong>/ /        |<strong>||</strong>||__||_______||<strong>||</strong>|    |<strong>|</strong>||<em><strong><strong><strong>||</strong></strong></strong></em>||<em><strong><strong><strong>||</strong></strong></strong></em>|<strong>||</strong>__________||<strong>||</strong>||<strong>||</strong>||____<em><strong>|
+|</strong></em>|/</p><h3 id="var/ehjax"><aside class="declaration">var </aside>ehjax
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ehjax.html">ehjax</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;ehjax.dm 7"/></h3>
+        <p>EHJAX - Like ajax but for ~byond~
+A framework for browser popups to interact with the byond server, async (client-side)</p><h3 id="var/fishing_spots"><aside class="declaration">var </aside>fishing_spots
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;fishing&#x2F;fishing_spots.dm 5"/></h3>
+        <p>initialised on world/New(), associative list with the format (fishing_atom_type = /datum/fishing_spot)</p><h3 id="var/ircbot"><aside class="declaration">var </aside>ircbot
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/ircbot</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;ircbot.dm 6"/></h3>
+        <p>Procs for handling ircbot connectivity and data transfer</p><h3 id="var/is_blank_string_regex"><aside class="declaration">var </aside>is_blank_string_regex
+            <aside>&ndash; /static/regex</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;text.dm 28"/></h3>
+        <p>Returns true if given string is just space characters
+The explicitly defined entries are various blank unicode characters that don't get included as white space by \s</p><h3 id="var/key_names"><aside class="declaration">var </aside>key_names
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;action_associations.dm 133"/></h3>
+        <p>Used to translate bitflags of hotkeys into human-readable names</p><h3 id="var/keybind_styles"><aside class="declaration">var </aside>keybind_styles
+            <aside>&ndash; /static/list/datum/keybind_style</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;keybind_style.dm 11"/></h3>
+        <p>This file is intended to hold all data pertaining to keybind_style datums and related functionality</p>
+<p>To add a new keybind:
+Add it in the right keybind_style below.
+Then, you need to update action_names to allow the menu to translate into human-readable format.
+Depending on what you're adding, you might need to update action_verbs as well.
+Global list holding all of the keybind style datums</p><h3 id="var/light_update_queue"><aside class="declaration">var </aside>light_update_queue
+            <aside>&ndash; /<a href="datum.html">datum</a>/circular_queue</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;controllers&#x2F;process&#x2F;lighting.dm 3"/></h3>
+        <p>List of items that want to be deleted</p><h3 id="var/material_category_names"><aside class="declaration">var </aside>material_category_names
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;materials.dm 25"/></h3>
+        <p>Material category names as displayed in fabricators
+see match_material_pattern() for exact definitions</p><h3 id="var/named_color_cache"><aside class="declaration">var </aside>named_color_cache
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;named_colors.dm 24"/></h3>
+        <p>global cache of all named colors once fetched with a color rgba</p><h3 id="var/named_colors"><aside class="declaration">var </aside>named_colors
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;named_colors.dm 22"/></h3>
+        <p>global list of all named colors</p><h3 id="var/opt_inactive"><aside class="declaration">var </aside>opt_inactive
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;world.dm 1684"/></h3>
+        <p>EXPERIMENTAL STUFF</p><h3 id="var/oven_recipes"><aside class="declaration">var </aside>oven_recipes
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;submachine&#x2F;cooking.dm 239"/></h3>
+        <p>COOKING RECODE</p><h3 id="var/phrase_log"><aside class="declaration">var </aside>phrase_log
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/phrase_log.html">phrase_log</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;logged_phrases.dm 28"/></h3>
+        <p>This system keeps a logged list of player-created phrases of various categories. The lists are cross-round.
+Useful for stuff like hallucinations etc. If the number of phrases in a category exceeds src.max_length
+random phrases get thrown out to reduce the size when saving.
+Currently logged categories:
+say - people talking
+whisper - people whispering
+pda - pda messages
+deadsay - ghosts talking
+ailaw - custom AI laws
+record - custom radio station record names
+emote - custom emotes
+prayer - prayers
+name-X - player chosen name for X where X is from the set {blob, ai, cyborg, clown, mime, wizard, ...}
+vehicle - vehicle names (via a bottle of Champagne)
+sing - people singing
+pill - custom pill name
+bottle - custom obttle name
+voice-mimic - voices used by the changeling mimic voice ability
+voice-radiostation - voices used by the radio station voice synthesizer
+telepathy - messages sent through the telepathy genetics ability
+bot-X - custom bot name, X is from the set {camera, fire, guard, med, sec} (I bet you didn't even know you could rename bots with a pen, huh)
+name-bee - custom bee / bee larva name
+name-critter - custom critter name (you can rename those with a pen too, whoa)
+seed - custom botany seed name</p><h3 id="var/portable_machinery"><aside class="declaration">var </aside>portable_machinery
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;machinery&#x2F;porters.dm 11"/></h3>
+        <p>Remote parent</p><h3 id="var/sb_tricks"><aside class="declaration">var </aside>sb_tricks
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 533"/></h3>
+        <p>Types of sounds: AMBIENCE_LOOPING, AMBIENCE_FX_1, and AMBIENCE_FX_2
+Holds the associated sound channel we want
+Determines if we are repeating or not
+Should the sound set the wait var?
+pool of precached sounds</p><h3 id="var/special_admin_observing_verbs"><aside class="declaration">var </aside>special_admin_observing_verbs
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;admin&#x2F;admin_verbs.dm 455"/></h3>
+        <p>proc/possess,
+client/proc/generate_poster,
+client/proc/addpathogens,
+client/proc/debug_check_possible_reactions,
+client/proc/dbg_itemspecial,
+client/proc/dbg_objectprop,</p><h3 id="var/station_areas"><aside class="declaration">var </aside>station_areas
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;global.dm 87"/></h3>
+        <p>All the accessible areas on the station in one convenient place</p><h3 id="var/statusGroupLimits"><aside class="declaration">var </aside>statusGroupLimits
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;status_system&#x2F;statusSystem.dm 7"/></h3>
+        <p>Simple global list of groupname : amount, that tells the system how many effects of a group we can have active at most.
+See exclusiveGroup. Buffs above the max will not be applied.</p><h3 id="var/tgui_admin_state"><aside class="declaration">var </aside>tgui_admin_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_admin_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;admin.dm 6"/></h3>
+        <p>tgui state: admin_state</p>
+<p>Checks that the user is an admin, end-of-story.</p><h3 id="var/tgui_always_state"><aside class="declaration">var </aside>tgui_always_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_always_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;always.dm 6"/></h3>
+        <p>tgui state: always_state</p>
+<p>Always grants the user UI_INTERACTIVE. Period.</p><h3 id="var/tgui_broken_state"><aside class="declaration">var </aside>tgui_broken_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_broken_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;not_broken.dm 7"/></h3>
+        <p>tgui state: broken</p>
+<p>Only checks if an object is not broken, can depend on obj type</p><h3 id="var/tgui_conscious_state"><aside class="declaration">var </aside>tgui_conscious_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_conscious_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;conscious.dm 6"/></h3>
+        <p>tgui state: conscious_state</p>
+<p>Only checks if the user is conscious.</p><h3 id="var/tgui_contained_state"><aside class="declaration">var </aside>tgui_contained_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_contained_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;contained.dm 6"/></h3>
+        <p>tgui state: contained_state</p>
+<p>Checks that the user is inside the src_object.</p><h3 id="var/tgui_deep_inventory_state"><aside class="declaration">var </aside>tgui_deep_inventory_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_deep_inventory_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;deep_inventory.dm 6"/></h3>
+        <p>tgui state: deep_inventory_state</p>
+<p>Checks that the src_object is in the user's deep (backpack, box, toolbox, etc) inventory.</p><h3 id="var/tgui_default_state"><aside class="declaration">var </aside>tgui_default_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_default_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;default.dm 6"/></h3>
+        <p>tgui state: default_state</p>
+<p>Checks a number of things -- mostly physical distance for humans and view for robots.</p><h3 id="var/tgui_hands_state"><aside class="declaration">var </aside>tgui_hands_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_hands_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;hands.dm 6"/></h3>
+        <p>tgui state: hands_state</p>
+<p>Checks that the src_object is in the user's hands.</p><h3 id="var/tgui_human_adjacent_state"><aside class="declaration">var </aside>tgui_human_adjacent_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_human_adjacent_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;human_adjacent.dm 8"/></h3>
+        <p>tgui state: human_adjacent_state</p>
+<p>In addition to default checks, only allows interaction for a
+human adjacent user.</p><h3 id="var/tgui_inventory_state"><aside class="declaration">var </aside>tgui_inventory_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_inventory_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;inventory.dm 6"/></h3>
+        <p>tgui state: inventory_state</p>
+<p>Checks that the src_object is in the user's top-level (hand, ear, pocket, belt, etc) inventory.</p><h3 id="var/tgui_not_incapacitated_state"><aside class="declaration">var </aside>tgui_not_incapacitated_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_not_incapacitated_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;not_incapacitated.dm 7"/></h3>
+        <p>tgui state: not_incapacitated_state</p>
+<p>Checks that the user isn't incapacitated</p><h3 id="var/tgui_not_incapacitated_turf_state"><aside class="declaration">var </aside>tgui_not_incapacitated_turf_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_not_incapacitated_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;not_incapacitated.dm 15"/></h3>
+        <p>tgui state: not_incapacitated_turf_state</p>
+<p>Checks that the user isn't incapacitated and that their loc is a turf</p><h3 id="var/tgui_notcontained_state"><aside class="declaration">var </aside>tgui_notcontained_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_notcontained_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;notcontained.dm 6"/></h3>
+        <p>tgui state: notcontained_state</p>
+<p>Checks that the user is not inside src_object, and then makes the default checks.</p><h3 id="var/tgui_observer_state"><aside class="declaration">var </aside>tgui_observer_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_observer_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;observer.dm 7"/></h3>
+        <p>tgui state: observer_state</p>
+<p>Checks that the user is an observer/ghost.</p><h3 id="var/tgui_physical_obscured_state"><aside class="declaration">var </aside>tgui_physical_obscured_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_physical_obscured_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;physical.dm 34"/></h3>
+        <p>tgui state: physical_obscured_state</p>
+<p>Short-circuits the default state to only check physical distance, being in view doesn't matter</p><h3 id="var/tgui_physical_state"><aside class="declaration">var </aside>tgui_physical_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_physical_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;physical.dm 6"/></h3>
+        <p>tgui state: physical_state</p>
+<p>Short-circuits the default state to only check physical distance.</p><h3 id="var/tgui_process"><aside class="declaration">var </aside>tgui_process
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/controller/process.html">controller/process</a>/<a href="datum/controller/process/tgui.html">tgui</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;controllers&#x2F;process&#x2F;tgui.dm 8"/></h3>
+        <p>tgui process</p>
+<p>Contains a bit of the tgui process code.
+Copyright (c) 2020 Aleksej Komarov &amp; ZeWaka (minor porting changes)
+SPDX-License-Identifier: MIT</p><h3 id="var/tgui_self_state"><aside class="declaration">var </aside>tgui_self_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_self_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;self.dm 7"/></h3>
+        <p>tgui state: self_state</p>
+<p>Only checks that the user and src_object are the same.</p><h3 id="var/tgui_z_state"><aside class="declaration">var </aside>tgui_z_state
+            <aside>&ndash; /static/<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/tgui_z_state</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;states&#x2F;zlevel.dm 7"/></h3>
+        <p>tgui state: z_state</p>
+<p>Only checks that the Z-level of the user and src_object are the same.</p><h3 id="var/the_automaton"><aside class="declaration">var </aside>the_automaton
+            <aside>&ndash; /static</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;critter&#x2F;automaton.dm 3"/></h3>
+        <p>cogwerks spooky automaton thing that kinda just sits there being weird and ominous</p><h3 id="var/triggerVars"><aside class="declaration">var </aside>triggerVars
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 17"/></h3>
+        <p>This contains the names of the trigger lists on materials. Required for copying materials. Remember to keep this updated if you add new triggers.</p><h3 id="var/vcs_revision"><aside class="declaration">var </aside>vcs_revision
+            <aside>&ndash; /static</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;__build.dm 124"/></h3>
+        <p>OPTIONS TO GO FAST
+PROFILING OPTIONS
+DEBUGGING TOGGLES
+MAP OVERRIDES
+HOLIDAYS AND OTHER SUCH TOGGLES</p><h3 id="var/waterflow_enabled"><aside class="declaration">var </aside>waterflow_enabled
+            <aside>&ndash; /static</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;fluids&#x2F;fluid_core.dm 25"/></h3>
+        <p>Fluid Object</p><h2 id="proc">Proc Details</h2><h3 id="proc/AuxSortLT"><aside class="declaration">proc </aside>AuxSortLT<aside>(/list/toSort, lower, upper) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;lists.dm 59"/></aside>
+        </h3>
+        <p>pivot</p><h3 id="proc/ClearBadsmokeRefs"><aside class="declaration">proc </aside>ClearBadsmokeRefs<aside>(/<a href="atom.html">atom</a>/A) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;effects&#x2F;system&#x2F;bad_smoke_spread.dm 7"/></aside>
+        </h3>
+        <p>SMOKE SYSTEMS</p><h3 id="proc/FindPromotionCandidates"><aside class="declaration">proc </aside>FindPromotionCandidates<aside>(/list/staff, /<a href="datum.html">datum</a>/job/JOB) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;jobprocs.dm 304"/></aside>
+        </h3>
+        <p>COMMAND PROMOTIONS</p><h3 id="proc/GetRandomPerimeterTurf"><aside class="declaration">proc </aside>GetRandomPerimeterTurf<aside>(/<a href="atom.html">atom</a>/A, dist, dir) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;gamehelpers.dm 649"/></aside>
+        </h3>
+        <p>Returns a turf at the edge of a squared circle of specified radius around a thing</p><h3 id="proc/IsGuestKey"><aside class="declaration">proc </aside>IsGuestKey<aside>(key) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 662"/></aside>
+        </h3>
+        <p>Returns true if the given key is a guest key</p><h3 id="proc/SortList"><aside class="declaration">proc </aside>SortList<aside>(/list/toSort, sortMethod) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;lists.dm 117"/></aside>
+        </h3>
+        <p>pivot</p><h3 id="proc/add_color"><aside class="declaration">proc </aside>add_color<aside>(name, red, green, blue) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;named_colors.dm 57"/></aside>
+        </h3>
+        <p>adds a named color to the global list
+given name and RGB color</p><h3 id="proc/affine_color_mapping_matrix"><aside class="declaration">proc </aside>affine_color_mapping_matrix<aside>(/list/list/inp, /list/list/out) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;color.dm 212"/></aside>
+        </h3>
+        <p>The same thing as [proc/color_mapping_matrix] but with 4 mapped colors.
+The first color is used as the origin in the affine transform.</p><h3 id="proc/angle2text"><aside class="declaration">proc </aside>angle2text<aside>(degree) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 515"/></aside>
+        </h3>
+        <p>Returns the given degree converted to a text string in the form of a direction</p><h3 id="proc/angle_to_dir"><aside class="declaration">proc </aside>angle_to_dir<aside>(angle) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;macros&#x2F;dir.dm 26"/></aside>
+        </h3>
+        <p>Transforms a given angle to a cardinal/ordinal direction</p><h3 id="proc/angle_to_vector"><aside class="declaration">proc </aside>angle_to_vector<aside>(ang) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;macros&#x2F;dir.dm 79"/></aside>
+        </h3>
+        <p>Transforms a given angle to vec2 in a list</p><h3 id="proc/applyCableMaterials"><aside class="declaration">proc </aside>applyCableMaterials<aside>(/<a href="atom.html">atom</a>/C, /<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/insulator, /<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/conductor) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 491"/></aside>
+        </h3>
+        <p>Yes hello apparently we need a proc for this because theres a million types of different wires and cables.</p><h3 id="proc/ass_explosion_limb_success"><aside class="declaration">proc </aside>ass_explosion_limb_success<aside>(/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/parts.html">parts</a>/L) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;gimmick&#x2F;bigfart.dm 168"/></aside>
+        </h3>
+        <p>First try to sever their butt
+If that didn't work, try severing a limb or tail
+Dont want your tail removed? Keep all your limbs intact!
+Returns 0 if it cant be severed like this, 1 if it always gets severed, or 2 if it <em>sometimes</em> gets severed</p><h3 id="proc/ass_explosion_message"><aside class="declaration">proc </aside>ass_explosion_message<aside>(/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/parts.html">parts</a>/L, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/H, magical, armleg, severed) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;events&#x2F;gimmick&#x2F;bigfart.dm 186"/></aside>
+        </h3>
+        <p>Returns if the limb is not ass-severable, and a message to the owner about why not
+returns some flufftext as to why their limb didnt come off. Or came off anyway.</p><h3 id="proc/attack_particle"><aside class="declaration">proc </aside>attack_particle<aside>(/<a href="mob.html">mob</a>/M, /<a href="atom.html">atom</a>/target) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;WorkInProgress&#x2F;AnimationLibrary.dm 191"/></aside>
+        </h3>
+        <p>obj/attackby(var/obj/item/I as obj, mob/user as mob)</p><h3 id="proc/attenuate_for_location"><aside class="declaration">proc </aside>attenuate_for_location<aside>(/<a href="atom.html">atom</a>/loc) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 37"/></aside>
+        </h3>
+        <p>returns 0 to 1 based on air pressure in turf</p><h3 id="proc/bash_explode"><aside class="declaration">proc </aside>bash_explode<aside>(str) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;WorkInProgress&#x2F;MarqStuff.dm 23"/></aside>
+        </h3>
+        <p>BASH explode: Splits a string into string pieces the same way BASH handles this.</p>
+<ul>
+<li>Process quoted strings LTR: Apostrophized strings are unparsed. Quoted strings are parsed.</li>
+<li>Insert parsed strings back into the string by using a placeholder for spaces.</li>
+<li>Split the string with the usual space separation method.</li>
+<li>Return list.</li>
+</ul><h3 id="proc/blend_skintone"><aside class="declaration">proc </aside>blend_skintone<aside>(r1, g1, b1) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2264"/></aside>
+        </h3>
+        <p>Blends given rgb values with old human mob skin color (#ffca95) to return a new rgb value</p><h3 id="proc/borkborkbork_parse"><aside class="declaration">proc </aside>borkborkbork_parse<aside>(/<a href="datum.html">datum</a>/text_roamer/R) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;accents.dm 246"/></aside>
+        </h3>
+        <p>!!!
+!!!</p><h3 id="proc/can_act"><aside class="declaration">proc </aside>can_act<aside>(/<a href="mob.html">mob</a>/M, include_cuffs) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2563"/></aside>
+        </h3>
+        <p>Returns true if not incapicitated and unhandcuffed (by default)</p><h3 id="proc/checkTurfPassable"><aside class="declaration">proc </aside>checkTurfPassable<aside>(/<a href="turf.html">turf</a>/T, heuristic, heuristic_args, /<a href="turf.html">turf</a>/source) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;pathfinding.dm 134"/></aside>
+        </h3>
+        <p>Returns false if there is a dense atom on the turf, unless a custom hueristic is passed.</p><h3 id="proc/check_whitelist"><aside class="declaration">proc </aside>check_whitelist<aside>(/<a href="atom.html">atom</a>/TA, /list/whitelist, /<a href="mob.html">mob</a>/user, custom_message) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2433"/></aside>
+        </h3>
+        <p>Removes non-whitelisted reagents from the reagents of TA</p>
+<ul>
+<li>
+<p>user: the mob that adds a reagent to an atom that has a reagent whitelist</p>
+</li>
+<li>
+<p>TA: Target Atom. The thing that the user is adding the reagent to</p>
+</li>
+</ul><h3 id="proc/checktraitor"><aside class="declaration">proc </aside>checktraitor<aside>(/<a href="mob.html">mob</a>/M) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;admin&#x2F;admin.dm 4406"/></aside>
+        </h3>
+        <p>ADMIN HELPER PROCS</p><h3 id="proc/color_mapping_matrix"><aside class="declaration">proc </aside>color_mapping_matrix<aside>(/list/list/inp, /list/list/out) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;color.dm 181"/></aside>
+        </h3>
+        <p>Takes two lists, inp=list(i1, i2, i3), out=(o1, o2, o3).
+Creates a color matrix which maps color i1 to o2, i2 to o2, i3 to o3. (Ignores alpha values.)
+Keep the i1, i2, i3 vectors linearly independent.
+The colors can be either be color hex strings or lists as returned from hex_to_rgb_list.
+You need to supply all arguments. If you don't care about the third just set i3 = o3 to something linearly independent of i1 and i2.</p><h3 id="proc/concrete_typesof"><aside class="declaration">proc </aside>concrete_typesof<aside>(type, cache) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 63"/></aside>
+        </h3>
+        <p>typesof() but only for concrete (not abstract) types,
+it caches the result so you don't need to worry about doing that manually
+so subsequent calls on the same type will be very fast.</p>
+<p>just don't modify the result of the call directly
+OKAY: <code>var/list/hats = concrete_typesof(/obj/item/clothing/head) - /obj/item/clothing/head/hosberet</code></p>
+<p>ALSO OKAY:</p>
+<pre><code class="language-dm">var/list/hats = concrete_typesof(/obj/item/clothing/head).Copy()
+hats -= /obj/item/clothing/head/hosberet
+</code></pre>
+<p>NOT OKAY:</p>
+<pre><code class="language-dm">var/list/hats = concrete_typesof(/obj/item/clothing/head)
+hats -= /obj/item/clothing/head/hosberet
+</code></pre><h3 id="proc/copyMaterial"><aside class="declaration">proc </aside>copyMaterial<aside>(/<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/base) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 47"/></aside>
+        </h3>
+        <p>Returns a copy of a given material.</p><h3 id="proc/create_named_colors"><aside class="declaration">proc </aside>create_named_colors<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;named_colors.dm 64"/></aside>
+        </h3>
+        <p>called at world startup
+populates the color list</p><h3 id="proc/csound"><aside class="declaration">proc </aside>csound<aside>(name) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 624"/></aside>
+        </h3>
+        <p>Soundcache
+NEVER use these sounds for modifying.
+This should only be used for sounds that are played unaltered to the user.
+@param text name the name of the sound that will be returned
+@return sound</p><h3 id="proc/dead_player_list"><aside class="declaration">proc </aside>dead_player_list<aside>(return_minds, confirmation_spawn, /list/text_messages, allow_dead_antags, require_client) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 1785"/></aside>
+        </h3>
+        <p>Returns a list of eligible dead players to be respawned as an antagonist or whatever (Convair880).
+Text messages: 1: alert | 2: alert (chatbox) | 3: alert acknowledged (chatbox) | 4: no longer eligible (chatbox) | 5: waited too long (chatbox)</p><h3 id="proc/dir_to_angle"><aside class="declaration">proc </aside>dir_to_angle<aside>(dir) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;macros&#x2F;dir.dm 56"/></aside>
+        </h3>
+        <p>Transforms a cardinal/ordinal direction to an angle</p><h3 id="proc/doAssetParse"><aside class="declaration">proc </aside>doAssetParse<aside>(path) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;resourceManagement.dm 108"/></aside>
+        </h3>
+        <p>CDN PROCS FOR LIVE SERVERS</p>
+<p>PROCS FOR LOCAL SERVER FALLBACK</p><h3 id="proc/english_list"><aside class="declaration">proc </aside>english_list<aside>(/list/input, nothing_text, and_text, comma_text, final_comma_text) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 469"/></aside>
+        </h3>
+        <p>Given a list, returns a text string representation of the list's contents.</p><h3 id="proc/filter_is_character_setup_ringtone"><aside class="declaration">proc </aside>filter_is_character_setup_ringtone<aside>(type) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;pda_ringtones.dm 9"/></aside>
+        </h3>
+        <p>type filter for ringtones that're suposed to be selectable at roundstart</p><h3 id="proc/filtered_concrete_typesof"><aside class="declaration">proc </aside>filtered_concrete_typesof<aside>(type, filter) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 95"/></aside>
+        </h3>
+        <p>The same thing but now you can filter the types using a proc. Also cached.
+The filter proc takes a type and should return 1 if we want to include it and 0 otherwise.
+That proc should also be pure (always return the same thing for the same arguments) because of the caching.
+If you want to use non-pure proc do the filtering manually yourself and don't use this.
+Note that the first call to filtered_concrete_typesof with a given type and filter will be (possibly a lot)
+<em>slower</em> than doing it manually. The benefit of this proc only shows itself for future calls which are
+very fast due to caching.</p>
+<p>Example:</p>
+<pre><code>proc/filter_is_syndicate(type)
+	var/obj/fake_instance = type
+	return initial(fake_instance.is_syndicate)
+
+var/syndie_thing_type = pick(filtered_concrete_typesof(/obj/item, /proc/filter_is_syndicate))
+</code></pre><h3 id="proc/find_ghost_by_key"><aside class="declaration">proc </aside>find_ghost_by_key<aside>(find_key) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;machinery&#x2F;computer&#x2F;cloning.dm 365"/></aside>
+        </h3>
+        <p>find a ghost mob (or a ghost respawned as critter in vr/afterlife bar)</p><h3 id="proc/find_player"><aside class="declaration">proc </aside>find_player<aside>(key) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;player.dm 156"/></aside>
+        </h3>
+        <p>returns a reference to a player datum based on the ckey you put into it</p><h3 id="proc/flockBasedGarbleText"><aside class="declaration">proc </aside>flockBasedGarbleText<aside>(message, modifier, /<a href="datum.html">datum</a>/flock/f) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2385"/></aside>
+        </h3>
+        <p>Returns given text replaced by nonsense but its based off of a modifier + flock's garblyness</p><h3 id="proc/gas_text_color"><aside class="declaration">proc </aside>gas_text_color<aside>(gas_id) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;macros&#x2F;atmos.dm 239"/></aside>
+        </h3>
+        <p>Enables debug overlay which counts process_cell() calls per turf (viewable through info-overlays)
+Enables debug overlay which counts all atmos operations per turf (viewable through info-overlays)
+Puts a list of turfs which get processed a lot into <code>global.hotly_processed_turf</code> for debugging
+Returns the color of a given gas ID.</p>
+<p>This is used only in the gas mixer computer as of now.</p><h3 id="proc/getClientFromCkey"><aside class="declaration">proc </aside>getClientFromCkey<aside>(ckey) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2409"/></aside>
+        </h3>
+        <p>Finds a client by ckey, throws exception if not found</p><h3 id="proc/getFusedMaterial"><aside class="declaration">proc </aside>getFusedMaterial<aside>(/<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/mat1, /<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/mat2) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 265"/></aside>
+        </h3>
+        <p>Merges two materials and returns result as new material.</p><h3 id="proc/getFusedTriggers"><aside class="declaration">proc </aside>getFusedTriggers<aside>(/list/L1, /list/L2, /<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/newMat) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 234"/></aside>
+        </h3>
+        <p>Fuses two material trigger lists.</p><h3 id="proc/getIconSize"><aside class="declaration">proc </aside>getIconSize<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2399"/></aside>
+        </h3>
+        <p>Handles the two states icon_size can be in: basic number, or string in WxH format</p><h3 id="proc/getInterpolatedName"><aside class="declaration">proc </aside>getInterpolatedName<aside>(mat1, mat2, t) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 358"/></aside>
+        </h3>
+        <p>Merges two material names into one.</p><h3 id="proc/getItemIcon"><aside class="declaration">proc </aside>getItemIcon<aside>(/<a href="atom.html">atom</a>/path, state, dir, key, /<a href="client.html">client</a>/C) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;global.dm 565"/></aside>
+        </h3>
+        <p>Generates item icons for manufacturers and other things, used in UI dialogs. Sends to client if needed.</p><h3 id="proc/getLineMatrix"><aside class="declaration">proc </aside>getLineMatrix<aside>(/<a href="atom.html">atom</a>/start, /<a href="atom.html">atom</a>/end) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 36"/></aside>
+        </h3>
+        <p>Returns the line matrix from a start atom to an end atom, used in creating line objects</p><h3 id="proc/getMatFailString"><aside class="declaration">proc </aside>getMatFailString<aside>(flag) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 365"/></aside>
+        </h3>
+        <p>Returns a string for when a material fail or breaks depending on its material flags.</p><h3 id="proc/getMatFlagString"><aside class="declaration">proc </aside>getMatFlagString<aside>(flag) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 395"/></aside>
+        </h3>
+        <p>Translates a material flag into a string.</p><h3 id="proc/getMaterial"><aside class="declaration">proc </aside>getMaterial<aside>(mat) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 20"/></aside>
+        </h3>
+        <p>Returns one of the base materials by id.</p><h3 id="proc/getOreQualityName"><aside class="declaration">proc </aside>getOreQualityName<aside>(quality) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;controllers&#x2F;mining_controls.dm 191"/></aside>
+        </h3>
+        <p>*** MISC ***</p><h3 id="proc/getQualityName"><aside class="declaration">proc </aside>getQualityName<aside>(quality) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 413"/></aside>
+        </h3>
+        <p>Simply returns a string for a given quality. Used as prefix for objects.</p><h3 id="proc/getRole"><aside class="declaration">proc </aside>getRole<aside>(/<a href="mob.html">mob</a>/M, strip) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2274"/></aside>
+        </h3>
+        <p>Returns a string based on the current job and antag role of the mob e.g. <code>&quot;Staff Assistant [Traitor]&quot;</code></p><h3 id="proc/getTimeInSecondsSinceTime"><aside class="declaration">proc </aside>getTimeInSecondsSinceTime<aside>(timestamp) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2391"/></aside>
+        </h3>
+        <p>Returns the time in seconds since a given timestamp</p><h3 id="proc/get_adjacent_floor"><aside class="declaration">proc </aside>get_adjacent_floor<aside>(/<a href="atom.html">atom</a>/W, /<a href="mob.html">mob</a>/user, px, py) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 925"/></aside>
+        </h3>
+        <p>Returns the turf facing the fab for cardinal directions (which should also be the user's turf),
+but for diagonals it returns a neighbouring turf depending on where you click
+Just in case you're attacking a corner diagonally. (made initially for lamp manufacturers, probably behaves funky above range 1)</p><h3 id="proc/get_alive_antags_percentage"><aside class="declaration">proc </aside>get_alive_antags_percentage<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;antagonist_procs.dm 316"/></aside>
+        </h3>
+        <p>returns a decimal representing the percentage of alive crew that are also antags</p><h3 id="proc/get_all_accesses"><aside class="declaration">proc </aside>get_all_accesses<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;access.dm 375"/></aside>
+        </h3>
+        <p>/ Heads of staff
+/ Security
+/ Medical
+/ Science
+Engineering
+/ Civilian
+Other or gimmick</p><h3 id="proc/get_all_character_setup_ringtones"><aside class="declaration">proc </aside>get_all_character_setup_ringtones<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2575"/></aside>
+        </h3>
+        <p>sets up the list of ringtones players can select through character setup</p><h3 id="proc/get_all_mobs_in"><aside class="declaration">proc </aside>get_all_mobs_in<aside>(/<a href="atom.html">atom</a>/found) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2235"/></aside>
+        </h3>
+        <p>Returns list of all mobs within an atom. Not cheap! (unlike ur mum)</p><h3 id="proc/get_angle"><aside class="declaration">proc </aside>get_angle<aside>(/<a href="atom.html">atom</a>/a, /<a href="atom.html">atom</a>/b) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 176"/></aside>
+        </h3>
+        <p>Returns the angle between two given atoms</p><h3 id="proc/get_assets"><aside class="declaration">proc </aside>get_assets<aside>(asset) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;localassets&#x2F;localasset.dm 59"/></aside>
+        </h3>
+        <p>Returns either the already-created asset or creates a new one and returns it</p><h3 id="proc/get_dead_crew_percentage"><aside class="declaration">proc </aside>get_dead_crew_percentage<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;antagonist_procs.dm 343"/></aside>
+        </h3>
+        <p>returns a decimal representing the percentage of dead crew (non-observers) to all crew</p><h3 id="proc/get_hud_style"><aside class="declaration">proc </aside>get_hud_style<aside>(someone) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2218"/></aside>
+        </h3>
+        <p>Returns hud style preferences of given client/mob</p><h3 id="proc/get_image_group"><aside class="declaration">proc </aside>get_image_group<aside>(key) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;client_image_group.dm 96"/></aside>
+        </h3>
+        <p>Returns the client image group for a given &quot;key&quot; argument. If one doesn't yet exist, creates it.</p><h3 id="proc/get_nearest_color"><aside class="declaration">proc </aside>get_nearest_color<aside>(/<a href="datum.html">datum</a>/color/c) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;named_colors.dm 27"/></aside>
+        </h3>
+        <p>returns the name of the color nearest to the given color RGB</p><h3 id="proc/get_nearest_color_datum"><aside class="declaration">proc </aside>get_nearest_color_datum<aside>(/<a href="datum.html">datum</a>/color/c) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;named_colors.dm 33"/></aside>
+        </h3>
+        <p>returns the named_color datum that is nearest to the given color RGB</p><h3 id="proc/get_singleton"><aside class="declaration">proc </aside>get_singleton<aside>(type) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 111"/></aside>
+        </h3>
+        <p>Gets the instance of a singleton type (or a non-singleton type if you decide to use it on one).</p><h3 id="proc/get_standard_skintone"><aside class="declaration">proc </aside>get_standard_skintone<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2246"/></aside>
+        </h3>
+        <p>Given user, will proompt user to select skin color from list (or custom) and returns skin tone after blending</p><h3 id="proc/gradientText"><aside class="declaration">proc </aside>gradientText<aside>(color1, color2, message) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2336"/></aside>
+        </h3>
+        <p>Returns span with a color gradient between two given colors of given message</p><h3 id="proc/handleTriggerGenerations"><aside class="declaration">proc </aside>handleTriggerGenerations<aside>(/list/toDo) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 225"/></aside>
+        </h3>
+        <p>Increases generations on material triggers and handles removal if over the generation cap.</p><h3 id="proc/hasParentMaterial"><aside class="declaration">proc </aside>hasParentMaterial<aside>(/<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/M, search_id, max_generations) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 477"/></aside>
+        </h3>
+        <p>Searches the parent materials of the given material, up to a given generation, for an id.</p>
+<p>Useful if you want to figure out if a given material was used in the making of another material.</p>
+<p>Keep in mind that this can be expensive so use it only when you have to.</p><h3 id="proc/hex2color_name"><aside class="declaration">proc </aside>hex2color_name<aside>(hex) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2127"/></aside>
+        </h3>
+        <p>Given hex color, returns string name of nearest named color</p><h3 id="proc/hsv_transform_color_matrix"><aside class="declaration">proc </aside>hsv_transform_color_matrix<aside>(h, s, v) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;color.dm 247"/></aside>
+        </h3>
+        <p>Generates a color matrix which performs an approximation of the HSV-space transform.
+Hue is in degrees and is applied additively.
+Saturation is in a 0-1 range and is applied multiplicatively.
+Value is in a 0-1 range and is applied multiplicatively.</p><h3 id="proc/illiterateGarbleText"><aside class="declaration">proc </aside>illiterateGarbleText<aside>(message) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2379"/></aside>
+        </h3>
+        <p>Returns given text replaced entirely by nonsense chars</p><h3 id="proc/in_cone_of_vision"><aside class="declaration">proc </aside>in_cone_of_vision<aside>(/<a href="atom.html">atom</a>/seer, /<a href="atom.html">atom</a>/target) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2470"/></aside>
+        </h3>
+        <p>This proc checks if one atom is in the cone of vision of another one.</p>
+<p>It uses the following map grid for the check, where each point is an integer coordinate and the seer is at point X:
+```</p>
+<pre><code>POV -&gt;	X * * *
+
+
+```
+</code></pre>
+<p>A '*' represents a point that is within X's FOV</p><h3 id="proc/in_interact_range"><aside class="declaration">proc </aside>in_interact_range<aside>(/<a href="atom.html">atom</a>/source, /<a href="atom.html">atom</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;gamehelpers.dm 100"/></aside>
+        </h3>
+        <p>For interacting with stuff.</p><h3 id="proc/initialise_fishing_spots"><aside class="declaration">proc </aside>initialise_fishing_spots<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;fishing&#x2F;fishing_spots.dm 8"/></aside>
+        </h3>
+        <p>run on world/New(), clears global.fishing_spots (if it exists) and fills it with the format (fishing_atom_type = /datum/fishing_spot)</p><h3 id="proc/initialize_biomes"><aside class="declaration">proc </aside>initialize_biomes<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;mapgen&#x2F;_MapGenerator.dm 5"/></aside>
+        </h3>
+        <p>Initialize all biomes, assoc as type || instance</p><h3 id="proc/isUpper"><aside class="declaration">proc </aside>isUpper<aside>(test) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 22"/></aside>
+        </h3>
+        <p>Returns true if the char you feed it is uppercase.</p><h3 id="proc/isVowel"><aside class="declaration">proc </aside>isVowel<aside>(t) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;text.dm 21"/></aside>
+        </h3>
+        <p>Returns true if the given string has a vowel</p><h3 id="proc/is_hex"><aside class="declaration">proc </aside>is_hex<aside>(hex) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 1180"/></aside>
+        </h3>
+        <p>Returns true if given value is a hex value</p><h3 id="proc/is_incapacitated"><aside class="declaration">proc </aside>is_incapacitated<aside>(/<a href="mob.html">mob</a>/M) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2567"/></aside>
+        </h3>
+        <p>Returns true if the given mob is incapacitated</p><h3 id="proc/isadmin"><aside class="declaration">proc </aside>isadmin<aside>(person) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2318"/></aside>
+        </h3>
+        <p>Returns true if given mob/client/mind is an admin</p><h3 id="proc/jobban_isbanned"><aside class="declaration">proc </aside>jobban_isbanned<aside>(M, rank) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;admin&#x2F;jobban.dm 27"/></aside>
+        </h3>
+        <p>Can be provided with a mob, a raw cache list, or a ckey. Prefer providing a cache if you can't use a mob, as that reduces API load.</p><h3 id="proc/lerp"><aside class="declaration">proc </aside>lerp<aside>(a, b, t) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2496"/></aside>
+        </h3>
+        <p>Linear interpolation</p><h3 id="proc/log_tgui"><aside class="declaration">proc </aside>log_tgui<aside>(user, message, context, /<a href="datum.html">datum</a>/<a href="datum/tgui_window.html">tgui_window</a>/window, /<a href="datum.html">datum</a>/src_object) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;logging.dm 118"/></aside>
+        </h3>
+        <p>Appends a tgui-related log entry. All arguments are optional.</p><h3 id="proc/make_fake_explosion"><aside class="declaration">proc </aside>make_fake_explosion<aside>(/<a href="atom.html">atom</a>/I) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;gamemodes&#x2F;pod_wars.dm 923"/></aside>
+        </h3>
+        <p>obj/item/tank/plasma = 2</p><h3 id="proc/make_player"><aside class="declaration">proc </aside>make_player<aside>(key) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;player.dm 162"/></aside>
+        </h3>
+        <p>returns a reference to a player datum, but it tries to make a new one if it cant an already existing one (this is how it persists between connections)</p><h3 id="proc/matchesMaterialRecipe"><aside class="declaration">proc </aside>matchesMaterialRecipe<aside>(/<a href="datum.html">datum</a>/<a href="datum/material.html">material</a>/M) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 465"/></aside>
+        </h3>
+        <p>Checks if a material matches a recipe and returns the recipe if a match is found. returns null if nothing matches it.</p><h3 id="proc/maximal_subtype"><aside class="declaration">proc </aside>maximal_subtype<aside>(/list/L) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 131"/></aside>
+        </h3>
+        <p>Returns the maximal subtype (i.e. the most subby) in a list of given types</p><h3 id="proc/mult_color_matrix"><aside class="declaration">proc </aside>mult_color_matrix<aside>(/list/Mat1, /list/Mat2) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;color.dm 76"/></aside>
+        </h3>
+        <p>Takes two 20-length lists, turns them into 5x4 matrices, multiplies them together, and returns a 20-length list</p><h3 id="proc/normalize_color_to_matrix"><aside class="declaration">proc </aside>normalize_color_to_matrix<aside>(color) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;color.dm 116"/></aside>
+        </h3>
+        <p>Takes a possible value of the <code>color</code> var and returns a length 20 color matrix doing the same thing.
+Available inputs:
+null, &quot;#rgb&quot;, &quot;#rrggbb&quot;, &quot;#rgba&quot;, &quot;#rrggbbaa&quot;, all forms of color matrices</p><h3 id="proc/o_clock_time"><aside class="declaration">proc </aside>o_clock_time<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 1599"/></aside>
+        </h3>
+        <p>Returns the current timeofday in o'clock format</p><h3 id="proc/placeAllPrefabs"><aside class="declaration">proc </aside>placeAllPrefabs<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;worldgen&#x2F;PrefabRuntimeChecker.dm 22"/></aside>
+        </h3>
+        <ul>
+<li>The <code>placeAllPrefabs()</code> proc, as the name suggests, places all the prefabs
+<ul>
+<li>
+<p>on the map, at (3, 3, 1). It overwrites existing objects, mobs, and turfs</p>
+</li>
+<li>
+<p>when doing so. This proc will only work correctly if RUNTIME_CHECKING is</p>
+</li>
+<li>
+<p>defined, as some turfs cannot be replaced using <code>turf/proc/ReplaceWith()</code></p>
+</li>
+<li>
+<p>and RUNTIME_CHECKING fixes this.</p>
+</li>
+<li>
+<p>Do not use this proc on a live server.</p>
+</li>
+<li>
+<p>If you run it locally do not move your mob into the location turfs are</p>
+</li>
+<li>
+<p>being placed (your client will be <code>qdel</code>'d).</p>
+</li>
+<li>
+<p>This proc was designed to be used with totally blank maps, where</p>
+</li>
+<li>
+<p>every tile is either space or trench. UNDERWATER_MAP is used in</p>
+</li>
+<li>
+<p><code>/proc/filter_underwater_prefab()</code> to choose underwater or space</p>
+</li>
+<li>
+<p>prefabs appropriately, depending on the type of map.</p>
+</li>
+<li>
+<p>Prefabs are found by looking for concrete types of</p>
+</li>
+<li>
+<p><code>/datum/generatorPrefab</code>. To add a new prefab to be checked, simply</p>
+</li>
+<li>
+<p>create a type for it.</p>
+</li>
+</ul>
+</li>
+</ul><h3 id="proc/playsound_global"><aside class="declaration">proc </aside>playsound_global<aside>(target, soundin, vol, vary, pitch, ignore_flag, channel) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 317"/></aside>
+        </h3>
+        <p>Plays a sound to some clients without caring about its source location and stuff.
+<code>target</code> can be either a list of clients or a list of mobs or <code>world</code> or an area.</p><h3 id="proc/predecessor_path_in_list"><aside class="declaration">proc </aside>predecessor_path_in_list<aside>(type, /list/types) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;types.dm 121"/></aside>
+        </h3>
+        <p>Find predecessor of a type</p><h3 id="proc/qdel"><aside class="declaration">proc </aside>qdel<aside>(/<a href="datum.html">datum</a>/O) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;del.dm 12"/></aside>
+        </h3>
+        <p>qdel</p>
+<p>queues a var for deletion by the delete queue processor.
+if used on /world, /list, /client, or /savefile, it just skips the queue.</p><h3 id="proc/radioGarbleText"><aside class="declaration">proc </aside>radioGarbleText<aside>(message, per_letter_corruption_chance) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2366"/></aside>
+        </h3>
+        <p>Returns given text replaced by nonsense chars, on a 40% or given % basis</p><h3 id="proc/random_emoji"><aside class="declaration">proc </aside>random_emoji<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;text.dm 39"/></aside>
+        </h3>
+        <p>Generates a random Unicode emoji that will look ok in the chat</p><h3 id="proc/random_hex"><aside class="declaration">proc </aside>random_hex<aside>(digits) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2082"/></aside>
+        </h3>
+        <p>Returns random hex value of length given</p><h3 id="proc/resource"><aside class="declaration">proc </aside>resource<aside>(file, group) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;resourceManagement.dm 8"/></aside>
+        </h3>
+        <p>GENERIC HELPERS FOR BOTH SYSTEMS</p><h3 id="proc/round_start_data"><aside class="declaration">proc </aside>round_start_data<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;export_data.dm 4"/></aside>
+        </h3>
+        <p>FOR EXPORTING DATA TO A SERVER</p><h3 id="proc/s_es"><aside class="declaration">proc </aside>s_es<aside>(number, es) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 8"/></aside>
+        </h3>
+        <p>Returns the plural based on a number provided.</p>
+<p>@param number the number to base the judgement off of
+@param es set this to true if your item's plural ends in &quot;es&quot;
+@return the plural suffix based on numbers</p><h3 id="proc/sanitize_frequency"><aside class="declaration">proc </aside>sanitize_frequency<aside>(f) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 669"/></aside>
+        </h3>
+        <p>Returns f, ensured that it's a valid frequency</p><h3 id="proc/sendItemIcons"><aside class="declaration">proc </aside>sendItemIcons<aside>(/<a href="client.html">client</a>/C) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;global.dm 587"/></aside>
+        </h3>
+        <p>Sends all of the item icons to a client. Kinda gross, but whatever.</p><h3 id="proc/sendItemIconsToAll"><aside class="declaration">proc </aside>sendItemIconsToAll<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;global.dm 592"/></aside>
+        </h3>
+        <p>Sends all item icons to all clients. Used at world startup to preload things.</p><h3 id="proc/send_assets"><aside class="declaration">proc </aside>send_assets<aside>(/<a href="client.html">client</a>/C, /list/assetlist) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;localassets&#x2F;localasset.dm 63"/></aside>
+        </h3>
+        <p>Sends the list of asset files to client if they're needed</p><h3 id="proc/separate_radio_prefix_and_message"><aside class="declaration">proc </aside>separate_radio_prefix_and_message<aside>(message) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 451"/></aside>
+        </h3>
+        <p>Given a message, returns a list containing the radio prefix and the message,
+so that the message can be manipulated seperately in various functions.</p><h3 id="proc/showLine"><aside class="declaration">proc </aside>showLine<aside>(/<a href="atom.html">atom</a>/start, /<a href="atom.html">atom</a>/end, s_icon_state, animate, get_turfs) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 53"/></aside>
+        </h3>
+        <p>Creates and shows a line object. Line object has an &quot;affected&quot; var that contains the cross tiles.</p><h3 id="proc/showadminlist"><aside class="declaration">proc </aside>showadminlist<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 30"/></aside>
+        </h3>
+        <p>Shows the calling client admins.txt</p><h3 id="proc/smilify"><aside class="declaration">proc </aside>smilify<aside>(string) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;accents.dm 1216"/></aside>
+        </h3>
+        <p>!!!
+!!!</p><h3 id="proc/sonic_attack_environmental_effect"><aside class="declaration">proc </aside>sonic_attack_environmental_effect<aside>(center, range, /list/smash) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2172"/></aside>
+        </h3>
+        <p>Given center turf/atom, range, and list of things to smash, will damage said objects within range of center.
+Used for sonic grenades and similar. Avoiding C&amp;P Code.</p><h3 id="proc/soviet_parse"><aside class="declaration">proc </aside>soviet_parse<aside>(/<a href="datum.html">datum</a>/text_roamer/R) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;accents.dm 409"/></aside>
+        </h3>
+        <p>!!!
+!!!
+!!!
+!!!</p><h3 id="proc/statlog_ticket"><aside class="declaration">proc </aside>statlog_ticket<aside>(/<a href="datum.html">datum</a>/ticket/T, /<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/M) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;stat_logging.dm 4"/></aside>
+        </h3>
+        <p>FOR LOGGING TO STATS FILE</p><h3 id="proc/stripTextMacros"><aside class="declaration">proc </aside>stripTextMacros<aside>(text) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2307"/></aside>
+        </h3>
+        <p>Removes the special data inserted via use of \improper etc in strings</p><h3 id="proc/test_disposal_system"><aside class="declaration">proc </aside>test_disposal_system<aside>(expected_x, expected_y, sleep_time, include_mail) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;WorkInProgress&#x2F;HaineWhatever.dm 7"/></aside>
+        </h3>
+        <p>Clothing properties stuff</p><h3 id="proc/tgui_Topic"><aside class="declaration">proc </aside>tgui_Topic<aside>(href_list) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;external.dm 164"/></aside>
+        </h3>
+        <p>Middleware for /client/Topic.</p>
+<p>return bool If TRUE, prevents propagation of the topic call.</p><h3 id="proc/tgui_alert"><aside class="declaration">proc </aside>tgui_alert<aside>(/<a href="mob.html">mob</a>/user, message, title, /list/buttons, timeout) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;tgui_alert.dm 17"/></aside>
+        </h3>
+        <p>Creates a TGUI alert window and returns the user's response.</p>
+<p>This proc should be used to create alerts that the caller will wait for a response from.
+Arguments:</p>
+<ul>
+<li>user - The user to show the alert to.</li>
+<li>message - The content of the alert, shown in the body of the TGUI window.</li>
+<li>title - The of the alert modal, shown on the top of the TGUI window.</li>
+<li>buttons - The options that can be chosen by the user, each string is assigned a button on the UI.</li>
+<li>timeout - The timeout of the alert, after which the modal will close and qdel itself. Disabled by default, can be set otherwise.</li>
+</ul><h3 id="proc/tgui_alert_async"><aside class="declaration">proc </aside>tgui_alert_async<aside>(/<a href="mob.html">mob</a>/user, message, title, /list/buttons, /<a href="datum.html">datum</a>/callback/callback, timeout) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;tgui_alert.dm 45"/></aside>
+        </h3>
+        <p>Creates an asynchronous TGUI alert window with an associated callback.</p>
+<p>This proc should be used to create alerts that invoke a callback with the user's chosen option.
+Arguments:</p>
+<ul>
+<li>user - The user to show the alert to.</li>
+<li>message - The content of the alert, shown in the body of the TGUI window.</li>
+<li>title - The of the alert modal, shown on the top of the TGUI window.</li>
+<li>buttons - The options that can be chosen by the user, each string is assigned a button on the UI.</li>
+<li>callback - The callback to be invoked when a choice is made.</li>
+<li>timeout - The timeout of the alert, after which the modal will close and qdel itself. Disabled by default, can be set otherwise.</li>
+</ul><h3 id="proc/tgui_input_list"><aside class="declaration">proc </aside>tgui_input_list<aside>(/<a href="mob.html">mob</a>/user, message, title, /list/buttons, timeout) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;tgui_input_list.dm 18"/></aside>
+        </h3>
+        <p>Creates a TGUI input list window and returns the user's response.</p>
+<p>This proc should be used to create alerts that the caller will wait for a response from.
+Arguments:</p>
+<ul>
+<li>user - The user to show the input box to.</li>
+<li>message - The content of the input box, shown in the body of the TGUI window.</li>
+<li>title - The title of the input box, shown on the top of the TGUI window.</li>
+<li>buttons - The options that can be chosen by the user, each string is assigned a button on the UI.</li>
+<li>timeout - The timeout of the input box, after which the input box will close and qdel itself. Set to zero for no timeout.</li>
+</ul><h3 id="proc/tgui_input_list_async"><aside class="declaration">proc </aside>tgui_input_list_async<aside>(/<a href="mob.html">mob</a>/user, message, title, /list/buttons, /<a href="datum.html">datum</a>/callback/callback, timeout) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;tgui_input_list.dm 48"/></aside>
+        </h3>
+        <p>Creates an asynchronous TGUI input list window with an associated callback.</p>
+<p>This proc should be used to create inputs that invoke a callback with the user's chosen option.
+Arguments:</p>
+<ul>
+<li>user - The user to show the input box to.</li>
+<li>message - The content of the input box, shown in the body of the TGUI window.</li>
+<li>title - The title of the input box, shown on the top of the TGUI window.</li>
+<li>buttons - The options that can be chosen by the user, each string is assigned a button on the UI.</li>
+<li>callback - The callback to be invoked when a choice is made.</li>
+<li>timeout - The timeout of the input box, after which the menu will close and qdel itself. Set to zero for no timeout.</li>
+</ul><h3 id="proc/time_to_text"><aside class="declaration">proc </aside>time_to_text<aside>(time) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2502"/></aside>
+        </h3>
+        <p>Returns the passed decisecond-format time in the form of a text string</p><h3 id="proc/tomatogibs"><aside class="declaration">proc </aside>tomatogibs<aside>(/<a href="turf.html">turf</a>/T, viral_list, /list/ejectables, bdna, btype) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;mob&#x2F;living&#x2F;critter&#x2F;killertomato.dm 1"/></aside>
+        </h3>
+        <p>You will appear adjacent to Hastur.</p><h3 id="proc/ucfirst"><aside class="declaration">proc </aside>ucfirst<aside>(str) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;stocks&#x2F;stock_helpers.dm 3"/></aside>
+        </h3>
+        <p>Uppercases first letter</p><h3 id="proc/ucfirsts"><aside class="declaration">proc </aside>ucfirsts<aside>(str) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;stocks&#x2F;stock_helpers.dm 7"/></aside>
+        </h3>
+        <p>Uppercases first letter of every word</p><h3 id="proc/uwutalk"><aside class="declaration">proc </aside>uwutalk<aside>(string) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;accents.dm 1583"/></aside>
+        </h3>
+        <p>uwutalk</p>
+<p>owo-talk version 2.
+Nyo it's sewious!</p><h3 id="proc/vector_magnitude"><aside class="declaration">proc </aside>vector_magnitude<aside>(x, y) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;macros&#x2F;dir.dm 13"/></aside>
+        </h3>
+        <p>Returns the vector magnitude of an x value and a y value</p><h3 id="proc/vector_to_dir"><aside class="declaration">proc </aside>vector_to_dir<aside>(x, y) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;macros&#x2F;dir.dm 20"/></aside>
+        </h3>
+        <p>Transforms a supplied vector x &amp; y to a direction</p><h3 id="proc/whodead"><aside class="declaration">proc </aside>whodead<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2073"/></aside>
+        </h3>
+        <p>Finds whoever's dead.</p><h3 id="proc/whois"><aside class="declaration">proc </aside>whois<aside>(target, limit, admin) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2027"/></aside>
+        </h3>
+        <p>Looks up a player based on a string. Searches a shit load of things ~whoa~. Returns a list of mob refs.</p><h3 id="proc/whois_ckey_to_mob_reference"><aside class="declaration">proc </aside>whois_ckey_to_mob_reference<aside>(target, exact) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm 2055"/></aside>
+        </h3>
+        <p>A universal ckey -&gt; mob reference lookup proc, adapted from whois() (Convair880).</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

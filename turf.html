@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;turf - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="turf.html#var">Var Details</a> - <a href="turf.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="turf.html">turf</a><aside> inherits /<a href="atom.html">atom</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;base_lighting.dm 37"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="turf.html#var/blocked_dirs">blocked_dirs</a></th><td>directions of this turf being blocked by directional blocking objects. So we don't need to loop through the entire contents</td></tr>
+            <tr><th><a href="turf.html#var/vistarget">vistarget</a></th><td>target turf for projecting its contents elsewhere</td></tr>
+            <tr><th><a href="turf.html#var/warptarget">warptarget</a></th><td>target turf for teleporting its contents elsewhere</td></tr>
+            <tr><th><a href="turf.html#var/warptarget_modifier">warptarget_modifier</a></th><td>control who gets warped to warptarget</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="turf.html#proc/AllDirsTurfsWithAccess">AllDirsTurfsWithAccess</a></th><td>Returns surrounding card+ord turfs with open links</td></tr>
+            <tr><th><a href="turf.html#proc/CardinalTurfsWithAccess">CardinalTurfsWithAccess</a></th><td>Returns the surrounding cardinal turfs with open links
+Including through doors openable with the ID</td></tr>
+            <tr><th><a href="turf.html#proc/tilenotify">tilenotify</a></th><td>HEY HEY LOOK AT ME TODO : This is kind of a band-aid. I'm not sure why, but tilenotify() doesn't trigger when it should sometimes. do this to be absolutely sure!</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/blocked_dirs"><aside class="declaration">var </aside>blocked_dirs
+            <aside>&ndash; /tmp</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;turf&#x2F;turf.dm 47"/></h3>
+        <p>directions of this turf being blocked by directional blocking objects. So we don't need to loop through the entire contents</p><h3 id="var/vistarget"><aside class="declaration">var </aside>vistarget
+            <aside>&ndash; /<a href="turf.html">turf</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;landmark.dm 292"/></h3>
+        <p>target turf for projecting its contents elsewhere</p><h3 id="var/warptarget"><aside class="declaration">var </aside>warptarget
+            <aside>&ndash; /<a href="turf.html">turf</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;landmark.dm 294"/></h3>
+        <p>target turf for teleporting its contents elsewhere</p><h3 id="var/warptarget_modifier"><aside class="declaration">var </aside>warptarget_modifier
+            <aside>&ndash; /<a href="turf.html">turf</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;landmark.dm 296"/></h3>
+        <p>control who gets warped to warptarget</p><h2 id="proc">Proc Details</h2><h3 id="proc/AllDirsTurfsWithAccess"><aside class="declaration">proc </aside>AllDirsTurfsWithAccess<aside>(/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/card/id.html">card/id</a>/ID) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;pathfinding.dm 264"/></aside>
+        </h3>
+        <p>Returns surrounding card+ord turfs with open links</p><h3 id="proc/CardinalTurfsWithAccess"><aside class="declaration">proc </aside>CardinalTurfsWithAccess<aside>(/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/card/id.html">card/id</a>/ID) 
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;pathfinding.dm 254"/></aside>
+        </h3>
+        <p>Returns the surrounding cardinal turfs with open links
+Including through doors openable with the ID</p><h3 id="proc/tilenotify"><aside class="declaration">proc </aside>tilenotify<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;fluids&#x2F;fluid_procs.dm 44"/></aside>
+        </h3>
+        <p>HEY HEY LOOK AT ME TODO : This is kind of a band-aid. I'm not sure why, but tilenotify() doesn't trigger when it should sometimes. do this to be absolutely sure!</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;kText - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="kText.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="kText.html">kText</a><aside> inherits /<a href="datum.html">datum</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 4"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="kText.html#proc/autoBreak">autoBreak</a></th><td>Adds linebreaks to the string every X characters.
+If the character at the position we want to place the linebreak at isn't whitespace,
+it will look for the next whitespace character before placing it.
+@param string		The string to be modified.
+@param charsPerLine	How many characters should be on each separate line.
+@return The modified string, with linebreaks placed every X characters.
+IE: autoBreak(&quot;I am not a crook.&quot;, 5) would return &quot;I am\nnot a\ncrook.&quot;</td></tr>
+            <tr><th><a href="kText.html#proc/autoComplete">autoComplete</a></th><td>Check if the given needle's characters all match the string's characters.
+For example, the needle &quot;ca&quot; -- since &quot;ca&quot; begins the string &quot;cake&quot;, &quot;ca&quot; is a match to it, thus &quot;auto-completes&quot;
+to it.
+@param string	The string to be matched against.
+@param needle	The string we want to know if matches.
+@return	if needle matches string, returns string.
+otherwise, null.
+IE: autoComplete(&quot;hippo&quot;, &quot;h&quot;) would return &quot;hippo&quot;.</td></tr>
+            <tr><th><a href="kText.html#proc/autoCompleteCase">autoCompleteCase</a></th><td>The case-sensitive version of autoComplete().
+@see kText.autoComplete()</td></tr>
+            <tr><th><a href="kText.html#proc/capitalize">capitalize</a></th><td>Capitalize the first character in a string.
+@param string	The string to be capitalized.
+@return the capitalized form of the string.</td></tr>
+            <tr><th><a href="kText.html#proc/file2list">file2list</a></th><td>Reads the contents of a file and separates it into a list, using the specified delimiter to
+separate entries.
+@param	file		The file object, or string referring to the file.
+@param	delimiter	The delimiter used to separate the text.
+@return	Returns the listified version of the file.
+null if a bad file was given.</td></tr>
+            <tr><th><a href="kText.html#proc/file2listCase">file2listCase</a></th><td>The case-sensitive version of file2list().
+@see kText.file2list()</td></tr>
+            <tr><th><a href="kText.html#proc/findNextWhitespace">findNextWhitespace</a></th><td>Finds the next occurrence of white space in a string, starting at the given position.
+@param string	The string to be queried.
+@param pos		Where to start searching for whitespace.
+@return the position of the next occurrence of whitespace, or null of there is no occurrence.</td></tr>
+            <tr><th><a href="kText.html#proc/findWhich">findWhich</a></th><td>Finds the xth occurence of a string within another string.
+@param string	The string to be queried.
+@param sub		The string to search for.
+@param which		Which occurrence of the string {sub} to look for.
+@return the starting position of the xth (which) occurrence of {sub} within {string}.
+0 if nothing is found.
+IE: findWhich(&quot;a b a&quot;, &quot;a&quot;, 2) would return 5 (where the second occurrence of &quot;a&quot; is).
+if which is -1, it will find the last occurrence of the substring.</td></tr>
+            <tr><th><a href="kText.html#proc/findWhichCase">findWhichCase</a></th><td>The case-sensitive version of findWhich().
+@see kText.findWhich()</td></tr>
+            <tr><th><a href="kText.html#proc/getCharacter">getCharacter</a></th><td>Gets the character at the given position in the string.
+@param string	The string to be queried.
+@param pos		The position of the character to be gotten.
+@return the character at the given position in the given string.</td></tr>
+            <tr><th><a href="kText.html#proc/hasPrefix">hasPrefix</a></th><td>Attempts to determine if the string is prefixed with the given prefix.
+@param	string	The string to check against.
+@param	prefix	The prefix to check for.
+@return	1 if the prefix was found. Just think of it as TRUE.
+0 if the prefix was not found.</td></tr>
+            <tr><th><a href="kText.html#proc/hasPrefixCase">hasPrefixCase</a></th><td>The case-sensitive version of hasPrefix().
+@see kText.hasPrefix()</td></tr>
+            <tr><th><a href="kText.html#proc/hasSuffix">hasSuffix</a></th><td>Attempts to determine if the string is suffixed with the given suffix.
+@param	string	The string to check against.
+@param	suffix	The suffix to check for.
+@return	The beginning of the suffix in the string (string's length - suffix's length + 1) if it is found.
+0 if the suffix was not found.</td></tr>
+            <tr><th><a href="kText.html#proc/hasSuffixCase">hasSuffixCase</a></th><td>The case-sensitive version of hasSuffix().
+@see kText.hasSuffix()</td></tr>
+            <tr><th><a href="kText.html#proc/isWhitespace">isWhitespace</a></th><td>Check if the character at the given position in the string is whitespace.
+@param string	The string to be queried.
+@param pos		The position to be checked.
+@return TRUE if it is whitespace. FALSE otherwise.</td></tr>
+            <tr><th><a href="kText.html#proc/limitText">limitText</a></th><td>Limits the max length of a string.
+@param	length	The maximum length a string can be.
+@return	If the string is longer than the given string, returns the string after it is cut short.
+Otherwise, the entire string.</td></tr>
+            <tr><th><a href="kText.html#proc/list2text">list2text</a></th><td>Converts a list into a string, placing a delimiter inbetween entries in the list.
+@param list		The list to be textified.
+@param delimiter	The string to place inbetween list entries.
+@return the string form of the list.
+IE: list2text(list(&quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;test&quot;), &quot; &quot;) would return &quot;this is a test&quot;.</td></tr>
+            <tr><th><a href="kText.html#proc/matchKeys">matchKeys</a></th><td>Checks if any of the space-delimited words within {needle} match to the space-delimited words in {string}.</td></tr>
+            <tr><th><a href="kText.html#proc/matchKeysCase">matchKeysCase</a></th><td>The case-sensitive version of matchKeys().
+@see kText.matchKeys()</td></tr>
+            <tr><th><a href="kText.html#proc/noBreak">noBreak</a></th><td>Removes linebreaks from the given string, replacing them with spaces.
+@param string	The string to be modified.
+@return The string, with linebreaks replaced with spaces.</td></tr>
+            <tr><th><a href="kText.html#proc/padText">padText</a></th><td>Pads a string so it is the given size.
+@param string	The string to be padded.
+@param size		The size the string should be padded to.
+@param padSide	The side to place the padding on the string.
+@param padText	The text to be used to pad the string.
+@return the padded form of the given string.
+IE: padText(&quot;Attributes:&quot;, 15, PAD_LEFT) would return &quot;    Attributes:&quot;.</td></tr>
+            <tr><th><a href="kText.html#proc/repeatText">repeatText</a></th><td>Simply repeats the given string a certain amount of times.
+@param	string	The string to repeat.
+@param	count	The amount to be repeated.
+@return	The string, repeated [count] times.</td></tr>
+            <tr><th><a href="kText.html#proc/replaceText">replaceText</a></th><td>Replaces all occurrences of one string within another string, with another string.
+@param string	The string to be queried.
+@param sub		The string to be searched for.
+@param replace	The string to be used as a replacement.
+@return the given string, with all occurrences of {sub} replaced with {replace}.
+IE: replaceText(&quot;i love cake&quot;, &quot;cake&quot;, &quot;pie&quot;) would return &quot;i love pie&quot;.</td></tr>
+            <tr><th><a href="kText.html#proc/replaceTextCase">replaceTextCase</a></th><td>The case-sensitive version of replaceText().
+@see kText.replaceText()</td></tr>
+            <tr><th><a href="kText.html#proc/text2list">text2list</a></th><td>Converts a string into a list, using a delimiter to determine where to separate entries.
+@param string	The string to be listified.
+@param delimiter	The string that will serve as a separator between entries in the list.
+@return the list form of the string.
+IE: text2list(&quot;this is a test&quot;, &quot; &quot;) would return list(&quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;test&quot;).</td></tr>
+            <tr><th><a href="kText.html#proc/text2listCase">text2listCase</a></th><td>The case-sensitive version of text2list().
+@see kText.text2list()</td></tr>
+            <tr><th><a href="kText.html#proc/trimWhitespace">trimWhitespace</a></th><td>Removes preceeding and following whitespace in a string.
+@param string	The string to be trimmed.
+@return the trimmed string.
+IE: trimWhitespace(&quot;   this is a string    ]   &quot;) would return &quot;this is a string    ]&quot;.</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/autoBreak"><aside class="declaration">proc </aside>autoBreak<aside>(string, charsPerLine) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 282"/></aside>
+        </h3>
+        <p>Adds linebreaks to the string every X characters.
+If the character at the position we want to place the linebreak at isn't whitespace,
+it will look for the next whitespace character before placing it.
+@param string		The string to be modified.
+@param charsPerLine	How many characters should be on each separate line.
+@return The modified string, with linebreaks placed every X characters.
+IE: autoBreak(&quot;I am not a crook.&quot;, 5) would return &quot;I am\nnot a\ncrook.&quot;</p>
+<p>note:	To keep the newly created lines consistent, this will also remove any
+extra whitespace at the beginning and ends of newly added lines.</p><h3 id="proc/autoComplete"><aside class="declaration">proc </aside>autoComplete<aside>(string, needle) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 318"/></aside>
+        </h3>
+        <p>Check if the given needle's characters all match the string's characters.
+For example, the needle &quot;ca&quot; -- since &quot;ca&quot; begins the string &quot;cake&quot;, &quot;ca&quot; is a match to it, thus &quot;auto-completes&quot;
+to it.
+@param string	The string to be matched against.
+@param needle	The string we want to know if matches.
+@return	if needle matches string, returns string.
+otherwise, null.
+IE: autoComplete(&quot;hippo&quot;, &quot;h&quot;) would return &quot;hippo&quot;.</p><h3 id="proc/autoCompleteCase"><aside class="declaration">proc </aside>autoCompleteCase<aside>(string, needle) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 334"/></aside>
+        </h3>
+        <p>The case-sensitive version of autoComplete().
+@see kText.autoComplete()</p><h3 id="proc/capitalize"><aside class="declaration">proc </aside>capitalize<aside>(string) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 48"/></aside>
+        </h3>
+        <p>Capitalize the first character in a string.
+@param string	The string to be capitalized.
+@return the capitalized form of the string.</p><h3 id="proc/file2list"><aside class="declaration">proc </aside>file2list<aside>(file, delimiter) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 462"/></aside>
+        </h3>
+        <p>Reads the contents of a file and separates it into a list, using the specified delimiter to
+separate entries.
+@param	file		The file object, or string referring to the file.
+@param	delimiter	The delimiter used to separate the text.
+@return	Returns the listified version of the file.
+null if a bad file was given.</p><h3 id="proc/file2listCase"><aside class="declaration">proc </aside>file2listCase<aside>(file, delimiter) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 480"/></aside>
+        </h3>
+        <p>The case-sensitive version of file2list().
+@see kText.file2list()</p><h3 id="proc/findNextWhitespace"><aside class="declaration">proc </aside>findNextWhitespace<aside>(string, pos) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 79"/></aside>
+        </h3>
+        <p>Finds the next occurrence of white space in a string, starting at the given position.
+@param string	The string to be queried.
+@param pos		Where to start searching for whitespace.
+@return the position of the next occurrence of whitespace, or null of there is no occurrence.</p><h3 id="proc/findWhich"><aside class="declaration">proc </aside>findWhich<aside>(string, sub, which) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 94"/></aside>
+        </h3>
+        <p>Finds the xth occurence of a string within another string.
+@param string	The string to be queried.
+@param sub		The string to search for.
+@param which		Which occurrence of the string {sub} to look for.
+@return the starting position of the xth (which) occurrence of {sub} within {string}.
+0 if nothing is found.
+IE: findWhich(&quot;a b a&quot;, &quot;a&quot;, 2) would return 5 (where the second occurrence of &quot;a&quot; is).
+if which is -1, it will find the last occurrence of the substring.</p><h3 id="proc/findWhichCase"><aside class="declaration">proc </aside>findWhichCase<aside>(string, sub, which) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 125"/></aside>
+        </h3>
+        <p>The case-sensitive version of findWhich().
+@see kText.findWhich()</p><h3 id="proc/getCharacter"><aside class="declaration">proc </aside>getCharacter<aside>(string, pos) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 24"/></aside>
+        </h3>
+        <p>Gets the character at the given position in the string.
+@param string	The string to be queried.
+@param pos		The position of the character to be gotten.
+@return the character at the given position in the given string.</p><h3 id="proc/hasPrefix"><aside class="declaration">proc </aside>hasPrefix<aside>(string, prefix) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 501"/></aside>
+        </h3>
+        <p>Attempts to determine if the string is prefixed with the given prefix.
+@param	string	The string to check against.
+@param	prefix	The prefix to check for.
+@return	1 if the prefix was found. Just think of it as TRUE.
+0 if the prefix was not found.</p><h3 id="proc/hasPrefixCase"><aside class="declaration">proc </aside>hasPrefixCase<aside>(string, prefix) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 508"/></aside>
+        </h3>
+        <p>The case-sensitive version of hasPrefix().
+@see kText.hasPrefix()</p><h3 id="proc/hasSuffix"><aside class="declaration">proc </aside>hasSuffix<aside>(string, suffix) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 518"/></aside>
+        </h3>
+        <p>Attempts to determine if the string is suffixed with the given suffix.
+@param	string	The string to check against.
+@param	suffix	The suffix to check for.
+@return	The beginning of the suffix in the string (string's length - suffix's length + 1) if it is found.
+0 if the suffix was not found.</p><h3 id="proc/hasSuffixCase"><aside class="declaration">proc </aside>hasSuffixCase<aside>(string, suffix) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 529"/></aside>
+        </h3>
+        <p>The case-sensitive version of hasSuffix().
+@see kText.hasSuffix()</p><h3 id="proc/isWhitespace"><aside class="declaration">proc </aside>isWhitespace<aside>(string, pos) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 33"/></aside>
+        </h3>
+        <p>Check if the character at the given position in the string is whitespace.
+@param string	The string to be queried.
+@param pos		The position to be checked.
+@return TRUE if it is whitespace. FALSE otherwise.</p><h3 id="proc/limitText"><aside class="declaration">proc </aside>limitText<aside>(string, length) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 542"/></aside>
+        </h3>
+        <p>Limits the max length of a string.
+@param	length	The maximum length a string can be.
+@return	If the string is longer than the given string, returns the string after it is cut short.
+Otherwise, the entire string.</p><h3 id="proc/list2text"><aside class="declaration">proc </aside>list2text<aside>(/list/list, delimiter) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 180"/></aside>
+        </h3>
+        <p>Converts a list into a string, placing a delimiter inbetween entries in the list.
+@param list		The list to be textified.
+@param delimiter	The string to place inbetween list entries.
+@return the string form of the list.
+IE: list2text(list(&quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;test&quot;), &quot; &quot;) would return &quot;this is a test&quot;.</p><h3 id="proc/matchKeys"><aside class="declaration">proc </aside>matchKeys<aside>(string, needle) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 364"/></aside>
+        </h3>
+        <p>Checks if any of the space-delimited words within {needle} match to the space-delimited words in {string}.</p>
+<p>This matching uses the same method of matching as autoComplete().</p>
+<p>Basically, &quot;c p&quot; matches &quot;cake pie&quot;, because &quot;c&quot; and &quot;p&quot; autocomplete to &quot;cake&quot; and &quot;pie&quot;, respectively.</p>
+<p>It should also be noted that if one of the keywords in {needle} does not have a match in {string}, the match will fail.</p>
+<ul>
+<li>
+<p>{string}	- The set of words to match against.</p>
+</li>
+<li>
+<p>{needle} - The set of words to be searched for.</p>
+</li>
+<li>
+<p>return	- if all the keywords in {needle} have a matching keyword in {string}, returns {string}. Otherwise, null.</p>
+</li>
+</ul>
+<p>matchKeys(&quot;giant king monster&quot;, &quot;giant monster&quot;) would return &quot;giant king monster&quot;.</p>
+<p>matchKeys(&quot;giant king monster&quot;, &quot;giant snail&quot;) would return null, because &quot;snail&quot; has no match.</p><h3 id="proc/matchKeysCase"><aside class="declaration">proc </aside>matchKeysCase<aside>(string, needle) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 402"/></aside>
+        </h3>
+        <p>The case-sensitive version of matchKeys().
+@see kText.matchKeys()</p><h3 id="proc/noBreak"><aside class="declaration">proc </aside>noBreak<aside>(string) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 267"/></aside>
+        </h3>
+        <p>Removes linebreaks from the given string, replacing them with spaces.
+@param string	The string to be modified.
+@return The string, with linebreaks replaced with spaces.</p><h3 id="proc/padText"><aside class="declaration">proc </aside>padText<aside>(string, size, padSide, padCharacter) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 241"/></aside>
+        </h3>
+        <p>Pads a string so it is the given size.
+@param string	The string to be padded.
+@param size		The size the string should be padded to.
+@param padSide	The side to place the padding on the string.
+@param padText	The text to be used to pad the string.
+@return the padded form of the given string.
+IE: padText(&quot;Attributes:&quot;, 15, PAD_LEFT) would return &quot;    Attributes:&quot;.</p>
+<p>note:	When using PAD_BOTH, the given text will attempt to be centered.
+This function assumes a fixed-width font, which means if the size
+of the padding is uneven, then one side (the right side) will be
+given an extra padding.</p>
+<pre><code>		For example, padText(&quot;ABC&quot;, 6, PAD_BOTH, &quot;-&quot;) would require atleast 3
+		padding characters. Since this can't be split down the middle,
+		one of the padding characters will be added to the end of the string:
+		&quot;-ABC--&quot;.
+</code></pre><h3 id="proc/repeatText"><aside class="declaration">proc </aside>repeatText<aside>(string, count) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 442"/></aside>
+        </h3>
+        <p>Simply repeats the given string a certain amount of times.
+@param	string	The string to repeat.
+@param	count	The amount to be repeated.
+@return	The string, repeated [count] times.</p><h3 id="proc/replaceText"><aside class="declaration">proc </aside>replaceText<aside>(string, sub, replace) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 198"/></aside>
+        </h3>
+        <p>Replaces all occurrences of one string within another string, with another string.
+@param string	The string to be queried.
+@param sub		The string to be searched for.
+@param replace	The string to be used as a replacement.
+@return the given string, with all occurrences of {sub} replaced with {replace}.
+IE: replaceText(&quot;i love cake&quot;, &quot;cake&quot;, &quot;pie&quot;) would return &quot;i love pie&quot;.</p><h3 id="proc/replaceTextCase"><aside class="declaration">proc </aside>replaceTextCase<aside>(string, sub, replace) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 212"/></aside>
+        </h3>
+        <p>The case-sensitive version of replaceText().
+@see kText.replaceText()</p><h3 id="proc/text2list"><aside class="declaration">proc </aside>text2list<aside>(string, delimiter) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 149"/></aside>
+        </h3>
+        <p>Converts a string into a list, using a delimiter to determine where to separate entries.
+@param string	The string to be listified.
+@param delimiter	The string that will serve as a separator between entries in the list.
+@return the list form of the string.
+IE: text2list(&quot;this is a test&quot;, &quot; &quot;) would return list(&quot;this&quot;, &quot;is&quot;, &quot;a&quot;, &quot;test&quot;).</p><h3 id="proc/text2listCase"><aside class="declaration">proc </aside>text2listCase<aside>(string, delimiter) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 163"/></aside>
+        </h3>
+        <p>The case-sensitive version of text2list().
+@see kText.text2list()</p><h3 id="proc/trimWhitespace"><aside class="declaration">proc </aside>trimWhitespace<aside>(string) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;webelements&#x2F;kText.dm 60"/></aside>
+        </h3>
+        <p>Removes preceeding and following whitespace in a string.
+@param string	The string to be trimmed.
+@return the trimmed string.
+IE: trimWhitespace(&quot;   this is a string    ]   &quot;) would return &quot;this is a string    ]&quot;.</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

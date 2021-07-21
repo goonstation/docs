@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;projectile - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/projectile.html#var">Var Details</a> - <a href="datum/projectile.html#proc">Proc Details</a></header>
+<main>
+<h1>projectile <aside>/<a href="datum.html">datum</a>/<a href="datum/projectile.html">projectile</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;projectiles&#x2F;projectile_parent.dm 461"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/projectile.html#var/fullauto_valid">fullauto_valid</a></th><td>if a fullauto-capable weapon should be able to fullauto this ammo type</td></tr>
+            <tr><th><a href="datum/projectile.html#var/last_thing_hit">last_thing_hit</a></th><td>for on_pre_hit. Causes it to early-return TRUE if the thing checked was already cleared for pass-thru</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/projectile.html#proc/on_pre_hit">on_pre_hit</a></th><td>Check if we want to do something before actually hitting the thing we hit
+Return TRUE for it to more or less skip collide()</td></tr>
+            <tr><th><a href="datum/projectile.html#proc/tick">tick</a></th><td>Does a thing every step this projectile takes</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/fullauto_valid"><aside class="declaration">var </aside>fullauto_valid
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;projectiles&#x2F;projectile_parent.dm 511"/></h3>
+        <p>if a fullauto-capable weapon should be able to fullauto this ammo type</p><h3 id="var/last_thing_hit"><aside class="declaration">var </aside>last_thing_hit
+            <aside>&ndash; /<a href="atom.html">atom</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;projectiles&#x2F;projectile_parent.dm 541"/></h3>
+        <p>for on_pre_hit. Causes it to early-return TRUE if the thing checked was already cleared for pass-thru</p><h2 id="proc">Proc Details</h2><h3 id="proc/on_pre_hit"><aside class="declaration">proc </aside>on_pre_hit<aside>(/<a href="atom.html">atom</a>/hit, angle, /<a href="obj.html">obj</a>/projectile/O) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;projectiles&#x2F;projectile_parent.dm 588"/></aside>
+        </h3>
+        <p>Check if we want to do something before actually hitting the thing we hit
+Return TRUE for it to more or less skip collide()</p><h3 id="proc/tick"><aside class="declaration">proc </aside>tick<aside>(/<a href="obj.html">obj</a>/projectile/O) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;projectiles&#x2F;projectile_parent.dm 576"/></aside>
+        </h3>
+        <p>Does a thing every step this projectile takes</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>_std&#x2F;defines&#x2F;lag.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="_std/defines/lag.html#define">Define Details</a></header>
+<main>
+<h1>_std/defines/lag.dm 
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th><a href="_std/defines/lag.html#define/UNTIL">UNTIL</a></th><td>Waits until a given condition is true, tg-style async</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/MIN_TICKLAG">MIN_TICKLAG</a></th><td>min value ticklag can be</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/OVERLOADED_WORLD_TICKLAG">OVERLOADED_WORLD_TICKLAG</a></th><td>max value ticklag can be</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/TICKLAG_DILATION_INC">TICKLAG_DILATION_INC</a></th><td>how ticklag much to increase by when appropriate</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/TICKLAG_DILATION_DEC">TICKLAG_DILATION_DEC</a></th><td>how much to decrease by when appropriate //MBCX I DONT KNOW WHY BUT MOST VALUES CAUSE ROUNDING ERRORS, ITS VERY IMPORTANT THAT THIS REMAINS 0.2 FIOR NOW</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/TICKLAG_MAPCPU_MAX">TICKLAG_MAPCPU_MAX</a></th><td>what map_cpu percent is too high in the dilation check</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/TICKLAG_MAPCPU_MIN">TICKLAG_MAPCPU_MIN</a></th><td>what map_cpu percent is low enough in the dilation check</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/TICKLAG_INCREASE_THRESHOLD">TICKLAG_INCREASE_THRESHOLD</a></th><td>number of times the dilation check needs to see lag in a row to slow down the ticker</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/TICKLAG_DECREASE_THRESHOLD">TICKLAG_DECREASE_THRESHOLD</a></th><td>number of times to see no lag in a row to speed up the ticker</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/TICKLAG_DILATE_INTERVAL">TICKLAG_DILATE_INTERVAL</a></th><td>how often to check for time dilation, against world.time, so counted in game ticks.</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/OVERLOAD_PLAYERCOUNT">OVERLOAD_PLAYERCOUNT</a></th><td>when pcount is above this number on round start, increase ticklag to OVERLOADED_WORLD_TICKLAG to try to maintain smoothness</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/OSHAN_LIGHT_OVERLOAD">OSHAN_LIGHT_OVERLOAD</a></th><td>when pcount is above this number on game load, dont generate lighting surrounding the station because it lags the map to heck</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/SLOW_LIFE_PLAYERCOUNT">SLOW_LIFE_PLAYERCOUNT</a></th><td>whenn pcount is &gt;= this number, slow Life() processing a bit</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/SLOWEST_LIFE_PLAYERCOUNT">SLOWEST_LIFE_PLAYERCOUNT</a></th><td>whenn pcount is &gt;= this number, slow Life() processing a lot</td></tr>
+        <tr><th><a href="_std/defines/lag.html#define/DEFAULT_POOL_SIZE">DEFAULT_POOL_SIZE</a></th><td>How much stuff is allowed in the pools before the lifeguard throws them into the deletequeue instead. A shameful lifeguard.</td></tr></table><h2 id="define">Define Details</h2>
+<h3 id="define/DEFAULT_POOL_SIZE"><aside class="declaration">#define </aside>DEFAULT_POOL_SIZE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 85"/>
+    </h3>
+    <p>How much stuff is allowed in the pools before the lifeguard throws them into the deletequeue instead. A shameful lifeguard.</p><h3 id="define/MIN_TICKLAG"><aside class="declaration">#define </aside>MIN_TICKLAG
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 40"/>
+    </h3>
+    <p>min value ticklag can be</p><h3 id="define/OSHAN_LIGHT_OVERLOAD"><aside class="declaration">#define </aside>OSHAN_LIGHT_OVERLOAD
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 61"/>
+    </h3>
+    <p>when pcount is above this number on game load, dont generate lighting surrounding the station because it lags the map to heck</p><h3 id="define/OVERLOADED_WORLD_TICKLAG"><aside class="declaration">#define </aside>OVERLOADED_WORLD_TICKLAG
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 42"/>
+    </h3>
+    <p>max value ticklag can be</p><h3 id="define/OVERLOAD_PLAYERCOUNT"><aside class="declaration">#define </aside>OVERLOAD_PLAYERCOUNT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 59"/>
+    </h3>
+    <p>when pcount is above this number on round start, increase ticklag to OVERLOADED_WORLD_TICKLAG to try to maintain smoothness</p><h3 id="define/SLOWEST_LIFE_PLAYERCOUNT"><aside class="declaration">#define </aside>SLOWEST_LIFE_PLAYERCOUNT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 65"/>
+    </h3>
+    <p>whenn pcount is &gt;= this number, slow Life() processing a lot</p><h3 id="define/SLOW_LIFE_PLAYERCOUNT"><aside class="declaration">#define </aside>SLOW_LIFE_PLAYERCOUNT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 63"/>
+    </h3>
+    <p>whenn pcount is &gt;= this number, slow Life() processing a bit</p><h3 id="define/TICKLAG_DECREASE_THRESHOLD"><aside class="declaration">#define </aside>TICKLAG_DECREASE_THRESHOLD
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 54"/>
+    </h3>
+    <p>number of times to see no lag in a row to speed up the ticker</p><h3 id="define/TICKLAG_DILATE_INTERVAL"><aside class="declaration">#define </aside>TICKLAG_DILATE_INTERVAL
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 56"/>
+    </h3>
+    <p>how often to check for time dilation, against world.time, so counted in game ticks.</p><h3 id="define/TICKLAG_DILATION_DEC"><aside class="declaration">#define </aside>TICKLAG_DILATION_DEC
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 46"/>
+    </h3>
+    <p>how much to decrease by when appropriate //MBCX I DONT KNOW WHY BUT MOST VALUES CAUSE ROUNDING ERRORS, ITS VERY IMPORTANT THAT THIS REMAINS 0.2 FIOR NOW</p><h3 id="define/TICKLAG_DILATION_INC"><aside class="declaration">#define </aside>TICKLAG_DILATION_INC
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 44"/>
+    </h3>
+    <p>how ticklag much to increase by when appropriate</p><h3 id="define/TICKLAG_INCREASE_THRESHOLD"><aside class="declaration">#define </aside>TICKLAG_INCREASE_THRESHOLD
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 52"/>
+    </h3>
+    <p>number of times the dilation check needs to see lag in a row to slow down the ticker</p><h3 id="define/TICKLAG_MAPCPU_MAX"><aside class="declaration">#define </aside>TICKLAG_MAPCPU_MAX
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 48"/>
+    </h3>
+    <p>what map_cpu percent is too high in the dilation check</p><h3 id="define/TICKLAG_MAPCPU_MIN"><aside class="declaration">#define </aside>TICKLAG_MAPCPU_MIN
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 50"/>
+    </h3>
+    <p>what map_cpu percent is low enough in the dilation check</p><h3 id="define/UNTIL"><aside class="declaration">#define </aside>UNTIL
+            <aside>(X)</aside>
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;lag.dm 35"/>
+    </h3>
+    <p>Waits until a given condition is true, tg-style async</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

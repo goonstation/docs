@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>code&#x2F;procs&#x2F;helpers.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+</header>
+<main>
+<h1>code/procs/helpers.dm 
+        <img src="git.png" width="16" height="16" title="code&#x2F;procs&#x2F;helpers.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th>/proc/<a href="global.html#proc/s_es">s_es</a></th>
+                <td>Returns the plural based on a number provided.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/isUpper">isUpper</a></th>
+                <td>Returns true if the char you feed it is uppercase.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/showadminlist">showadminlist</a></th>
+                <td>Shows the calling client admins.txt</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/getLineMatrix">getLineMatrix</a></th>
+                <td>Returns the line matrix from a start atom to an end atom, used in creating line objects</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/showLine">showLine</a></th>
+                <td>Creates and shows a line object. Line object has an &quot;affected&quot; var that contains the cross tiles.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/get_angle">get_angle</a></th>
+                <td>Returns the angle between two given atoms</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/separate_radio_prefix_and_message">separate_radio_prefix_and_message</a></th>
+                <td>Given a message, returns a list containing the radio prefix and the message,
+so that the message can be manipulated seperately in various functions.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/english_list">english_list</a></th>
+                <td>Given a list, returns a text string representation of the list's contents.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/angle2text">angle2text</a></th>
+                <td>Returns the given degree converted to a text string in the form of a direction</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/IsGuestKey">IsGuestKey</a></th>
+                <td>Returns true if the given key is a guest key</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/sanitize_frequency">sanitize_frequency</a></th>
+                <td>Returns f, ensured that it's a valid frequency</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/get_adjacent_floor">get_adjacent_floor</a></th>
+                <td>Returns the turf facing the fab for cardinal directions (which should also be the user's turf),
+but for diagonals it returns a neighbouring turf depending on where you click
+Just in case you're attacking a corner diagonally. (made initially for lamp manufacturers, probably behaves funky above range 1)</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/is_hex">is_hex</a></th>
+                <td>Returns true if given value is a hex value</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/o_clock_time">o_clock_time</a></th>
+                <td>Returns the current timeofday in o'clock format</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/dead_player_list">dead_player_list</a></th>
+                <td>Returns a list of eligible dead players to be respawned as an antagonist or whatever (Convair880).
+Text messages: 1: alert | 2: alert (chatbox) | 3: alert acknowledged (chatbox) | 4: no longer eligible (chatbox) | 5: waited too long (chatbox)</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/whois">whois</a></th>
+                <td>Looks up a player based on a string. Searches a shit load of things ~whoa~. Returns a list of mob refs.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/whois_ckey_to_mob_reference">whois_ckey_to_mob_reference</a></th>
+                <td>A universal ckey -&gt; mob reference lookup proc, adapted from whois() (Convair880).</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/whodead">whodead</a></th>
+                <td>Finds whoever's dead.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/random_hex">random_hex</a></th>
+                <td>Returns random hex value of length given</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/hex2color_name">hex2color_name</a></th>
+                <td>Given hex color, returns string name of nearest named color</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/sonic_attack_environmental_effect">sonic_attack_environmental_effect</a></th>
+                <td>Given center turf/atom, range, and list of things to smash, will damage said objects within range of center.
+Used for sonic grenades and similar. Avoiding C&amp;P Code.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/get_hud_style">get_hud_style</a></th>
+                <td>Returns hud style preferences of given client/mob</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/get_all_mobs_in">get_all_mobs_in</a></th>
+                <td>Returns list of all mobs within an atom. Not cheap! (unlike ur mum)</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/get_standard_skintone">get_standard_skintone</a></th>
+                <td>Given user, will proompt user to select skin color from list (or custom) and returns skin tone after blending</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/blend_skintone">blend_skintone</a></th>
+                <td>Blends given rgb values with old human mob skin color (#ffca95) to return a new rgb value</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/getRole">getRole</a></th>
+                <td>Returns a string based on the current job and antag role of the mob e.g. <code>&quot;Staff Assistant [Traitor]&quot;</code></td></tr>
+        <tr><th>/proc/<a href="global.html#proc/stripTextMacros">stripTextMacros</a></th>
+                <td>Removes the special data inserted via use of \improper etc in strings</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/isadmin">isadmin</a></th>
+                <td>Returns true if given mob/client/mind is an admin</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/gradientText">gradientText</a></th>
+                <td>Returns span with a color gradient between two given colors of given message</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/radioGarbleText">radioGarbleText</a></th>
+                <td>Returns given text replaced by nonsense chars, on a 40% or given % basis</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/illiterateGarbleText">illiterateGarbleText</a></th>
+                <td>Returns given text replaced entirely by nonsense chars</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/flockBasedGarbleText">flockBasedGarbleText</a></th>
+                <td>Returns given text replaced by nonsense but its based off of a modifier + flock's garblyness</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/getTimeInSecondsSinceTime">getTimeInSecondsSinceTime</a></th>
+                <td>Returns the time in seconds since a given timestamp</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/getIconSize">getIconSize</a></th>
+                <td>Handles the two states icon_size can be in: basic number, or string in WxH format</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/getClientFromCkey">getClientFromCkey</a></th>
+                <td>Finds a client by ckey, throws exception if not found</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/check_whitelist">check_whitelist</a></th>
+                <td>Removes non-whitelisted reagents from the reagents of TA</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/in_cone_of_vision">in_cone_of_vision</a></th>
+                <td>This proc checks if one atom is in the cone of vision of another one.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/lerp">lerp</a></th>
+                <td>Linear interpolation</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/time_to_text">time_to_text</a></th>
+                <td>Returns the passed decisecond-format time in the form of a text string</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/can_act">can_act</a></th>
+                <td>Returns true if not incapicitated and unhandcuffed (by default)</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/is_incapacitated">is_incapacitated</a></th>
+                <td>Returns true if the given mob is incapacitated</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/get_all_character_setup_ringtones">get_all_character_setup_ringtones</a></th>
+                <td>sets up the list of ringtones players can select through character setup</td></tr></table></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

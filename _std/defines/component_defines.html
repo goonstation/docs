@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>_std&#x2F;defines&#x2F;component_defines.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="_std/defines/component_defines.html#define">Define Details</a></header>
+<main>
+<h1>_std/defines/component_defines.dm 
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th><a href="_std/defines/component_defines.html#define/SEND_SIGNAL">SEND_SIGNAL</a></th><td>Used to trigger signals and call procs registered for that signal
+The datum hosting the signal is automaticaly added as the first argument
+Returns a bitfield gathered from all registered procs
+Arguments given here are packaged in a list and given to _SendSignal</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/SEND_GLOBAL_SIGNAL">SEND_GLOBAL_SIGNAL</a></th><td><code>target</code> to use for signals that are global and not tied to a single datum.</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/AddComponent">AddComponent</a></th><td>A wrapper for _AddComponent that allows us to pretend we're using normal named arguments</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMPONENT_INCOMPATIBLE">COMPONENT_INCOMPATIBLE</a></th><td>Return this from <code>/datum/component/Initialize</code> or <code>datum/component/OnTransfer</code> to have the component be deleted if it's applied to an incorrect type.</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMPONENT_NOTRANSFER">COMPONENT_NOTRANSFER</a></th><td>Returned in PostTransfer to prevent transfer, similar to <code>COMPONENT_INCOMPATIBLE</code></td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMPONENT_DUPE_HIGHLANDER">COMPONENT_DUPE_HIGHLANDER</a></th><td>old component is deleted (default)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMPONENT_DUPE_ALLOWED">COMPONENT_DUPE_ALLOWED</a></th><td>duplicates allowed</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMPONENT_DUPE_UNIQUE">COMPONENT_DUPE_UNIQUE</a></th><td>new component is deleted</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMPONENT_DUPE_UNIQUE_PASSARGS">COMPONENT_DUPE_UNIQUE_PASSARGS</a></th><td>old component is given the initialization args of the new</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMPONENT_DUPE_SELECTIVE">COMPONENT_DUPE_SELECTIVE</a></th><td>each component of the same type is consulted as to whether the duplicate should be allowed</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_COMPONENT_ADDED">COMSIG_COMPONENT_ADDED</a></th><td>when a component is added to a datum: (/datum/component)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_COMPONENT_REMOVING">COMSIG_COMPONENT_REMOVING</a></th><td>before a component is removed from a datum because of RemoveComponent: (/datum/component)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_PARENT_PRE_DISPOSING">COMSIG_PARENT_PRE_DISPOSING</a></th><td>just before a datum's disposing()</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ATOM_DIR_CHANGED">COMSIG_ATOM_DIR_CHANGED</a></th><td>when an atom changes dir (olddir, newdir)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ATOM_HITBY_PROJ">COMSIG_ATOM_HITBY_PROJ</a></th><td>when an atom is collided by a projectile (/obj/projectile)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ATOM_HITBY_THROWN">COMSIG_ATOM_HITBY_THROWN</a></th><td>when an atom is hit by a thrown thing (thrown_atom, /datum/thrown_thing)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ATOM_EXAMINE">COMSIG_ATOM_EXAMINE</a></th><td>when an atom is examined (/mob/examiner, /list/lines), append to lines for more description</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOVABLE_MOVED">COMSIG_MOVABLE_MOVED</a></th><td>when an AM moves (thing, previous_loc, direction)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOVABLE_SET_LOC">COMSIG_MOVABLE_SET_LOC</a></th><td>when an AM moves (thing, previous_loc)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOVABLE_THROW_END">COMSIG_MOVABLE_THROW_END</a></th><td>when an AM ends throw (thing, /datum/thrown_thing)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_EQUIPPED">COMSIG_ITEM_EQUIPPED</a></th><td>When an item is equipped (user, slot)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_UNEQUIPPED">COMSIG_ITEM_UNEQUIPPED</a></th><td>When an item is unequipped (user)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_PICKUP">COMSIG_ITEM_PICKUP</a></th><td>When an item is picked up (user)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_DROPPED">COMSIG_ITEM_DROPPED</a></th><td>When an item is picked dropped (user)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_ATTACK_POST">COMSIG_ITEM_ATTACK_POST</a></th><td>When an item is used to attack a mob</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_CONSUMED_PRE">COMSIG_ITEM_CONSUMED_PRE</a></th><td>Just before an item is eaten</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_CONSUMED">COMSIG_ITEM_CONSUMED</a></th><td>When an item is eaten</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_CONSUMED_PARTIAL">COMSIG_ITEM_CONSUMED_PARTIAL</a></th><td>After an item's been eaten, but there's still some left</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_CONSUMED_ALL">COMSIG_ITEM_CONSUMED_ALL</a></th><td>After we've consumed an item</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_ATTACK_PRE">COMSIG_ITEM_ATTACK_PRE</a></th><td>When an item is used to attack a mob before it actually hurts the mob</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_ATTACK_SELF">COMSIG_ITEM_ATTACK_SELF</a></th><td>When an item is used in-hand</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_SWAP_TO">COMSIG_ITEM_SWAP_TO</a></th><td>When an item is swapped to [does not include being picked up/taken out of bags/etc] (user)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_SWAP_AWAY">COMSIG_ITEM_SWAP_AWAY</a></th><td>When an item is swapped away from [does not include being picked up/taken out of bags/etc] (user)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_SPECIAL_POST">COMSIG_ITEM_SPECIAL_POST</a></th><td>After an item's itemspecial is used (user)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_CLOAKING_DEVICE_DEACTIVATE">COMSIG_CLOAKING_DEVICE_DEACTIVATE</a></th><td>Make cloaking devices turn off</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_DISGUISER_DEACTIVATE">COMSIG_DISGUISER_DEACTIVATE</a></th><td>Make disguiser devices turn off</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_IMPLANT_IMPLANTED">COMSIG_IMPLANT_IMPLANTED</a></th><td>When implanted</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_IMPLANT_REMOVED">COMSIG_IMPLANT_REMOVED</a></th><td>When removed</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_TOOLTIP_BLOCKING_APPEND">COMSIG_TOOLTIP_BLOCKING_APPEND</a></th><td>Append to the end of the blocking section of tooltip (list/tooltip)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_BLOCK_BEGIN">COMSIG_ITEM_BLOCK_BEGIN</a></th><td>After  an item block is set up</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ITEM_BLOCK_END">COMSIG_ITEM_BLOCK_END</a></th><td>When an item block is disposed</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_UNARMED_BLOCK_BEGIN">COMSIG_UNARMED_BLOCK_BEGIN</a></th><td>After an unarmed block is set up</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_UNARMED_BLOCK_END">COMSIG_UNARMED_BLOCK_END</a></th><td>When an item block is created</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_BLOCK_BLOCKED">COMSIG_BLOCK_BLOCKED</a></th><td>When a block blocks damage at all</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_LOGIN">COMSIG_MOB_LOGIN</a></th><td>When a client logs into a mob</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_LOGOUT">COMSIG_MOB_LOGOUT</a></th><td>When a client logs out of a mob</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_ATTACKED_PRE">COMSIG_MOB_ATTACKED_PRE</a></th><td>At the beginning of when an attackresults datum is being set up</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_DEATH">COMSIG_MOB_DEATH</a></th><td>When a mob dies</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_FAKE_DEATH">COMSIG_MOB_FAKE_DEATH</a></th><td>When a mob fakes death</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_THROW_ITEM">COMSIG_MOB_THROW_ITEM</a></th><td>sent when a mob throws something (target, params)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_GEIGER_TICK">COMSIG_MOB_GEIGER_TICK</a></th><td>sent when radiation status ticks on mob (stage)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOUSEUP">COMSIG_MOUSEUP</a></th><td>on mouseup</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_LIVING_LIFE_TICK">COMSIG_LIVING_LIFE_TICK</a></th><td>When a Life tick occurs</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MOB_PROP_INVISIBILITY">COMSIG_MOB_PROP_INVISIBILITY</a></th><td>When invisibility of a mob gets updated (old_value)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_ATTACKBY">COMSIG_ATTACKBY</a></th><td>Attacking wiht an item in-hand</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_PROJ_COLLIDE">COMSIG_PROJ_COLLIDE</a></th><td>After a projectile makes a valid hit on an atom (after immunity/other early returns, before other effects)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MECHCOMP_ADD_INPUT">COMSIG_MECHCOMP_ADD_INPUT</a></th><td>Add an input chanel for a device to send into</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MECHCOMP_ADD_CONFIG">COMSIG_MECHCOMP_ADD_CONFIG</a></th><td>Connect two mechcomp devices together</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MECHCOMP_ALLOW_MANUAL_SIGNAL">COMSIG_MECHCOMP_ALLOW_MANUAL_SIGNAL</a></th><td>Connect two mechcomp devices together</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MECHCOMP_RM_ALL_CONNECTIONS">COMSIG_MECHCOMP_RM_ALL_CONNECTIONS</a></th><td>Remove all connected devices</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MECHCOMP_TRANSMIT_SIGNAL">COMSIG_MECHCOMP_TRANSMIT_SIGNAL</a></th><td>Passing the signal of a message to all connected mechcomp devices for handling (message will be instatiated by the component)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MECHCOMP_TRANSMIT_MSG">COMSIG_MECHCOMP_TRANSMIT_MSG</a></th><td>Passing a message to all connected mechcomp devices for handling</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_MECHCOMP_TRANSMIT_DEFAULT_MSG">COMSIG_MECHCOMP_TRANSMIT_DEFAULT_MSG</a></th><td>Passing the stored message to all connected mechcomp devices for handling</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_RECEIVE_MSG">_COMSIG_MECHCOMP_RECEIVE_MSG</a></th><td>Receiving a message from a mechcomp device for handling</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_RM_INCOMING">_COMSIG_MECHCOMP_RM_INCOMING</a></th><td>Remove {the caller} from the list of transmitting devices</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_RM_OUTGOING">_COMSIG_MECHCOMP_RM_OUTGOING</a></th><td>Remove {the caller} from the list of receiving devices</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_GET_OUTGOING">_COMSIG_MECHCOMP_GET_OUTGOING</a></th><td>Return the component's outgoing connections</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_GET_INCOMING">_COMSIG_MECHCOMP_GET_INCOMING</a></th><td>Return the component's incoming connections</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_DROPCONNECT">_COMSIG_MECHCOMP_DROPCONNECT</a></th><td>Begin to connect two mechcomp devices together</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_LINK">_COMSIG_MECHCOMP_LINK</a></th><td>Connect one MechComp compatible device as a receiver to a trigger. (This is meant to be a private method)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_COMPATIBLE">_COMSIG_MECHCOMP_COMPATIBLE</a></th><td>Returns 1</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_DISPATCH_ADD_FILTER">_COMSIG_MECHCOMP_DISPATCH_ADD_FILTER</a></th><td>Add a filtered connection, getting user input on the filter</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_DISPATCH_RM_OUTGOING">_COMSIG_MECHCOMP_DISPATCH_RM_OUTGOING</a></th><td>Remove a filtered connection</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/_COMSIG_MECHCOMP_DISPATCH_VALIDATE">_COMSIG_MECHCOMP_DISPATCH_VALIDATE</a></th><td>Test a signal to be sent to a connection</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_AREA_ACTIVATED">COMSIG_AREA_ACTIVATED</a></th><td>area's active var set to true (when a client enters)</td></tr>
+        <tr><th><a href="_std/defines/component_defines.html#define/COMSIG_AREA_DEACTIVATED">COMSIG_AREA_DEACTIVATED</a></th><td>area's active var set to false (when all clients leave)</td></tr></table><h2 id="define">Define Details</h2>
+<h3 id="define/AddComponent"><aside class="declaration">#define </aside>AddComponent
+            <aside>(arguments ...)</aside>
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 18"/>
+    </h3>
+    <p>A wrapper for _AddComponent that allows us to pretend we're using normal named arguments</p><h3 id="define/COMPONENT_DUPE_ALLOWED"><aside class="declaration">#define </aside>COMPONENT_DUPE_ALLOWED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 37"/>
+    </h3>
+    <p>duplicates allowed</p><h3 id="define/COMPONENT_DUPE_HIGHLANDER"><aside class="declaration">#define </aside>COMPONENT_DUPE_HIGHLANDER
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 35"/>
+    </h3>
+    <p>old component is deleted (default)</p><h3 id="define/COMPONENT_DUPE_SELECTIVE"><aside class="declaration">#define </aside>COMPONENT_DUPE_SELECTIVE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 43"/>
+    </h3>
+    <p>each component of the same type is consulted as to whether the duplicate should be allowed</p><h3 id="define/COMPONENT_DUPE_UNIQUE"><aside class="declaration">#define </aside>COMPONENT_DUPE_UNIQUE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 39"/>
+    </h3>
+    <p>new component is deleted</p><h3 id="define/COMPONENT_DUPE_UNIQUE_PASSARGS"><aside class="declaration">#define </aside>COMPONENT_DUPE_UNIQUE_PASSARGS
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 41"/>
+    </h3>
+    <p>old component is given the initialization args of the new</p><h3 id="define/COMPONENT_INCOMPATIBLE"><aside class="declaration">#define </aside>COMPONENT_INCOMPATIBLE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 27"/>
+    </h3>
+    <p>Return this from <code>/datum/component/Initialize</code> or <code>datum/component/OnTransfer</code> to have the component be deleted if it's applied to an incorrect type.</p>
+<p><code>parent</code> must not be modified if this is to be returned.
+This will be noted in the runtime logs.</p><h3 id="define/COMPONENT_NOTRANSFER"><aside class="declaration">#define </aside>COMPONENT_NOTRANSFER
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 29"/>
+    </h3>
+    <p>Returned in PostTransfer to prevent transfer, similar to <code>COMPONENT_INCOMPATIBLE</code></p><h3 id="define/COMSIG_AREA_ACTIVATED"><aside class="declaration">#define </aside>COMSIG_AREA_ACTIVATED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 246"/>
+    </h3>
+    <p>area's active var set to true (when a client enters)</p><h3 id="define/COMSIG_AREA_DEACTIVATED"><aside class="declaration">#define </aside>COMSIG_AREA_DEACTIVATED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 248"/>
+    </h3>
+    <p>area's active var set to false (when all clients leave)</p><h3 id="define/COMSIG_ATOM_DIR_CHANGED"><aside class="declaration">#define </aside>COMSIG_ATOM_DIR_CHANGED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 63"/>
+    </h3>
+    <p>when an atom changes dir (olddir, newdir)</p><h3 id="define/COMSIG_ATOM_EXAMINE"><aside class="declaration">#define </aside>COMSIG_ATOM_EXAMINE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 69"/>
+    </h3>
+    <p>when an atom is examined (/mob/examiner, /list/lines), append to lines for more description</p><h3 id="define/COMSIG_ATOM_HITBY_PROJ"><aside class="declaration">#define </aside>COMSIG_ATOM_HITBY_PROJ
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 65"/>
+    </h3>
+    <p>when an atom is collided by a projectile (/obj/projectile)</p><h3 id="define/COMSIG_ATOM_HITBY_THROWN"><aside class="declaration">#define </aside>COMSIG_ATOM_HITBY_THROWN
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 67"/>
+    </h3>
+    <p>when an atom is hit by a thrown thing (thrown_atom, /datum/thrown_thing)</p><h3 id="define/COMSIG_ATTACKBY"><aside class="declaration">#define </aside>COMSIG_ATTACKBY
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 180"/>
+    </h3>
+    <p>Attacking wiht an item in-hand</p><h3 id="define/COMSIG_BLOCK_BLOCKED"><aside class="declaration">#define </aside>COMSIG_BLOCK_BLOCKED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 141"/>
+    </h3>
+    <p>When a block blocks damage at all</p><h3 id="define/COMSIG_CLOAKING_DEVICE_DEACTIVATE"><aside class="declaration">#define </aside>COMSIG_CLOAKING_DEVICE_DEACTIVATE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 113"/>
+    </h3>
+    <p>Make cloaking devices turn off</p><h3 id="define/COMSIG_COMPONENT_ADDED"><aside class="declaration">#define </aside>COMSIG_COMPONENT_ADDED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 54"/>
+    </h3>
+    <p>when a component is added to a datum: (/datum/component)</p><h3 id="define/COMSIG_COMPONENT_REMOVING"><aside class="declaration">#define </aside>COMSIG_COMPONENT_REMOVING
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 56"/>
+    </h3>
+    <p>before a component is removed from a datum because of RemoveComponent: (/datum/component)</p><h3 id="define/COMSIG_DISGUISER_DEACTIVATE"><aside class="declaration">#define </aside>COMSIG_DISGUISER_DEACTIVATE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 117"/>
+    </h3>
+    <p>Make disguiser devices turn off</p><h3 id="define/COMSIG_IMPLANT_IMPLANTED"><aside class="declaration">#define </aside>COMSIG_IMPLANT_IMPLANTED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 121"/>
+    </h3>
+    <p>When implanted</p><h3 id="define/COMSIG_IMPLANT_REMOVED"><aside class="declaration">#define </aside>COMSIG_IMPLANT_REMOVED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 123"/>
+    </h3>
+    <p>When removed</p><h3 id="define/COMSIG_ITEM_ATTACK_POST"><aside class="declaration">#define </aside>COMSIG_ITEM_ATTACK_POST
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 91"/>
+    </h3>
+    <p>When an item is used to attack a mob</p><h3 id="define/COMSIG_ITEM_ATTACK_PRE"><aside class="declaration">#define </aside>COMSIG_ITEM_ATTACK_PRE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 101"/>
+    </h3>
+    <p>When an item is used to attack a mob before it actually hurts the mob</p><h3 id="define/COMSIG_ITEM_ATTACK_SELF"><aside class="declaration">#define </aside>COMSIG_ITEM_ATTACK_SELF
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 103"/>
+    </h3>
+    <p>When an item is used in-hand</p><h3 id="define/COMSIG_ITEM_BLOCK_BEGIN"><aside class="declaration">#define </aside>COMSIG_ITEM_BLOCK_BEGIN
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 133"/>
+    </h3>
+    <p>After  an item block is set up</p><h3 id="define/COMSIG_ITEM_BLOCK_END"><aside class="declaration">#define </aside>COMSIG_ITEM_BLOCK_END
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 135"/>
+    </h3>
+    <p>When an item block is disposed</p><h3 id="define/COMSIG_ITEM_CONSUMED"><aside class="declaration">#define </aside>COMSIG_ITEM_CONSUMED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 95"/>
+    </h3>
+    <p>When an item is eaten</p><h3 id="define/COMSIG_ITEM_CONSUMED_ALL"><aside class="declaration">#define </aside>COMSIG_ITEM_CONSUMED_ALL
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 99"/>
+    </h3>
+    <p>After we've consumed an item</p><h3 id="define/COMSIG_ITEM_CONSUMED_PARTIAL"><aside class="declaration">#define </aside>COMSIG_ITEM_CONSUMED_PARTIAL
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 97"/>
+    </h3>
+    <p>After an item's been eaten, but there's still some left</p><h3 id="define/COMSIG_ITEM_CONSUMED_PRE"><aside class="declaration">#define </aside>COMSIG_ITEM_CONSUMED_PRE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 93"/>
+    </h3>
+    <p>Just before an item is eaten</p><h3 id="define/COMSIG_ITEM_DROPPED"><aside class="declaration">#define </aside>COMSIG_ITEM_DROPPED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 89"/>
+    </h3>
+    <p>When an item is picked dropped (user)</p><h3 id="define/COMSIG_ITEM_EQUIPPED"><aside class="declaration">#define </aside>COMSIG_ITEM_EQUIPPED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 83"/>
+    </h3>
+    <p>When an item is equipped (user, slot)</p><h3 id="define/COMSIG_ITEM_PICKUP"><aside class="declaration">#define </aside>COMSIG_ITEM_PICKUP
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 87"/>
+    </h3>
+    <p>When an item is picked up (user)</p><h3 id="define/COMSIG_ITEM_SPECIAL_POST"><aside class="declaration">#define </aside>COMSIG_ITEM_SPECIAL_POST
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 109"/>
+    </h3>
+    <p>After an item's itemspecial is used (user)</p><h3 id="define/COMSIG_ITEM_SWAP_AWAY"><aside class="declaration">#define </aside>COMSIG_ITEM_SWAP_AWAY
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 107"/>
+    </h3>
+    <p>When an item is swapped away from [does not include being picked up/taken out of bags/etc] (user)</p><h3 id="define/COMSIG_ITEM_SWAP_TO"><aside class="declaration">#define </aside>COMSIG_ITEM_SWAP_TO
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 105"/>
+    </h3>
+    <p>When an item is swapped to [does not include being picked up/taken out of bags/etc] (user)</p><h3 id="define/COMSIG_ITEM_UNEQUIPPED"><aside class="declaration">#define </aside>COMSIG_ITEM_UNEQUIPPED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 85"/>
+    </h3>
+    <p>When an item is unequipped (user)</p><h3 id="define/COMSIG_LIVING_LIFE_TICK"><aside class="declaration">#define </aside>COMSIG_LIVING_LIFE_TICK
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 171"/>
+    </h3>
+    <p>When a Life tick occurs</p><h3 id="define/COMSIG_MECHCOMP_ADD_CONFIG"><aside class="declaration">#define </aside>COMSIG_MECHCOMP_ADD_CONFIG
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 193"/>
+    </h3>
+    <p>Connect two mechcomp devices together</p><h3 id="define/COMSIG_MECHCOMP_ADD_INPUT"><aside class="declaration">#define </aside>COMSIG_MECHCOMP_ADD_INPUT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 191"/>
+    </h3>
+    <p>Add an input chanel for a device to send into</p><h3 id="define/COMSIG_MECHCOMP_ALLOW_MANUAL_SIGNAL"><aside class="declaration">#define </aside>COMSIG_MECHCOMP_ALLOW_MANUAL_SIGNAL
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 195"/>
+    </h3>
+    <p>Connect two mechcomp devices together</p><h3 id="define/COMSIG_MECHCOMP_RM_ALL_CONNECTIONS"><aside class="declaration">#define </aside>COMSIG_MECHCOMP_RM_ALL_CONNECTIONS
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 197"/>
+    </h3>
+    <p>Remove all connected devices</p><h3 id="define/COMSIG_MECHCOMP_TRANSMIT_DEFAULT_MSG"><aside class="declaration">#define </aside>COMSIG_MECHCOMP_TRANSMIT_DEFAULT_MSG
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 203"/>
+    </h3>
+    <p>Passing the stored message to all connected mechcomp devices for handling</p><h3 id="define/COMSIG_MECHCOMP_TRANSMIT_MSG"><aside class="declaration">#define </aside>COMSIG_MECHCOMP_TRANSMIT_MSG
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 201"/>
+    </h3>
+    <p>Passing a message to all connected mechcomp devices for handling</p><h3 id="define/COMSIG_MECHCOMP_TRANSMIT_SIGNAL"><aside class="declaration">#define </aside>COMSIG_MECHCOMP_TRANSMIT_SIGNAL
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 199"/>
+    </h3>
+    <p>Passing the signal of a message to all connected mechcomp devices for handling (message will be instatiated by the component)</p><h3 id="define/COMSIG_MOB_ATTACKED_PRE"><aside class="declaration">#define </aside>COMSIG_MOB_ATTACKED_PRE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 151"/>
+    </h3>
+    <p>At the beginning of when an attackresults datum is being set up</p><h3 id="define/COMSIG_MOB_DEATH"><aside class="declaration">#define </aside>COMSIG_MOB_DEATH
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 153"/>
+    </h3>
+    <p>When a mob dies</p><h3 id="define/COMSIG_MOB_FAKE_DEATH"><aside class="declaration">#define </aside>COMSIG_MOB_FAKE_DEATH
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 156"/>
+    </h3>
+    <p>When a mob fakes death</p><h3 id="define/COMSIG_MOB_GEIGER_TICK"><aside class="declaration">#define </aside>COMSIG_MOB_GEIGER_TICK
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 166"/>
+    </h3>
+    <p>sent when radiation status ticks on mob (stage)</p><h3 id="define/COMSIG_MOB_LOGIN"><aside class="declaration">#define </aside>COMSIG_MOB_LOGIN
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 147"/>
+    </h3>
+    <p>When a client logs into a mob</p><h3 id="define/COMSIG_MOB_LOGOUT"><aside class="declaration">#define </aside>COMSIG_MOB_LOGOUT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 149"/>
+    </h3>
+    <p>When a client logs out of a mob</p><h3 id="define/COMSIG_MOB_PROP_INVISIBILITY"><aside class="declaration">#define </aside>COMSIG_MOB_PROP_INVISIBILITY
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 175"/>
+    </h3>
+    <p>When invisibility of a mob gets updated (old_value)</p><h3 id="define/COMSIG_MOB_THROW_ITEM"><aside class="declaration">#define </aside>COMSIG_MOB_THROW_ITEM
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 163"/>
+    </h3>
+    <p>sent when a mob throws something (target, params)</p><h3 id="define/COMSIG_MOUSEUP"><aside class="declaration">#define </aside>COMSIG_MOUSEUP
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 168"/>
+    </h3>
+    <p>on mouseup</p><h3 id="define/COMSIG_MOVABLE_MOVED"><aside class="declaration">#define </aside>COMSIG_MOVABLE_MOVED
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 74"/>
+    </h3>
+    <p>when an AM moves (thing, previous_loc, direction)</p><h3 id="define/COMSIG_MOVABLE_SET_LOC"><aside class="declaration">#define </aside>COMSIG_MOVABLE_SET_LOC
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 76"/>
+    </h3>
+    <p>when an AM moves (thing, previous_loc)</p><h3 id="define/COMSIG_MOVABLE_THROW_END"><aside class="declaration">#define </aside>COMSIG_MOVABLE_THROW_END
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 78"/>
+    </h3>
+    <p>when an AM ends throw (thing, /datum/thrown_thing)</p><h3 id="define/COMSIG_PARENT_PRE_DISPOSING"><aside class="declaration">#define </aside>COMSIG_PARENT_PRE_DISPOSING
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 58"/>
+    </h3>
+    <p>just before a datum's disposing()</p><h3 id="define/COMSIG_PROJ_COLLIDE"><aside class="declaration">#define </aside>COMSIG_PROJ_COLLIDE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 186"/>
+    </h3>
+    <p>After a projectile makes a valid hit on an atom (after immunity/other early returns, before other effects)</p><h3 id="define/COMSIG_TOOLTIP_BLOCKING_APPEND"><aside class="declaration">#define </aside>COMSIG_TOOLTIP_BLOCKING_APPEND
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 128"/>
+    </h3>
+    <p>Append to the end of the blocking section of tooltip (list/tooltip)</p><h3 id="define/COMSIG_UNARMED_BLOCK_BEGIN"><aside class="declaration">#define </aside>COMSIG_UNARMED_BLOCK_BEGIN
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 137"/>
+    </h3>
+    <p>After an unarmed block is set up</p><h3 id="define/COMSIG_UNARMED_BLOCK_END"><aside class="declaration">#define </aside>COMSIG_UNARMED_BLOCK_END
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 139"/>
+    </h3>
+    <p>When an item block is created</p><h3 id="define/SEND_GLOBAL_SIGNAL"><aside class="declaration">#define </aside>SEND_GLOBAL_SIGNAL
+            <aside>(sigtype, arguments ...)</aside>
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 15"/>
+    </h3>
+    <p><code>target</code> to use for signals that are global and not tied to a single datum.</p>
+<p>Note that this does NOT work with SEND_SIGNAL because of preprocessor weirdness.
+Use SEND_GLOBAL_SIGNAL instead.</p><h3 id="define/SEND_SIGNAL"><aside class="declaration">#define </aside>SEND_SIGNAL
+            <aside>(target, sigtype, arguments ...)</aside>
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 5"/>
+    </h3>
+    <p>Used to trigger signals and call procs registered for that signal
+The datum hosting the signal is automaticaly added as the first argument
+Returns a bitfield gathered from all registered procs
+Arguments given here are packaged in a list and given to _SendSignal</p><h3 id="define/_COMSIG_MECHCOMP_COMPATIBLE"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_COMPATIBLE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 222"/>
+    </h3>
+    <p>Returns 1</p><h3 id="define/_COMSIG_MECHCOMP_DISPATCH_ADD_FILTER"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_DISPATCH_ADD_FILTER
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 226"/>
+    </h3>
+    <p>Add a filtered connection, getting user input on the filter</p><h3 id="define/_COMSIG_MECHCOMP_DISPATCH_RM_OUTGOING"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_DISPATCH_RM_OUTGOING
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 228"/>
+    </h3>
+    <p>Remove a filtered connection</p><h3 id="define/_COMSIG_MECHCOMP_DISPATCH_VALIDATE"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_DISPATCH_VALIDATE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 230"/>
+    </h3>
+    <p>Test a signal to be sent to a connection</p><h3 id="define/_COMSIG_MECHCOMP_DROPCONNECT"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_DROPCONNECT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 218"/>
+    </h3>
+    <p>Begin to connect two mechcomp devices together</p><h3 id="define/_COMSIG_MECHCOMP_GET_INCOMING"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_GET_INCOMING
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 216"/>
+    </h3>
+    <p>Return the component's incoming connections</p><h3 id="define/_COMSIG_MECHCOMP_GET_OUTGOING"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_GET_OUTGOING
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 214"/>
+    </h3>
+    <p>Return the component's outgoing connections</p><h3 id="define/_COMSIG_MECHCOMP_LINK"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_LINK
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 220"/>
+    </h3>
+    <p>Connect one MechComp compatible device as a receiver to a trigger. (This is meant to be a private method)</p><h3 id="define/_COMSIG_MECHCOMP_RECEIVE_MSG"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_RECEIVE_MSG
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 208"/>
+    </h3>
+    <p>Receiving a message from a mechcomp device for handling</p><h3 id="define/_COMSIG_MECHCOMP_RM_INCOMING"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_RM_INCOMING
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 210"/>
+    </h3>
+    <p>Remove {the caller} from the list of transmitting devices</p><h3 id="define/_COMSIG_MECHCOMP_RM_OUTGOING"><aside class="declaration">#define </aside>_COMSIG_MECHCOMP_RM_OUTGOING
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;component_defines.dm 212"/>
+    </h3>
+    <p>Remove {the caller} from the list of receiving devices</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

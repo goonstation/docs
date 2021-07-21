@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>_std&#x2F;defines&#x2F;clothing.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="_std/defines/clothing.html#define">Define Details</a></header>
+<main>
+<h1>_std/defines/clothing.dm 
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th><a href="_std/defines/clothing.html#define/SPACEWEAR">SPACEWEAR</a></th><td>protects you from the dangers of space</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/MASKINTERNALS">MASKINTERNALS</a></th><td>mask allows internals to be used</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/COVERSEYES">COVERSEYES</a></th><td>covers the person's eyes</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/NOSLIP">NOSLIP</a></th><td>for galoshes/magic sandals/etc that prevent slipping on things</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/SLEEVELESS">SLEEVELESS</a></th><td>ain't got no sleeeeeves</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/BLOCKSMOKE">BLOCKSMOKE</a></th><td>block smoke inhalations (gas mask)</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/BLOCKCHOKE">BLOCKCHOKE</a></th><td>blocks choking, also a very silly flag name</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/IS_JETPACK">IS_JETPACK</a></th><td>is this clothing a jetpack</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/EQUIPPED_WHILE_HELD">EQUIPPED_WHILE_HELD</a></th><td>doesn't need to be worn to appear in the 'get_equipped_items' list and apply itemproperties (protections resistances etc)! for stuff like shields</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/NOT_EQUIPPED_WHEN_WORN">NOT_EQUIPPED_WHEN_WORN</a></th><td>return early out of equipped/unequipped, unless in SLOT_L_HAND or SLOT_R_HAND (i.e.: if EQUIPPED_WHILE_HELD)</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/HAS_GRAB_EQUIP">HAS_GRAB_EQUIP</a></th><td>if we currently have a grab (or by extention, a block) attached to us</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/BLOCK_TOOLTIP">BLOCK_TOOLTIP</a></th><td>whether or not we should show extra tooltip info about blocking with this item</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/BLOCK_CUT">BLOCK_CUT</a></th><td>block an extra point of cut damage when used to block</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/BLOCK_STAB">BLOCK_STAB</a></th><td>block an extra point of stab damage when used to block</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/BLOCK_BURN">BLOCK_BURN</a></th><td>block an extra point of burn damage when used to block</td></tr>
+        <tr><th><a href="_std/defines/clothing.html#define/BLOCK_BLUNT">BLOCK_BLUNT</a></th><td>block an extra point of blunt damage when used to block</td></tr></table><h2 id="define">Define Details</h2>
+<h3 id="define/BLOCKCHOKE"><aside class="declaration">#define </aside>BLOCKCHOKE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 44"/>
+    </h3>
+    <p>blocks choking, also a very silly flag name</p><h3 id="define/BLOCKSMOKE"><aside class="declaration">#define </aside>BLOCKSMOKE
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 42"/>
+    </h3>
+    <p>block smoke inhalations (gas mask)</p><h3 id="define/BLOCK_BLUNT"><aside class="declaration">#define </aside>BLOCK_BLUNT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 62"/>
+    </h3>
+    <p>block an extra point of blunt damage when used to block</p><h3 id="define/BLOCK_BURN"><aside class="declaration">#define </aside>BLOCK_BURN
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 60"/>
+    </h3>
+    <p>block an extra point of burn damage when used to block</p><h3 id="define/BLOCK_CUT"><aside class="declaration">#define </aside>BLOCK_CUT
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 56"/>
+    </h3>
+    <p>block an extra point of cut damage when used to block</p><h3 id="define/BLOCK_STAB"><aside class="declaration">#define </aside>BLOCK_STAB
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 58"/>
+    </h3>
+    <p>block an extra point of stab damage when used to block</p><h3 id="define/BLOCK_TOOLTIP"><aside class="declaration">#define </aside>BLOCK_TOOLTIP
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 54"/>
+    </h3>
+    <p>whether or not we should show extra tooltip info about blocking with this item</p><h3 id="define/COVERSEYES"><aside class="declaration">#define </aside>COVERSEYES
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 34"/>
+    </h3>
+    <p>covers the person's eyes</p><h3 id="define/EQUIPPED_WHILE_HELD"><aside class="declaration">#define </aside>EQUIPPED_WHILE_HELD
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 48"/>
+    </h3>
+    <p>doesn't need to be worn to appear in the 'get_equipped_items' list and apply itemproperties (protections resistances etc)! for stuff like shields</p><h3 id="define/HAS_GRAB_EQUIP"><aside class="declaration">#define </aside>HAS_GRAB_EQUIP
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 52"/>
+    </h3>
+    <p>if we currently have a grab (or by extention, a block) attached to us</p><h3 id="define/IS_JETPACK"><aside class="declaration">#define </aside>IS_JETPACK
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 46"/>
+    </h3>
+    <p>is this clothing a jetpack</p><h3 id="define/MASKINTERNALS"><aside class="declaration">#define </aside>MASKINTERNALS
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 32"/>
+    </h3>
+    <p>mask allows internals to be used</p><h3 id="define/NOSLIP"><aside class="declaration">#define </aside>NOSLIP
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 38"/>
+    </h3>
+    <p>for galoshes/magic sandals/etc that prevent slipping on things</p><h3 id="define/NOT_EQUIPPED_WHEN_WORN"><aside class="declaration">#define </aside>NOT_EQUIPPED_WHEN_WORN
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 50"/>
+    </h3>
+    <p>return early out of equipped/unequipped, unless in SLOT_L_HAND or SLOT_R_HAND (i.e.: if EQUIPPED_WHILE_HELD)</p><h3 id="define/SLEEVELESS"><aside class="declaration">#define </aside>SLEEVELESS
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 40"/>
+    </h3>
+    <p>ain't got no sleeeeeves</p><h3 id="define/SPACEWEAR"><aside class="declaration">#define </aside>SPACEWEAR
+        <img src="git.png" width="16" height="16" title="_std&#x2F;defines&#x2F;clothing.dm 30"/>
+    </h3>
+    <p>protects you from the dangers of space</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

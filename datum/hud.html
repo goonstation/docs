@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;hud - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/hud.html#var">Var Details</a> - <a href="datum/hud.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="datum.html">datum</a>/<a href="datum/hud.html">hud</a>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 62"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/hud.html#var/hud_zones">hud_zones</a></th><td>assoc list of hud zones with the format:</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/hud.html#proc/add_elem_no_adjust">add_elem_no_adjust</a></th><td>adds an element without adjusting positions automatically - manually set instead. no safety checking</td></tr>
+            <tr><th><a href="datum/hud.html#proc/add_hud_zone">add_hud_zone</a></th><td>defines a hud zone within the bounds of the screen at the supplied coordinates</td></tr>
+            <tr><th><a href="datum/hud.html#proc/adjust_offset">adjust_offset</a></th><td>internal use only. accepts a zone and an element, and then tries to position that element in the zone based on current element positions.</td></tr>
+            <tr><th><a href="datum/hud.html#proc/debug_print_all">debug_print_all</a></th><td>debug purposes only, call this to print ALL of the information you could ever need</td></tr>
+            <tr><th><a href="datum/hud.html#proc/del_elem_no_adjust">del_elem_no_adjust</a></th><td>removes an element without adjusting positions automatically - will probably fuck stuff up if theres any dynamically positioned elements</td></tr>
+            <tr><th><a href="datum/hud.html#proc/get_element">get_element</a></th><td>returns /atom/movable/screen/hud with in zone_alias with alias elem_alias</td></tr>
+            <tr><th><a href="datum/hud.html#proc/register_element">register_element</a></th><td>adds a hud element (which will be associated with elem_alias) to the elements list of the hud zone associated with zone_alias.</td></tr>
+            <tr><th><a href="datum/hud.html#proc/remove_hud_zone">remove_hud_zone</a></th><td>removes a hud zone and deletes all elements inside of it</td></tr>
+            <tr><th><a href="datum/hud.html#proc/screen_boundary_check">screen_boundary_check</a></th><td>returns true if a rectangle defined by coords is within screen dimensions, false if it isnt</td></tr>
+            <tr><th><a href="datum/hud.html#proc/set_elem_position">set_elem_position</a></th><td>used to manually set the position of an element relative to the BOTTOM LEFT corner of a hud zone. no safety checks</td></tr>
+            <tr><th><a href="datum/hud.html#proc/unregister_element">unregister_element</a></th><td>removes hud element &quot;element_alias&quot; from the hud zone &quot;zone_alias&quot; and deletes it, then readjusts offsets</td></tr>
+            <tr><th><a href="datum/hud.html#proc/zone_overlap_check">zone_overlap_check</a></th><td>returns true if a rectangle defined by coords doesnt overlap with any existing hud zone, false if it does</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/hud_zones"><aside class="declaration">var </aside>hud_zones
+            <aside>&ndash; /list/list/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 89"/></h3>
+        <p>assoc list of hud zones with the format:</p>
+<p>list(</p>
+<pre><code>&quot;zone_alias&quot; = list(
+
+	&quot;coords&quot; = list( // list of 2 coordinate pairs for the lower left corner and the upper right corner of the hud zone
+		x_low = num, y_low = num, x_high = num, y_high = num
+
+	&quot;elements&quot; = list( // list of all visible hud elements in the hud zone
+		&quot;elem_alias&quot; = screenobj // screenobj is the hud object that is visible on the players screen
+
+	&quot;horizontal_edge&quot; = &quot;&quot; // what horizontal edge of the zone elements are initially added from. should be EAST or WEST.
+
+	&quot;vertical_edge&quot; = &quot;&quot; // what vertical edge of the zone elements are intially added from. should be NORTH or SOUTH.
+
+	&quot;horizontal_offset&quot; = num // offset for the horizontal placement of elements, used when placing new elements so they dont overlap
+
+	&quot;vertical_offset&quot; = num // offset for the horizontal placement of elements, used when placing new elements so they dont overlap
+</code></pre><h2 id="proc">Proc Details</h2><h3 id="proc/add_elem_no_adjust"><aside class="declaration">proc </aside>add_elem_no_adjust<aside>(zone_alias, elem_alias, /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/screen/hud/element, pos_x, pos_y) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 302"/></aside>
+        </h3>
+        <p>adds an element without adjusting positions automatically - manually set instead. no safety checking</p><h3 id="proc/add_hud_zone"><aside class="declaration">proc </aside>add_hud_zone<aside>(/list/coords, alias, horizontal_edge, vertical_edge, ignore_overlap) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 243"/></aside>
+        </h3>
+        <p>defines a hud zone within the bounds of the screen at the supplied coordinates</p>
+<p>coords: assoc list with format list(x_low = num, y_low = num, x_high = num, y_high = num)
+x_low and y_low are the x and y coordinates of the bottom left corner of the zone
+x_high and y_high are the x and y coordinates of the top right corner of the zone</p>
+<p>alias: string, key for the hud zone, used like this: src.hud_zones[&quot;[alias]&quot;]</p>
+<p>horizontal_edge: what horizontal side of the hud zone are new elements added from? can be EAST or WEST
+for example, if its EAST then the first element is added at the right edge of the zone
+the second element is added to the left side of the first element
+the third element is added to the left side of the second element, etc.</p>
+<p>vertical_edge: what vertical side of the hud zone are new elements added from? can be NORTH or SOUTH
+for example, if its NORTH then the first element is added at the top edge of the zone
+the second element is added to the bottom side of the first element
+the third element is added to the bottom side of the second element, etc.</p><h3 id="proc/adjust_offset"><aside class="declaration">proc </aside>adjust_offset<aside>(/list/hud_zone, /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/screen/hud/element) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 347"/></aside>
+        </h3>
+        <p>internal use only. accepts a zone and an element, and then tries to position that element in the zone based on current element positions.</p><h3 id="proc/debug_print_all"><aside class="declaration">proc </aside>debug_print_all<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 466"/></aside>
+        </h3>
+        <p>debug purposes only, call this to print ALL of the information you could ever need</p><h3 id="proc/del_elem_no_adjust"><aside class="declaration">proc </aside>del_elem_no_adjust<aside>(zone_alias, elem_alias) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 310"/></aside>
+        </h3>
+        <p>removes an element without adjusting positions automatically - will probably fuck stuff up if theres any dynamically positioned elements</p><h3 id="proc/get_element"><aside class="declaration">proc </aside>get_element<aside>(zone_alias, elem_alias) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 457"/></aside>
+        </h3>
+        <p>returns /atom/movable/screen/hud with in zone_alias with alias elem_alias</p><h3 id="proc/register_element"><aside class="declaration">proc </aside>register_element<aside>(zone_alias, /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/screen/hud/element, elem_alias) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 267"/></aside>
+        </h3>
+        <p>adds a hud element (which will be associated with elem_alias) to the elements list of the hud zone associated with zone_alias.</p><h3 id="proc/remove_hud_zone"><aside class="declaration">proc </aside>remove_hud_zone<aside>(alias) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 254"/></aside>
+        </h3>
+        <p>removes a hud zone and deletes all elements inside of it</p><h3 id="proc/screen_boundary_check"><aside class="declaration">proc </aside>screen_boundary_check<aside>(/list/coords) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 404"/></aside>
+        </h3>
+        <p>returns true if a rectangle defined by coords is within screen dimensions, false if it isnt</p><h3 id="proc/set_elem_position"><aside class="declaration">proc </aside>set_elem_position<aside>(/<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a>/screen/hud/element, /list/zone_coords, pos_x, pos_y) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 319"/></aside>
+        </h3>
+        <p>used to manually set the position of an element relative to the BOTTOM LEFT corner of a hud zone. no safety checks</p><h3 id="proc/unregister_element"><aside class="declaration">proc </aside>unregister_element<aside>(zone_alias, elem_alias) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 280"/></aside>
+        </h3>
+        <p>removes hud element &quot;element_alias&quot; from the hud zone &quot;zone_alias&quot; and deletes it, then readjusts offsets</p><h3 id="proc/zone_overlap_check"><aside class="declaration">proc </aside>zone_overlap_check<aside>(/list/coords, ignore_overlap) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;hud.dm 421"/></aside>
+        </h3>
+        <p>returns true if a rectangle defined by coords doesnt overlap with any existing hud zone, false if it does</p></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>

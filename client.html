@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;client - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="client.html#var">Var Details</a> - <a href="client.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="client.html">client</a>
+        
+    
+        <img src="git.png" width="16" height="16" title="_std&#x2F;plane.dm 74"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="client.html#var/applied_keybind_styles">applied_keybind_styles</a></th><td>List on each client containing the styles we've applied so we don't double-apply.</td></tr>
+            <tr><th><a href="client.html#var/refresh_varedit_onchange">refresh_varedit_onchange</a></th><td>controls whether or not the varedit page is refreshed after altering variables</td></tr>
+            <tr><th><a href="client.html#var/tgui_windows">tgui_windows</a></th><td>global</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="client.html#proc/apply_keybind">apply_keybind</a></th><td></td></tr>
+            <tr><th><a href="client.html#proc/apply_keys">apply_keys</a></th><td></td></tr>
+            <tr><th><a href="client.html#proc/cloud_available">cloud_available</a></th><td>Returns 1 if you can set or retrieve cloud data on the client</td></tr>
+            <tr><th><a href="client.html#proc/cloud_get">cloud_get</a></th><td>Returns some cloud data on the client</td></tr>
+            <tr><th><a href="client.html#proc/cloud_put">cloud_put</a></th><td>Sets a cloud key value pair and sends it to goonhub</td></tr>
+            <tr><th><a href="client.html#proc/cmd_admin_show_player_stats">cmd_admin_show_player_stats</a></th><td>A bunch of procs for showing admins player data from the central API databases</td></tr>
+            <tr><th><a href="client.html#proc/enable_waterflow">enable_waterflow</a></th><td>mob/EnteredAirborneFluid(obj/fluid/F as obj, atom/oldloc)</td></tr>
+            <tr><th><a href="client.html#proc/getDefaultVolume">getDefaultVolume</a></th><td>Returns the default volume for a channel, unattenuated for the master channel (0-1)</td></tr>
+            <tr><th><a href="client.html#proc/getMasterVolume">getMasterVolume</a></th><td>Returns the master volume (0-1)</td></tr>
+            <tr><th><a href="client.html#proc/getRealVolume">getRealVolume</a></th><td>Returns the true volume for a channel, unattenuated for the master channel (0-1)</td></tr>
+            <tr><th><a href="client.html#proc/getVolume">getVolume</a></th><td>Returns the volume to set /sound/var/volume to for the given channel(so 0-100)</td></tr>
+            <tr><th><a href="client.html#proc/getVolumeChannelDescription">getVolumeChannelDescription</a></th><td>Get the friendly description for a specific sound channel.</td></tr>
+            <tr><th><a href="client.html#proc/getVolumeDescriptions">getVolumeDescriptions</a></th><td>Returns a list of friendly descriptions for available sound channels</td></tr>
+            <tr><th><a href="client.html#proc/getVolumeNames">getVolumeNames</a></th><td>Returns a list of friendly names for available sound channels</td></tr>
+            <tr><th><a href="client.html#proc/get_keybind_style_datum">get_keybind_style_datum</a></th><td></td></tr>
+            <tr><th><a href="client.html#proc/playAmbience">playAmbience</a></th><td></td></tr>
+            <tr><th><a href="client.html#proc/setVolume">setVolume</a></th><td>Sets and applies the volume for a channel (0-1)</td></tr>
+            <tr><th><a href="client.html#proc/uiclose">uiclose</a></th><td>verb</td></tr>
+            <tr><th><a href="client.html#proc/viewnewvote">viewnewvote</a></th><td>/mob/verb/vote_new()
+set name = &quot;Initiate Vote&quot;</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/applied_keybind_styles"><aside class="declaration">var </aside>applied_keybind_styles
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;keybind_style.dm 19"/></h3>
+        <p>List on each client containing the styles we've applied so we don't double-apply.</p><h3 id="var/refresh_varedit_onchange"><aside class="declaration">var </aside>refresh_varedit_onchange
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;client.dm 35"/></h3>
+        <p>controls whether or not the varedit page is refreshed after altering variables</p><h3 id="var/tgui_windows"><aside class="declaration">var </aside>tgui_windows
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;external.dm 131"/></h3>
+        <p>global</p>
+<p>Tracks open windows for a user.</p><h2 id="proc">Proc Details</h2><h3 id="proc/apply_keybind"><aside class="declaration">proc </aside>apply_keybind<aside>(style_str) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;keybind_style.dm 58"/></aside>
+        </h3>
+        <ul>
+<li>apply_keybind: Takes a given string style, and finds the datum, then applies it.</li>
+<li>External use only.</li>
+<li>This is what external stuff should be calling when applying their additive styles.</li>
+</ul><h3 id="proc/apply_keys"><aside class="declaration">proc </aside>apply_keys<aside>(/<a href="datum.html">datum</a>/keybind_style/style) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;keybind_style.dm 43"/></aside>
+        </h3>
+        <ul>
+<li>apply_keys: Takes a keybind_style to apply to the src client</li>
+<li>Internal use only.</li>
+<li>Merges the given keybind_style onto the client. Also adds it to the client's tracking list.</li>
+</ul><h3 id="proc/cloud_available"><aside class="declaration">proc </aside>cloud_available<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;client.dm 1139"/></aside>
+        </h3>
+        <p>Returns 1 if you can set or retrieve cloud data on the client</p><h3 id="proc/cloud_get"><aside class="declaration">proc </aside>cloud_get<aside>(key) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;client.dm 1135"/></aside>
+        </h3>
+        <p>Returns some cloud data on the client</p><h3 id="proc/cloud_put"><aside class="declaration">proc </aside>cloud_put<aside>(key, value) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;client.dm 1131"/></aside>
+        </h3>
+        <p>Sets a cloud key value pair and sends it to goonhub</p><h3 id="proc/cmd_admin_show_player_stats"><aside class="declaration">proc </aside>cmd_admin_show_player_stats<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;admin&#x2F;player_stats.dm 10"/></aside>
+        </h3>
+        <p>A bunch of procs for showing admins player data from the central API databases</p>
+<p>Verbs</p><h3 id="proc/enable_waterflow"><aside class="declaration">proc </aside>enable_waterflow<aside>(enabled) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;fluids&#x2F;fluid_commands.dm 4"/></aside>
+        </h3>
+        <p>mob/EnteredAirborneFluid(obj/fluid/F as obj, atom/oldloc)</p><h3 id="proc/getDefaultVolume"><aside class="declaration">proc </aside>getDefaultVolume<aside>(channel) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 74"/></aside>
+        </h3>
+        <p>Returns the default volume for a channel, unattenuated for the master channel (0-1)</p><h3 id="proc/getMasterVolume"><aside class="declaration">proc </aside>getMasterVolume<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 91"/></aside>
+        </h3>
+        <p>Returns the master volume (0-1)</p><h3 id="proc/getRealVolume"><aside class="declaration">proc </aside>getRealVolume<aside>(channel) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 95"/></aside>
+        </h3>
+        <p>Returns the true volume for a channel, unattenuated for the master channel (0-1)</p><h3 id="proc/getVolume"><aside class="declaration">proc </aside>getVolume<aside>(id) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 87"/></aside>
+        </h3>
+        <p>Returns the volume to set /sound/var/volume to for the given channel(so 0-100)</p><h3 id="proc/getVolumeChannelDescription"><aside class="declaration">proc </aside>getVolumeChannelDescription<aside>(channel) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 82"/></aside>
+        </h3>
+        <p>Get the friendly description for a specific sound channel.</p><h3 id="proc/getVolumeDescriptions"><aside class="declaration">proc </aside>getVolumeDescriptions<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 78"/></aside>
+        </h3>
+        <p>Returns a list of friendly descriptions for available sound channels</p><h3 id="proc/getVolumeNames"><aside class="declaration">proc </aside>getVolumeNames<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 70"/></aside>
+        </h3>
+        <p>Returns a list of friendly names for available sound channels</p><h3 id="proc/get_keybind_style_datum"><aside class="declaration">proc </aside>get_keybind_style_datum<aside>(style_name) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;interface&#x2F;keybind_style.dm 26"/></aside>
+        </h3>
+        <ul>
+<li>get_keybind_style_datum: Given the string name of a style, finds the keybind_style with the matching name.</li>
+<li>Internal use only.</li>
+<li>Called by apply_keybind to fetch our datum.</li>
+</ul><h3 id="proc/playAmbience"><aside class="declaration">proc </aside>playAmbience<aside>(/<a href="area.html">area</a>/A, type, pass_volume) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 481"/></aside>
+        </h3>
+        <ul>
+<li>
+<p>Client part of the Area Ambience Project</p>
+</li>
+<li>
+<p>Calling this proc is handled by the Area our client is in, see [area/proc/Exited()] and [area/proc/Entered()]</p>
+</li>
+<li>
+<p>LOOPING channel sound will keep playing until fed a pass_volume of 0 (done automagically)
+* For FX sounds, they will play once.</p>
+</li>
+<li>
+<p>FX_1 is area-specific background noise handled by area/pickAmbience(), FX_2 is more noticeable stuff directly triggered, normally shorter</p>
+</li>
+</ul><h3 id="proc/setVolume"><aside class="declaration">proc </aside>setVolume<aside>(channel, volume) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;sound&#x2F;sound.dm 99"/></aside>
+        </h3>
+        <p>Sets and applies the volume for a channel (0-1)</p><h3 id="proc/uiclose"><aside class="declaration">verb </aside>uiclose<aside>(window_id) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;tgui&#x2F;external.dm 149"/></aside>
+        </h3>
+        <p>verb</p>
+<p>Called by UIs when they are closed.
+Must be a verb so winset() can call it.</p>
+<p>required uiref ref The UI that was closed.</p><h3 id="proc/viewnewvote"><aside class="declaration">proc </aside>viewnewvote<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;WorkInProgress&#x2F;NewVote.dm 27"/></aside>
+        </h3>
+        <p>/mob/verb/vote_new()
+set name = &quot;Initiate Vote&quot;</p>
+<pre><code>//if(!config.allow_vote_restart &amp;&amp; !config.allow_vote_mode &amp;&amp; !src.client.holder)
+//	boutput(src, &quot;&lt;span class='alert'&gt;Player voting disabled.&lt;/span&gt;&quot;)
+//	return
+if(!ticker)
+	boutput(src, &quot;&lt;span class='alert'&gt;Can not start votes before the game starts.&lt;/span&gt;&quot;)
+	return
+if(!vote_manager) return //shits hitting the fan at ludicrous speeds
+if(vote_manager.active_vote) vote_manager.show_vote(src.client)
+else
+	if(src.ckey in vote_log)
+		if(vote_log[src.ckey] &lt; max_votes_per_round)
+			if(vote_manager.show_vote_selection(src.client)) vote_log[src.ckey]++
+		else
+			boutput(src, &quot;&lt;span class='alert'&gt;You may not start any more votes this round. (Maximum reached : [max_votes_per_round])&lt;/span&gt;&quot;)
+	else
+		if(vote_manager.show_vote_selection(src.client)) vote_log[src.ckey] = 1
+</code></pre></main>
+<footer>
+    goonstation.dme
+    6b90046d3eeccb1f3790d27490493c04892d83b6 &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/src/dmdoc/README.md">dmdoc 1.4.0</a></footer>
+</body>
+</html>
