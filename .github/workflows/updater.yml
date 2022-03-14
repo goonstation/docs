@@ -12,11 +12,9 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2.3.5
-          with:
-            submodules: true
-            fetch-depth: 1
 
         - run: |
+            git submodule update --init
             git config --local user.name robuddybot
             git config --local user.email 65057909+robuddybot@users.noreply.github.com
             git submodule update --remote --merge
