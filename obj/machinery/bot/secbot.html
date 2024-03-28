@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;machinery&#x2F;bot&#x2F;secbot - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/machinery/bot/secbot.html#var">Var Details</a> - <a href="obj/machinery/bot/secbot.html#proc">Proc Details</a></header>
+<main>
+<h1>Securitron <aside>/<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/<a href="obj/machinery/bot.html">bot</a>/<a href="obj/machinery/bot/secbot.html">secbot</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 51"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/baton_charge_duration">baton_charge_duration</a></th><td>How long these batons hold a charge</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/baton_charged">baton_charged</a></th><td>Set by the stun action bar if the target isnt in range, grants a brief window for a free zap next time they try to attack</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/baton_charging">baton_charging</a></th><td>Busy charging</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/chatspam_cooldown">chatspam_cooldown</a></th><td>Lots of bots say lots of things. Let's space them out since most of it is just guff</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/container_cool_off_counter">container_cool_off_counter</a></th><td>How long has the bot been sitting in the time-out locker? (process cycles spent inside a locked/welded storage object)</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/container_cool_off_max">container_cool_off_max</a></th><td>When the bot's been stuck in a locker this long, they'll forget who they were mad at
+Note, this is in process() calls, not seconds, so it could vary quite a bit</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/cuff_threat_threshold">cuff_threat_threshold</a></th><td>How much of a threat does something have to be for us to actually cuff them?</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/cuffing">cuffing</a></th><td>So we dont try to cuff someone while we're cuffing someone</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/guard_area">guard_area</a></th><td>Set a bot to guard an area, and they'll go there and mill around</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/guard_area_lockdown">guard_area_lockdown</a></th><td>Arrest anyone who arent security / heads if they're in this area?</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/guard_mill_cooldown">guard_mill_cooldown</a></th><td>How often should the bot try to wander around their guard post?</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/guard_start_no_announce">guard_start_no_announce</a></th><td>Was on guard duty, apprehended someone, then went to return to guard duty? Keep it to yourself please</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/helpme_cooldown">helpme_cooldown</a></th><td>Secbots send a message when attacked. How long after this message should they send another?</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/last_target_cooldown">last_target_cooldown</a></th><td>Time after giving up on assaulting someone before they'll consider assaulting them again</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/lockdown_permit">lockdown_permit</a></th><td>Who is exempt from our wrath while locking down an area?</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/warn_minor_crime">warn_minor_crime</a></th><td>Obey the threat threshold. Otherwise, just cuff em</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#var/weeooing">weeooing</a></th><td>One WEEOOWEEOO at a time, please</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/KillPathAndGiveUp">KillPathAndGiveUp</a></th><td>Every 5 tiles, look for someone to kill
+If we happen to be chasing someone and get in batonning range, let's stop and maybe try to hit them</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/YellAtPerp">YellAtPerp</a></th><td>Already engaging someone!</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/assault_target">assault_target</a></th><td>Makes the bot chase perps, hit them, and cuff them</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/baton_attack">baton_attack</a></th><td>Hits someone with our baton, or charges it if it isnt</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/charge_baton">charge_baton</a></th><td>Makes the bot able to baton people, then makes them unable to baton people after a while</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/find_patrol_target">find_patrol_target</a></th><td>finds a new patrol target</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/guard_target">guard_target</a></th><td>No guard orders, start patrol if allowed, also look for people to heck up
+No guard orders, engaging target, seeking to arrest them
+On guard duty, returning from distraction
+On guard duty, check if we're in the place we're supposed to be
+Makes bots go to an area, mill around, and maybe attack people who shouldnt be there</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/look_for_perp">look_for_perp</a></th><td>Current mode determines what we're supposed to go back to when we're done
+Tango never up to begin with? Or some kind of not-human? Eh whatever give up
+Tango hidden inside something or someone? Welp, can't hit them through a locker, so may as well give up!
+Tango down or tango hecked off or tango behind a bunch of stuff, give up and get back to work
+Finish what you're doing first!
+We inside something?
+Tango!
+Tango in batonning distance?
+Are they good and downed, and are we allowed to cuff em?
+No? Well, make em good and downed then
+Tango in charging distance?
+Charge em!
+Tango outside of charging distance?</td></tr>
+            <tr><th><a href="obj/machinery/bot/secbot.html#proc/move_the_bot">move_the_bot</a></th><td>Sends the bot on to a patrol target. Or Summon target, if that's what patrol_target is set to</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/baton_charge_duration"><aside class="declaration">var </aside>baton_charge_duration
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 122"/></h3>
+        <p>How long these batons hold a charge</p><h3 id="var/baton_charged"><aside class="declaration">var </aside>baton_charged
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 118"/></h3>
+        <p>Set by the stun action bar if the target isnt in range, grants a brief window for a free zap next time they try to attack</p><h3 id="var/baton_charging"><aside class="declaration">var </aside>baton_charging
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 120"/></h3>
+        <p>Busy charging</p><h3 id="var/chatspam_cooldown"><aside class="declaration">var </aside>chatspam_cooldown
+            <aside>&ndash; /static</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 146"/></h3>
+        <p>Lots of bots say lots of things. Let's space them out since most of it is just guff</p><h3 id="var/container_cool_off_counter"><aside class="declaration">var </aside>container_cool_off_counter
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 130"/></h3>
+        <p>How long has the bot been sitting in the time-out locker? (process cycles spent inside a locked/welded storage object)</p><h3 id="var/container_cool_off_max"><aside class="declaration">var </aside>container_cool_off_max
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 133"/></h3>
+        <p>When the bot's been stuck in a locker this long, they'll forget who they were mad at
+Note, this is in process() calls, not seconds, so it could vary quite a bit</p><h3 id="var/cuff_threat_threshold"><aside class="declaration">var </aside>cuff_threat_threshold
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 126"/></h3>
+        <p>How much of a threat does something have to be for us to actually cuff them?</p><h3 id="var/cuffing"><aside class="declaration">var </aside>cuffing
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 124"/></h3>
+        <p>So we dont try to cuff someone while we're cuffing someone</p><h3 id="var/guard_area"><aside class="declaration">var </aside>guard_area
+            <aside>&ndash; /<a href="area.html">area</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 136"/></h3>
+        <p>Set a bot to guard an area, and they'll go there and mill around</p><h3 id="var/guard_area_lockdown"><aside class="declaration">var </aside>guard_area_lockdown
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 138"/></h3>
+        <p>Arrest anyone who arent security / heads if they're in this area?</p><h3 id="var/guard_mill_cooldown"><aside class="declaration">var </aside>guard_mill_cooldown
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 142"/></h3>
+        <p>How often should the bot try to wander around their guard post?</p><h3 id="var/guard_start_no_announce"><aside class="declaration">var </aside>guard_start_no_announce
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 148"/></h3>
+        <p>Was on guard duty, apprehended someone, then went to return to guard duty? Keep it to yourself please</p><h3 id="var/helpme_cooldown"><aside class="declaration">var </aside>helpme_cooldown
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 144"/></h3>
+        <p>Secbots send a message when attacked. How long after this message should they send another?</p><h3 id="var/last_target_cooldown"><aside class="declaration">var </aside>last_target_cooldown
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 77"/></h3>
+        <p>Time after giving up on assaulting someone before they'll consider assaulting them again</p><h3 id="var/lockdown_permit"><aside class="declaration">var </aside>lockdown_permit
+            <aside>&ndash; /static/list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 140"/></h3>
+        <p>Who is exempt from our wrath while locking down an area?</p><h3 id="var/warn_minor_crime"><aside class="declaration">var </aside>warn_minor_crime
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 128"/></h3>
+        <p>Obey the threat threshold. Otherwise, just cuff em</p><h3 id="var/weeooing"><aside class="declaration">var </aside>weeooing
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 116"/></h3>
+        <p>One WEEOOWEEOO at a time, please</p><h2 id="proc">Proc Details</h2><h3 id="proc/KillPathAndGiveUp">KillPathAndGiveUp<aside>(give_up) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 983"/></aside>
+        </h3>
+        <p>Every 5 tiles, look for someone to kill
+If we happen to be chasing someone and get in batonning range, let's stop and maybe try to hit them</p><h3 id="proc/YellAtPerp"><aside class="declaration">proc </aside>YellAtPerp<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 897"/></aside>
+        </h3>
+        <p>Already engaging someone!</p><h3 id="proc/assault_target"><aside class="declaration">proc </aside>assault_target<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 739"/></aside>
+        </h3>
+        <p>Makes the bot chase perps, hit them, and cuff them</p><h3 id="proc/baton_attack"><aside class="declaration">proc </aside>baton_attack<aside>(/<a href="mob.html">mob</a>/<a href="mob/living.html">living</a>/carbon/M, force_attack) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 582"/></aside>
+        </h3>
+        <p>Hits someone with our baton, or charges it if it isnt</p><h3 id="proc/charge_baton"><aside class="declaration">proc </aside>charge_baton<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 574"/></aside>
+        </h3>
+        <p>Makes the bot able to baton people, then makes them unable to baton people after a while</p><h3 id="proc/find_patrol_target"><aside class="declaration">proc </aside>find_patrol_target<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 1018"/></aside>
+        </h3>
+        <p>finds a new patrol target</p><h3 id="proc/guard_target"><aside class="declaration">proc </aside>guard_target<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 694"/></aside>
+        </h3>
+        <p>No guard orders, start patrol if allowed, also look for people to heck up
+No guard orders, engaging target, seeking to arrest them
+On guard duty, returning from distraction
+On guard duty, check if we're in the place we're supposed to be
+Makes bots go to an area, mill around, and maybe attack people who shouldnt be there</p><h3 id="proc/look_for_perp"><aside class="declaration">proc </aside>look_for_perp<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 828"/></aside>
+        </h3>
+        <p>Current mode determines what we're supposed to go back to when we're done
+Tango never up to begin with? Or some kind of not-human? Eh whatever give up
+Tango hidden inside something or someone? Welp, can't hit them through a locker, so may as well give up!
+Tango down or tango hecked off or tango behind a bunch of stuff, give up and get back to work
+Finish what you're doing first!
+We inside something?
+Tango!
+Tango in batonning distance?
+Are they good and downed, and are we allowed to cuff em?
+No? Well, make em good and downed then
+Tango in charging distance?
+Charge em!
+Tango outside of charging distance?</p><h3 id="proc/move_the_bot"><aside class="declaration">proc </aside>move_the_bot<aside>(delay) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;robotics&#x2F;bot&#x2F;secbot.dm 1001"/></aside>
+        </h3>
+        <p>Sends the bot on to a patrol target. Or Summon target, if that's what patrol_target is set to</p></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

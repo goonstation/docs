@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item.html#var">Var Details</a> - <a href="obj/item.html#proc">Proc Details</a></header>
+<main>
+<h1>item <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 3"/></h1>
+
+<p>Verb used when you attack someone with this, as in [attacker] [attack_verbs] [victim]. Can be a list or single entry
+What reagent will it make if it's brewable?</p>
+<p>/////////////////////// Base vars &amp; procs /////////////////////////////////</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="obj/item.html#var/amount">amount</a></th><td>This is for things which are stackable! It means that there are [amount] things here, which could be discretely split or stacked!
+if you use this to represent something other than a literal stack of items I will break your kneecaps</td></tr>
+            <tr><th><a href="obj/item.html#var/health">health</a></th><td>How long an item takes to burn (or be consumed by other means), based on the weight class if no value is set</td></tr>
+            <tr><th><a href="obj/item.html#var/inhand_color">inhand_color</a></th><td>set to a colour to make the inhand image be that colour. if the item is coloured though that takes priority over this variable</td></tr>
+            <tr><th><a href="obj/item.html#var/item_state">item_state</a></th><td>The in-hand icon state</td></tr>
+            <tr><th><a href="obj/item.html#var/leaves_slash_wound">leaves_slash_wound</a></th><td>when attacking, this item can leave a slash wound</td></tr>
+            <tr><th><a href="obj/item.html#var/master">master</a></th><td>This var fucking sucks. It's used for prox sensors and other stuff that when triggered trigger an item they're attached to. Why is this on /item i am so sad</td></tr>
+            <tr><th><a href="obj/item.html#var/mimic_chance">mimic_chance</a></th><td>Chance for this item to be replaced by a mimic disguised as it - note, setting this high here is a <em>really</em> bad idea</td></tr>
+            <tr><th><a href="obj/item.html#var/stored">stored</a></th><td>storage datum holding it</td></tr>
+            <tr><th><a href="obj/item.html#var/wear_state">wear_state</a></th><td>icon state used for worn sprites, icon_state used otherwise</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item.html#proc/AttackSelf">AttackSelf</a></th><td>Call this proc inplace of attack_self(...)</td></tr>
+            <tr><th><a href="obj/item.html#proc/UpdateStackAppearance">UpdateStackAppearance</a></th><td>Don't override this, override _update_stack_appearance() instead.</td></tr>
+            <tr><th><a href="obj/item.html#proc/_update_stack_appearance">_update_stack_appearance</a></th><td>Call UpdateStackAppearance() instead.</td></tr>
+            <tr><th><a href="obj/item.html#proc/attack_self">attack_self</a></th><td>DO NOT CALL THIS PROC - Call AttackSelf(...) Instead!</td></tr>
+            <tr><th><a href="obj/item.html#proc/enchant">enchant</a></th><td>Enchants an item (minor armor boost for clothing, otherwise increases melee damage)</td></tr>
+            <tr><th><a href="obj/item.html#proc/force_drop">force_drop</a></th><td>Force the item to drop from the mob's hands.
+If <code>sever</code> is TRUE, items will be severed from item arms</td></tr>
+            <tr><th><a href="obj/item.html#proc/get_hero">get_hero</a></th><td>Pick one human trying to cover the object</td></tr>
+            <tr><th><a href="obj/item.html#proc/material_on_drop">material_on_drop</a></th><td>Called when an item is dropped for mat effects</td></tr>
+            <tr><th><a href="obj/item.html#proc/material_on_pickup">material_on_pickup</a></th><td>Called when an item is picked up for mat effects</td></tr>
+            <tr><th><a href="obj/item.html#proc/setTwoHanded">setTwoHanded</a></th><td>This is the safe way of changing 2-handed-ness at runtime. Use this please.</td></tr>
+            <tr><th><a href="obj/item.html#proc/try_specific_equip">try_specific_equip</a></th><td>attempt unique functionality when item is held in hand and and using the equip hotkey</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/amount"><aside class="declaration">var </aside>amount
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 79"/></h3>
+        <p>This is for things which are stackable! It means that there are [amount] things here, which could be discretely split or stacked!
+if you use this to represent something other than a literal stack of items I will break your kneecaps</p><h3 id="var/health"><aside class="declaration">var </aside>health
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 32"/></h3>
+        <p>How long an item takes to burn (or be consumed by other means), based on the weight class if no value is set</p><h3 id="var/inhand_color"><aside class="declaration">var </aside>inhand_color
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 22"/></h3>
+        <p>set to a colour to make the inhand image be that colour. if the item is coloured though that takes priority over this variable</p><h3 id="var/item_state"><aside class="declaration">var </aside>item_state
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 13"/></h3>
+        <p>The in-hand icon state</p><h3 id="var/leaves_slash_wound"><aside class="declaration">var </aside>leaves_slash_wound
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 64"/></h3>
+        <p>when attacking, this item can leave a slash wound</p><h3 id="var/master"><aside class="declaration">var </aside>master
+            <aside>&ndash; /<a href="obj.html">obj</a>/<a href="obj/item.html">item</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 134"/></h3>
+        <p>This var fucking sucks. It's used for prox sensors and other stuff that when triggered trigger an item they're attached to. Why is this on /item i am so sad</p><h3 id="var/mimic_chance"><aside class="declaration">var </aside>mimic_chance
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 128"/></h3>
+        <p>Chance for this item to be replaced by a mimic disguised as it - note, setting this high here is a <em>really</em> bad idea</p><h3 id="var/stored"><aside class="declaration">var </aside>stored
+            <aside>&ndash; /<a href="datum.html">datum</a>/<a href="datum/storage.html">storage</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 24"/></h3>
+        <p>storage datum holding it</p><h3 id="var/wear_state"><aside class="declaration">var </aside>wear_state
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 15"/></h3>
+        <p>icon state used for worn sprites, icon_state used otherwise</p><h2 id="proc">Proc Details</h2><h3 id="proc/AttackSelf"><aside class="declaration">proc </aside>AttackSelf<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 971"/></aside>
+        </h3>
+        <p>Call this proc inplace of attack_self(...)</p><h3 id="proc/UpdateStackAppearance"><aside class="declaration">proc </aside>UpdateStackAppearance<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 577"/></aside>
+        </h3>
+        <p>Don't override this, override _update_stack_appearance() instead.</p><h3 id="proc/_update_stack_appearance"><aside class="declaration">proc </aside>_update_stack_appearance<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 584"/></aside>
+        </h3>
+        <p>Call UpdateStackAppearance() instead.</p><h3 id="proc/attack_self"><aside class="declaration">proc </aside>attack_self<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 982"/></aside>
+        </h3>
+        <p>DO NOT CALL THIS PROC - Call AttackSelf(...) Instead!</p>
+<p>Only override this proc!</p><h3 id="proc/enchant"><aside class="declaration">proc </aside>enchant<aside>(incr, setTo) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;WorkInProgress&#x2F;tarmStuff.dm 508"/></aside>
+        </h3>
+        <p>Enchants an item (minor armor boost for clothing, otherwise increases melee damage)</p>
+<p>incr - value to enchant by
+setTo - when true, sets enchantment to incr, otherwise will add incr to existing enchantment (positive or negative)</p><h3 id="proc/force_drop"><aside class="declaration">proc </aside>force_drop<aside>(/<a href="mob.html">mob</a>/possible_mob_holder, sever) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 1600"/></aside>
+        </h3>
+        <p>Force the item to drop from the mob's hands.
+If <code>sever</code> is TRUE, items will be severed from item arms</p><h3 id="proc/get_hero"><aside class="declaration">proc </aside>get_hero<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;grenades.dm 2251"/></aside>
+        </h3>
+        <p>Pick one human trying to cover the object</p><h3 id="proc/material_on_drop"><aside class="declaration">proc </aside>material_on_drop<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 307"/></aside>
+        </h3>
+        <p>Called when an item is dropped for mat effects</p><h3 id="proc/material_on_pickup"><aside class="declaration">proc </aside>material_on_pickup<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;materials&#x2F;Mat_ProcsDefines.dm 301"/></aside>
+        </h3>
+        <p>Called when an item is picked up for mat effects</p><h3 id="proc/setTwoHanded"><aside class="declaration">proc </aside>setTwoHanded<aside>(twohanded) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 143"/></aside>
+        </h3>
+        <p>This is the safe way of changing 2-handed-ness at runtime. Use this please.</p><h3 id="proc/try_specific_equip"><aside class="declaration">proc </aside>try_specific_equip<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item.dm 1717"/></aside>
+        </h3>
+        <p>attempt unique functionality when item is held in hand and and using the equip hotkey</p></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

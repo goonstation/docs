@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>code&#x2F;datums&#x2F;limb.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+</header>
+<main>
+<h1>code/datums/limb.dm 
+        <img src="git.png" width="16" height="16" title="code&#x2F;datums&#x2F;limb.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th><a href="datum&#x2F;limb.html">&#x2F;datum&#x2F;limb</a></th><td>Limb datums for arms. Describes all activity performed by the limb.
+Currently, this is basically attack_hand().</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/limb.html">limb</a>/mouth/maneater</th><td>how much stam damage this limb should deal to living mobs
+how much desorient this limb should apply to living mobs
+how much stun this limb should apply to living mobs
+if this limb stunned: how long should this kind of limb not be able to stun the target; to prevent reapplication of stuns
+list of chems this limb should inject on targets
+amount of chems this limb should inject on targets
+additional damage bonus or malus dealt to borgs</td></tr>
+        <tr><td colspan="2"><p>cooldown on which to throw a borg across the room. No permastunning borgs</p></td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/limb.html">limb</a>/mouth/small</th><td>this proc makes the maneater fling borgs across the room or damages AI. The maneater is not interested in borgs, so it should just backhand them across the room.
+It should not directly go for wrenching off the head of borgs like special_attack_silicon
+for cats/mice/etc</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/limb.html">limb</a>/hot</th><td>Currently used by the High Fever disease which is obtainable from the &quot;Too Much&quot; chem which only shows up in sickly pears, which are currently commented out. Go there to make use of this.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/limb.html">limb</a>/small_critter</th><td>little critters with teeth, like mice! can pick up small items only.</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/limb.html">limb</a>/small_critter/med</th><td>same as the parent, but can pick up some heavier shit</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/limb.html">limb</a>/swipe_quake</th><td>test for crab attack thing</td></tr>
+        <tr><th>/<a href="datum.html">datum</a>/<a href="datum/limb.html">limb</a>/tentacle</th><td>I wanted a claw-like limb but without the random item pickup fail</td></tr></table></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

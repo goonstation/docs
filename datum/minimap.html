@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;minimap - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/minimap.html#var">Var Details</a> - <a href="datum/minimap.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="datum.html">datum</a>/<a href="datum/minimap.html">minimap</a>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 1"/></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/minimap.html#var/map">map</a></th><td>The minimap, without minimap markers. Kept separate for the purpose of scaling the minimap without scaling the markers.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/map_scale">map_scale</a></th><td>The current scale of the physical map, as a multiple of the original size (300x300px).</td></tr>
+            <tr><th><a href="datum/minimap.html#var/marker_scale">marker_scale</a></th><td>The desired scale of the minimap markers, as a multiple of the original size (32x32px).</td></tr>
+            <tr><th><a href="datum/minimap.html#var/minimap_holder">minimap_holder</a></th><td>The holder for the render of the minimap, allowing for offsets and other effects to be applied to the render without modifying the render itself.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/minimap_markers">minimap_markers</a></th><td>An associative list of all the targets and associated minimap markers the minimap is currently tracking and displaying.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/minimap_render">minimap_render</a></th><td>The minimap render to be displayed, containing both the map, and icons.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/minimap_type">minimap_type</a></th><td>A bitflag that determines which areas and minimap markers are to be rendered on the minimap. For available flags, see <code>_std/defines/minimap.dm</code>.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/x_max">x_max</a></th><td>The maximum x coordinate to be rendered, in world coordinates.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/x_min">x_min</a></th><td>The minimum x coordinate to be rendered, in world coordinates.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/y_max">y_max</a></th><td>The maximum y coordinate to be rendered, in world coordinates.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/y_min">y_min</a></th><td>The minimum y coordinate to be rendered, in world coordinates.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/z_level">z_level</a></th><td>The z-level that the minimap is to be rendered from.</td></tr>
+            <tr><th><a href="datum/minimap.html#var/zoom_coefficient">zoom_coefficient</a></th><td>The scale that the minimap should be zoomed to; it does not affect the physical size of the minimap, as the alpha mask will take care of any map area scaled outside of the minimap boundaries.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/minimap.html#proc/create_alpha_mask">create_alpha_mask</a></th><td>Create an alpha mask to hide anything outside the bounds of the physical map.</td></tr>
+            <tr><th><a href="datum/minimap.html#proc/create_minimap_marker">create_minimap_marker</a></th><td>Creates a minimap marker from a specified target, icon, and icon state. 'marker_name' will override the marker inheriting the target's name.</td></tr>
+            <tr><th><a href="datum/minimap.html#proc/set_marker_position">set_marker_position</a></th><td>Sets the x and y position of a specified minimap marker, in world coordinates.</td></tr>
+            <tr><th><a href="datum/minimap.html#proc/valid_turf">valid_turf</a></th><td>Checks whether a turf should be rendered on the map through the minimaps_to_render_on bitflag on /area.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/map"><aside class="declaration">var </aside>map
+            <aside>&ndash; /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 7"/></h3>
+        <p>The minimap, without minimap markers. Kept separate for the purpose of scaling the minimap without scaling the markers.</p><h3 id="var/map_scale"><aside class="declaration">var </aside>map_scale
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 29"/></h3>
+        <p>The current scale of the physical map, as a multiple of the original size (300x300px).</p><h3 id="var/marker_scale"><aside class="declaration">var </aside>marker_scale
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 31"/></h3>
+        <p>The desired scale of the minimap markers, as a multiple of the original size (32x32px).</p><h3 id="var/minimap_holder"><aside class="declaration">var </aside>minimap_holder
+            <aside>&ndash; /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 3"/></h3>
+        <p>The holder for the render of the minimap, allowing for offsets and other effects to be applied to the render without modifying the render itself.</p><h3 id="var/minimap_markers"><aside class="declaration">var </aside>minimap_markers
+            <aside>&ndash; /list</aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 10"/></h3>
+        <p>An associative list of all the targets and associated minimap markers the minimap is currently tracking and displaying.</p><h3 id="var/minimap_render"><aside class="declaration">var </aside>minimap_render
+            <aside>&ndash; /<a href="atom.html">atom</a>/<a href="atom/movable.html">movable</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 5"/></h3>
+        <p>The minimap render to be displayed, containing both the map, and icons.</p><h3 id="var/minimap_type"><aside class="declaration">var </aside>minimap_type
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 13"/></h3>
+        <p>A bitflag that determines which areas and minimap markers are to be rendered on the minimap. For available flags, see <code>_std/defines/minimap.dm</code>.</p><h3 id="var/x_max"><aside class="declaration">var </aside>x_max
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 18"/></h3>
+        <p>The maximum x coordinate to be rendered, in world coordinates.</p><h3 id="var/x_min"><aside class="declaration">var </aside>x_min
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 20"/></h3>
+        <p>The minimum x coordinate to be rendered, in world coordinates.</p><h3 id="var/y_max"><aside class="declaration">var </aside>y_max
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 22"/></h3>
+        <p>The maximum y coordinate to be rendered, in world coordinates.</p><h3 id="var/y_min"><aside class="declaration">var </aside>y_min
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 24"/></h3>
+        <p>The minimum y coordinate to be rendered, in world coordinates.</p><h3 id="var/z_level"><aside class="declaration">var </aside>z_level
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 16"/></h3>
+        <p>The z-level that the minimap is to be rendered from.</p><h3 id="var/zoom_coefficient"><aside class="declaration">var </aside>zoom_coefficient
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 27"/></h3>
+        <p>The scale that the minimap should be zoomed to; it does not affect the physical size of the minimap, as the alpha mask will take care of any map area scaled outside of the minimap boundaries.</p><h2 id="proc">Proc Details</h2><h3 id="proc/create_alpha_mask"><aside class="declaration">proc </aside>create_alpha_mask<aside>() 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 68"/></aside>
+        </h3>
+        <p>Create an alpha mask to hide anything outside the bounds of the physical map.</p><h3 id="proc/create_minimap_marker"><aside class="declaration">proc </aside>create_minimap_marker<aside>(/<a href="atom.html">atom</a>/target, icon, icon_state, marker_name, can_be_deleted_by_player, list_on_ui) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 76"/></aside>
+        </h3>
+        <p>Creates a minimap marker from a specified target, icon, and icon state. 'marker_name' will override the marker inheriting the target's name.</p><h3 id="proc/set_marker_position"><aside class="declaration">proc </aside>set_marker_position<aside>(/<a href="datum.html">datum</a>/<a href="datum/minimap_marker.html">minimap_marker</a>/map_marker, x, y, z) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 90"/></aside>
+        </h3>
+        <p>Sets the x and y position of a specified minimap marker, in world coordinates.</p><h3 id="proc/valid_turf"><aside class="declaration">proc </aside>valid_turf<aside>(/<a href="turf.html">turf</a>/T) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;minimap&#x2F;minimap.dm 59"/></aside>
+        </h3>
+        <p>Checks whether a turf should be rendered on the map through the minimaps_to_render_on bitflag on /area.</p></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

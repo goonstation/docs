@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>code&#x2F;obj&#x2F;vehicle.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+</header>
+<main>
+<h1>code/obj/vehicle.dm 
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;vehicle.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th>/_is_abstract/obj/vehicle</th><td>Vehicle parent</td></tr>
+        <tr><th><a href="obj&#x2F;vehicle.html">&#x2F;obj&#x2F;vehicle</a></th><td>Rider is basically the &quot;driver&quot; of the vehicle
+Sanity variable to prevent the vehicle from crashing multiple times due to a single collision
+Does the vehicle have air conditioning? (check /datum/lifeprocess/bodytemp in bodytemp.dm for details)
+Can we see the driver from outside of the vehicle? (used for overlays)
+Storage for the ability buttons after initialization
+List of types of ability buttons to be initialized
+See /mob/proc/drop_item() in mob.dm and /atom/movable/proc/throw_at in throwing.dm
+Whether any attack with an item that has a force value will immediately eject the rider (only works if rider_visible is true)
+Speed, lower is faster, minimum of MINIMUM_EFFECTIVE_DELAY
+Do we go through space?
+What overlay icon do we use for the booster upgrade? (we have to initialize this in New)</td></tr>
+        <tr><th><a href="obj&#x2F;vehicle&#x2F;segway.html">&#x2F;obj&#x2F;vehicle&#x2F;segway</a></th><td>Number of light cycles currently left to perform
+Number of times our lights cycle with each press of the siren button</td></tr>
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/vehicle.html">vehicle</a>/cat</th><td>Rideable cats</td></tr>
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/vehicle.html">vehicle</a>/<a href="obj/vehicle/adminbus.html">adminbus</a>/battlebus</th><td>Battle Bus</td></tr></table></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;rc_entry - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/rc_entry.html#var">Var Details</a> - <a href="datum/rc_entry.html#proc">Proc Details</a></header>
+<main>
+<h1>/<a href="datum.html">datum</a>/<a href="datum/rc_entry.html">rc_entry</a>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;requisition&#x2F;requisition_contracts.dm 53"/></h1>
+
+<p>Requisition contract entry: analyzes things passed to it, returns whether they were needed, and is checked for completion at end of analyses.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/rc_entry.html#var/count">count</a></th><td>What quantity this entry requires (examples: item quantity, stack quantity or reagent units); can be adjusted at any point during creation.</td></tr>
+            <tr><th><a href="datum/rc_entry.html#var/entryclass">entryclass</a></th><td>The evaluation class of the entry; used for formatting when building the text form of a contract's list of requirements.</td></tr>
+            <tr><th><a href="datum/rc_entry.html#var/feemod">feemod</a></th><td>How much this entry will contribute to a contract's overall payout, PER COUNT. Some entry types can configure this from commodity data.</td></tr>
+            <tr><th><a href="datum/rc_entry.html#var/name">name</a></th><td>Name as shown on the requisition contract itself. Can be different from your item's real name for flavor purposes.</td></tr>
+            <tr><th><a href="datum/rc_entry.html#var/rollcount">rollcount</a></th><td>When an item contributes to fulfillment, this value should be incremented; when it matches or exceeds the count, the entry is fully satisfied.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/rc_entry.html#proc/rc_eval">rc_eval</a></th><td>Evaluation proc called by contracts to see whether an item fulfills the entry's requirements.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/count"><aside class="declaration">var </aside>count
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;requisition&#x2F;requisition_contracts.dm 59"/></h3>
+        <p>What quantity this entry requires (examples: item quantity, stack quantity or reagent units); can be adjusted at any point during creation.</p><h3 id="var/entryclass"><aside class="declaration">var </aside>entryclass
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;requisition&#x2F;requisition_contracts.dm 57"/></h3>
+        <p>The evaluation class of the entry; used for formatting when building the text form of a contract's list of requirements.</p><h3 id="var/feemod"><aside class="declaration">var </aside>feemod
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;requisition&#x2F;requisition_contracts.dm 63"/></h3>
+        <p>How much this entry will contribute to a contract's overall payout, PER COUNT. Some entry types can configure this from commodity data.</p><h3 id="var/name"><aside class="declaration">var </aside>name
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;requisition&#x2F;requisition_contracts.dm 55"/></h3>
+        <p>Name as shown on the requisition contract itself. Can be different from your item's real name for flavor purposes.</p><h3 id="var/rollcount"><aside class="declaration">var </aside>rollcount
+            <aside>&ndash; </aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;requisition&#x2F;requisition_contracts.dm 61"/></h3>
+        <p>When an item contributes to fulfillment, this value should be incremented; when it matches or exceeds the count, the entry is fully satisfied.</p><h2 id="proc">Proc Details</h2><h3 id="proc/rc_eval"><aside class="declaration">proc </aside>rc_eval<aside>(/<a href="atom.html">atom</a>/eval_item) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;economy&#x2F;requisition&#x2F;requisition_contracts.dm 72"/></aside>
+        </h3>
+        <p>Evaluation proc called by contracts to see whether an item fulfills the entry's requirements.</p>
+<p>When creating an entry type, there are two required outputs from the variant's rc_eval proc.
+First, it must return true if the atom the entry has been passed contributes to satisfying the condition, so the atom can be consumed.
+Second, you must increment rollcount if the condition was satisfied; often by 1, but can be multiple for things like reagents or stacks.</p></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

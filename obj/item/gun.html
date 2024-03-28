@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;obj&#x2F;item&#x2F;gun - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="obj/item/gun.html#proc">Proc Details</a></header>
+<main>
+<h1>gun <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/gun.html">gun</a></aside>
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;gun&#x2F;gun_parent.dm 3"/></h1>
+
+<p>Can this gun be *spin emoted without a chance to shoot yourself?
+current cumulative recoil value, for inaccuracy. leave at 0
+last time this was fired, for recoil purposes
+current icon rotation, used to make sure the icon resets properly
+current number of shots fired before recoil_reset elapsed.
+How strong this gun's base recoil impulse is.
+What's the max cumulative recoil this gun can hit?
+at recoil_max, the weapon has this much additional spread
+Should this gun's icon tilt?
+At maximum recoil, what angle should the icon state be at?
+Should this gun gain more recoil strength as it shoots?
+Ignore this many shots before stacking up (if you want 3-shot bursts not to be penalsied)
+How much should recoil_strength go up by, every shot
+How many times can recoil-stacking_amount apply?
+how long it takes for recoil to start resetting (6 deci seconds feels nice)
+multiplier to apply to recoil every .1 seconds (affects high recoil recovery)
+additive reduction to accumulated recoil (affects low recoil recovery better than mult)
+Should this gun kickback the camera when fired?
+Multiply the recoil value by this for camera movement
+If enabled, camera recoil rattles perpendicular to the aim direction too (recommended)
+Minimum recoil variance
+Maximum recoil variance</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="obj/item/gun.html#proc/canshoot">canshoot</a></th><td>Check if the gun can shoot or not. <code>user</code> will be null if the gun is shot by a non-mob (gun component)</td></tr>
+            <tr><th><a href="obj/item/gun.html#proc/check_lock">check_lock</a></th><td>CHECK_LOCK
+Call to run a weaponlock check vs the users implant
+Return 0 for fail</td></tr>
+            <tr><th><a href="obj/item/gun.html#proc/check_valid_shot">check_valid_shot</a></th><td>CHECK_VALID_SHOT
+Call to check and make sure the shot is ok
+Not called much atm might remove, is now inside shoot</td></tr>
+            <tr><th><a href="obj/item/gun.html#proc/set_current_projectile">set_current_projectile</a></th><td>setter for current_projectile so we can have a signal attached. do not set current_projectile on guns without this proc</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/canshoot"><aside class="declaration">proc </aside>canshoot<aside>(/<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;gun&#x2F;gun_parent.dm 451"/></aside>
+        </h3>
+        <p>Check if the gun can shoot or not. <code>user</code> will be null if the gun is shot by a non-mob (gun component)</p><h3 id="proc/check_lock"><aside class="declaration">proc </aside>check_lock<aside>(user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;gun&#x2F;gun_parent.dm 133"/></aside>
+        </h3>
+        <p>CHECK_LOCK
+Call to run a weaponlock check vs the users implant
+Return 0 for fail</p><h3 id="proc/check_valid_shot"><aside class="declaration">proc </aside>check_valid_shot<aside>(/<a href="atom.html">atom</a>/target, /<a href="mob.html">mob</a>/user) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;gun&#x2F;gun_parent.dm 139"/></aside>
+        </h3>
+        <p>CHECK_VALID_SHOT
+Call to check and make sure the shot is ok
+Not called much atm might remove, is now inside shoot</p><h3 id="proc/set_current_projectile"><aside class="declaration">proc </aside>set_current_projectile<aside>(/<a href="datum.html">datum</a>/<a href="datum/projectile.html">projectile</a>/newProj) 
+        
+    
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;item&#x2F;gun&#x2F;gun_parent.dm 509"/></aside>
+        </h3>
+        <p>setter for current_projectile so we can have a signal attached. do not set current_projectile on guns without this proc</p></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

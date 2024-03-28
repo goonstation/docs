@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>code&#x2F;obj&#x2F;machinery&#x2F;manufacturer.dm - Goonstation 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">Goonstation 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+</header>
+<main>
+<h1>code/obj/machinery/manufacturer.dm 
+        <img src="git.png" width="16" height="16" title="code&#x2F;obj&#x2F;machinery&#x2F;manufacturer.dm"/></h1>
+
+<table class="summary" cellspacing="0">
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/manufacturer</th><td>This is used to make icon state changes cleaner by setting it to &quot;fab-[icon_base]&quot;
+appended in get_desc() to the base description, to make subtype definitions cleaner
+How much power is consumed while active? This is determined automatically when the unit starts a production cycle
+This is a timer and not a true/false; it's decremented every process() tick
+This is a bitflag used to track wire states, for hacking and such. Replace it with something cleaner if an option exists when you're reading this :p
+Used as a cache when outputting messages to users
+Used when deducting payment for ores from a Rockbox
+This is an antispam timer to prevent autoclickers from lagging the server
+Base class for material pieces that the manufacturer accepts. Keep this as material pieces only unless you're making larger changes to the system
+The amount of each free resource that the manufacturer comes preloaded with
+See free_resource_amt; this is the list of resources being populated from
+A list of every option available in this unit subtype by default
+Options gained from scanned blueprints
+Options provided by an inserted manudrive
+These options are available by default, but can't be printed unless the machine is hacked</td></tr>
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/machinery.html">machinery</a>/manufacturer/gas</th><td>cogwerks - a gas extractor for the engine</td></tr>
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/paper/manufacturer_blueprint</th><td>Manufacturer blueprints can be read by any manufacturer unit to add the referenced object to the unit's production options.
+If non-zero, the name and description of this blueprint will be overriden on New() with standardized values</td></tr>
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/paper/manufacturer_blueprint/resonator_type_ax</th><td>Nadir Resonators</td></tr>
+        <tr><th>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/cloner_blueprints_folder</th><td>This is a special item that breaks apart into blueprints for the machines needed to build/repair a cloner.</td></tr>
+        <tr><th>/proc/<a href="global.html#proc/build_manufacturer_icons">build_manufacturer_icons</a></th>
+                <td>Pre-build the icons for things manufacturers make</td></tr></table></main>
+<footer>
+    goonstation.dme
+    b1a700120286ede96635ed4ef2a42f7b7129401f &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>
