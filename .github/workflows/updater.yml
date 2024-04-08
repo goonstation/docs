@@ -11,7 +11,7 @@ jobs:
     update:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2.3.5
+        - uses: actions/checkout@v4
 
         - run: |
             git submodule update --init
@@ -26,7 +26,7 @@ jobs:
             github_token: ${{ secrets.ROBUDDYBOT_PAT }}
 
         - name: Repository Dispatch
-          uses: peter-evans/repository-dispatch@v1
+          uses: peter-evans/repository-dispatch@v3
           with:
             token: ${{ secrets.ROBUDDYBOT_PAT_FULL }}
             event-type: update-documentation
