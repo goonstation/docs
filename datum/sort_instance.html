@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>/datum/sort_instance - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="datum/sort_instance.html#var">Var Details</a> - <a href="datum/sort_instance.html#proc">Proc Details</a></header><main><h1>/<a href="datum.html">datum</a>/<a href="datum/sort_instance.html">sort_instance</a> <img src="git.png" width="16" height="16" title="_std/sorting.dm 59"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr><tr><th><a href="datum/sort_instance.html#var/L">L</a></th><td>The array being sorted.</td></tr><tr><th><a href="datum/sort_instance.html#var/associative">associative</a></th><td>whether we are sorting list keys (0: L[i]) or associated values (1: L[L[i]])</td></tr><tr><th><a href="datum/sort_instance.html#var/cmp">cmp</a></th><td>The comparator proc-reference</td></tr><tr><th><a href="datum/sort_instance.html#var/minGallop">minGallop</a></th><td>This controls when we get <em>into</em> galloping mode.  It is initialized to MIN_GALLOP.
+The mergeLo and mergeHi methods nudge it higher for random data, and lower for highly structured data.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="datum/sort_instance.html#proc/binarySort">binarySort</a></th><td>Sorts the specified portion of the specified array using a binary insertion sort.
+This is the best method for sorting small numbers of elements.</td></tr><tr><th><a href="datum/sort_instance.html#proc/countRunAndMakeAscending">countRunAndMakeAscending</a></th><td>Returns the length of the run beginning at the specified position and reverses the run if it is back-to-front</td></tr><tr><th><a href="datum/sort_instance.html#proc/gallopLeft">gallopLeft</a></th><td>Locates the position to insert key within the specified sorted range.
+If the range contains elements equal to key, this will return the index of the LEFTMOST of those elements.</td></tr><tr><th><a href="datum/sort_instance.html#proc/gallopRight">gallopRight</a></th><td>Like gallopLeft, except that if the range contains an element equal to
+key, gallopRight returns the index after the rightmost equal element.</td></tr><tr><th><a href="datum/sort_instance.html#proc/mergeAt">mergeAt</a></th><td>Merges the two consecutive runs at stack indices i and i+1.
+Run i must be the penultimate or antepenultimate run on the stack.
+In other words, i must be equal to stackSize-2 or stackSize-3.</td></tr><tr><th><a href="datum/sort_instance.html#proc/mergeCollapse">mergeCollapse</a></th><td>Examines the stack of runs waiting to be merged and merges adjacent runs until the stack invariants are reestablished:</td></tr><tr><th><a href="datum/sort_instance.html#proc/mergeForceCollapse">mergeForceCollapse</a></th><td>Merges all runs on the stack until only one remains.
+Called only once, to finalise the sort</td></tr><tr><th><a href="datum/sort_instance.html#proc/mergeLo">mergeLo</a></th><td>Merges two adjacent runs in-place in a stable fashion.
+For performance this method should only be called when len1 &lt;= len2!</td></tr><tr><th><a href="datum/sort_instance.html#proc/minRunLength">minRunLength</a></th><td>Returns the minimum acceptable run length for an array of the specified length.
+Natural runs shorter than this will be extended with binarySort</td></tr></table><h2 id="var">Var Details</h2><h3 id="var/L"><aside class="declaration">var </aside>L <aside>– /list</aside> <img src="git.png" width="16" height="16" title="_std/sorting.dm 61"></h3><p>The array being sorted.</p><h3 id="var/associative"><aside class="declaration">var </aside>associative <img src="git.png" width="16" height="16" title="_std/sorting.dm 67"></h3><p>whether we are sorting list keys (0: L[i]) or associated values (1: L[L[i]])</p><h3 id="var/cmp"><aside class="declaration">var </aside>cmp <img src="git.png" width="16" height="16" title="_std/sorting.dm 64"></h3><p>The comparator proc-reference</p><h3 id="var/minGallop"><aside class="declaration">var </aside>minGallop <img src="git.png" width="16" height="16" title="_std/sorting.dm 71"></h3><p>This controls when we get <em>into</em> galloping mode.  It is initialized to MIN_GALLOP.
+The mergeLo and mergeHi methods nudge it higher for random data, and lower for highly structured data.</p><h2 id="proc">Proc Details</h2><h3 id="proc/binarySort"><aside class="declaration">proc </aside>binarySort<aside>(lo, hi, start)  <img src="git.png" width="16" height="16" title="_std/sorting.dm 144"></aside></h3><p>Sorts the specified portion of the specified array using a binary insertion sort.
+This is the best method for sorting small numbers of elements.</p>
+<p>It requires O(n log n) compares, but O(n^2) data movement (worst case).</p>
+<p>If the initial part of the specified range is already sorted,
+this method can take advantage of it: the method assumes that the
+elements in range [lo,start) are already sorted</p>
+<p>lo the index of the first element in the range to be sorted</p>
+<p>hi the index after the last element in the range to be sorted</p>
+<p>start the index of the first element in the range that is not already known to be sorted</p><h3 id="proc/countRunAndMakeAscending"><aside class="declaration">proc </aside>countRunAndMakeAscending<aside>(lo, hi)  <img src="git.png" width="16" height="16" title="_std/sorting.dm 180"></aside></h3><p>Returns the length of the run beginning at the specified position and reverses the run if it is back-to-front</p>
+<p>A run is the longest ascending sequence with:
+a[lo] &lt;= a[lo + 1] &lt;= a[lo + 2] &lt;= ...</p>
+<p>or the longest descending sequence with:
+a[lo] &gt;  a[lo + 1] &gt;  a[lo + 2] &gt;  ...</p>
+<p>For its intended use in a stable mergesort, the strictness of the
+definition of &quot;descending&quot; is needed so that the call can safely
+reverse a descending sequence without violating stability.</p><h3 id="proc/gallopLeft"><aside class="declaration">proc </aside>gallopLeft<aside>(key, base, len, hint)  <img src="git.png" width="16" height="16" title="_std/sorting.dm 298"></aside></h3><p>Locates the position to insert key within the specified sorted range.
+If the range contains elements equal to key, this will return the index of the LEFTMOST of those elements.</p>
+<p>key the element to be inserted into the sorted range</p>
+<p>base the index of the first element of the sorted range</p>
+<p>len the length of the sorted range, must be greater than 0</p>
+<p>hint the offset from base at which to begin the search, such that 0 &lt;= hint &lt; len; i.e. base &lt;= hint &lt; base+hint</p>
+<p>Returns the index at which to insert element 'key'</p><h3 id="proc/gallopRight"><aside class="declaration">proc </aside>gallopRight<aside>(key, base, len, hint)  <img src="git.png" width="16" height="16" title="_std/sorting.dm 359"></aside></h3><p>Like gallopLeft, except that if the range contains an element equal to
+key, gallopRight returns the index after the rightmost equal element.</p>
+<p>@param key the key whose insertion point to search for</p>
+<p>@param a the array in which to search</p>
+<p>@param base the index of the first element in the range</p>
+<p>@param len the length of the range; must be &gt; 0</p>
+<p>@param hint the index at which to begin the search, 0 &lt;= hint &lt; n.
+The closer hint is to the result, the faster this method will run.</p>
+<p>@param c the comparator used to order the range, and to search</p>
+<p>@return the int k,  0 &lt;= k &lt;= n such that <code>a[b + k - 1] &lt;= key &lt; a[b + k]</code></p><h3 id="proc/mergeAt"><aside class="declaration">proc </aside>mergeAt<aside>(i)  <img src="git.png" width="16" height="16" title="_std/sorting.dm 252"></aside></h3><p>Merges the two consecutive runs at stack indices i and i+1.
+Run i must be the penultimate or antepenultimate run on the stack.
+In other words, i must be equal to stackSize-2 or stackSize-3.</p><h3 id="proc/mergeCollapse"><aside class="declaration">proc </aside>mergeCollapse<aside>()  <img src="git.png" width="16" height="16" title="_std/sorting.dm 227"></aside></h3><p>Examines the stack of runs waiting to be merged and merges adjacent runs until the stack invariants are reestablished:</p>
+<p>runLen[i-3] &gt; runLen[i-2] + runLen[i-1]</p>
+<p>runLen[i-2] &gt; runLen[i-1]</p>
+<p>This method is called each time a new run is pushed onto the stack.
+So, the invariants are guaranteed to hold for i&lt;stackSize upon entry to the method</p><h3 id="proc/mergeForceCollapse"><aside class="declaration">proc </aside>mergeForceCollapse<aside>()  <img src="git.png" width="16" height="16" title="_std/sorting.dm 242"></aside></h3><p>Merges all runs on the stack until only one remains.
+Called only once, to finalise the sort</p><h3 id="proc/mergeLo"><aside class="declaration">proc </aside>mergeLo<aside>(base1, len1, base2, len2)  <img src="git.png" width="16" height="16" title="_std/sorting.dm 402"></aside></h3><p>Merges two adjacent runs in-place in a stable fashion.
+For performance this method should only be called when len1 &lt;= len2!</p><h3 id="proc/minRunLength"><aside class="declaration">proc </aside>minRunLength<aside>(n)  <img src="git.png" width="16" height="16" title="_std/sorting.dm 209"></aside></h3><p>Returns the minimum acceptable run length for an array of the specified length.
+Natural runs shorter than this will be extended with binarySort</p></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

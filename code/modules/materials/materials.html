@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../../"><link rel="stylesheet" href="dmdoc.css"><title>code/modules/materials/materials.md - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>code/modules/materials/materials.md <img src="git.png" width="16" height="16" title="code/modules/materials/materials.md"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>The system has gotten a bit convoluted so im gonna write down some notes here to help people.</p>
+<h3 id="how-do-i-add-new-material-trigger-procs">How do i add new Material trigger procs?</h3>
+<ul>
+<li>Add a new datum for it in the [Mat_MaterialProcs.dm] file</li>
+<li>Make sure the signature for the execute proc matches what will be passed in. See the [Mat_Materials.dm] file and the calling procs therein - for example &quot;triggerOnLife&quot; - to find the signatures.</li>
+<li>In the New proc of the material datum, do something like addTrigger(triggersOnAdd, new /datum/materialProc/erebite_flash())</li>
+</ul>
+<h3 id="how-do-i-add-a-new-trigger">How do i add a new Trigger?</h3>
+<ul>
+<li>Add a list and a calling proc for it in the base material definition</li>
+<li>Add the name of the list to triggerVars in Mat_ProcsDefines.dm</li>
+<li>Add the required handling for the new trigger in the getFusedMaterial proc in Mat_ProcsDefines.dm - See the existing ones for an example.</li>
+<li>Make sure the calling proc you created in step one is called from somewhere in the game.</li>
+<li>If possible, make sure that the call for your new trigger has the object owning the material or a relevant entity as its first argument.</li>
+</ul>
+<h3 id="how-do-i-add-a-new-material-flag">How do i add a new material flag?</h3>
+<ul>
+<li>Add it in [material_properties.dm]</li>
+<li>Add the handling for it in the getFusedMaterial proc in [Mat_ProcsDefines.dm]</li>
+<li>Give it a name in getMatFlagString in [Mat_ProcsDefines.dm]</li>
+</ul>
+<h2 id="material-properties">MATERIAL PROPERTIES:</h2>
+<p>Tensile Strength: How much a material can be stretched before it snaps</p>
+<p>Compressive Strength: How much a material can resist being crushed</p>
+<p>Shear Strength: Essentially resistance to being cut or abrased</p>
+<p>Ductility: How much it can be fucked with until it is permanently deformed</p>
+<p>Toughness: How much force it can absorb without fracturing</p></td></tr></table></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

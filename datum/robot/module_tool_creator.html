@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>/datum/robot/module_tool_creator - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="datum/robot/module_tool_creator.html#proc">Proc Details</a></header><main><h1>/<a href="datum.html">datum</a>/<a href="datum/robot/module_tool_creator.html">robot/module_tool_creator</a> <img src="git.png" width="16" height="16" title="code/modules/robotics/robot/module_tool_creator/parent.dm 25"></h1><p>Stub parent.</p>
+<p>Allows for a tool (or lists of tools) to be created and configured properly.</p>
+<p>Configuration includes correctly setting them up for inclusion in a robot module.</p>
+<p>Configuration can include other processing, e.g. random generation.</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="datum/robot/module_tool_creator.html#proc/apply_to_module">apply_to_module</a></th><td>Instantiates contents and adds to a specific module.</td></tr><tr><th><a href="datum/robot/module_tool_creator.html#proc/instantiate">instantiate</a></th><td>Stub, used to instantiate tool(s).
+Ensure <code>setup</code> is called when defining behavior.</td></tr><tr><th><a href="datum/robot/module_tool_creator.html#proc/setup">setup</a></th><td>Stub proc.
+Used to alter/configure instantiated tool(s).</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/apply_to_module"><aside class="declaration">proc </aside>apply_to_module<aside>(/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/robot_module.html">robot_module</a>/M)  <img src="git.png" width="16" height="16" title="code/modules/robotics/robot/module_tool_creator/parent.dm 35"></aside></h3><p>Instantiates contents and adds to a specific module.</p>
+<ul>
+<li>
+<p>M {<a href="obj/item/robot_module.html" title="/obj/item/robot_module">/obj/item/robot_module</a>}</p>
+</li>
+<li>
+<p>return {(/obj/item|/list&lt;/obj/item&gt;)} result - Added contents</p>
+</li>
+</ul><h3 id="proc/instantiate"><aside class="declaration">proc </aside>instantiate<aside>(/<a href="atom.html">atom</a>/proxy_loc)  <img src="git.png" width="16" height="16" title="code/modules/robotics/robot/module_tool_creator/parent.dm 46"></aside></h3><p>Stub, used to instantiate tool(s).
+Ensure <code>setup</code> is called when defining behavior.</p>
+<ul>
+<li>
+<p>proxy_loc {<a href="atom.html" title="/atom">/atom</a>} - Location to create contents</p>
+</li>
+<li>
+<p>return {(/obj/item|/list&lt;/obj/item&gt;)} result</p>
+</li>
+</ul><h3 id="proc/setup"><aside class="declaration">proc </aside>setup<aside>(contents, /<a href="atom.html">atom</a>/proxy_loc)  <img src="git.png" width="16" height="16" title="code/modules/robotics/robot/module_tool_creator/parent.dm 58"></aside></h3><p>Stub proc.
+Used to alter/configure instantiated tool(s).</p>
+<ul>
+<li>
+<p>contents {(/obj/item|/list&lt;/obj/item&gt;)} - Instantiated contents</p>
+</li>
+<li>
+<p>proxy_loc {<a href="atom.html" title="/atom">/atom</a>} - Location used in <code>instantiate</code>, in case needed</p>
+</li>
+<li>
+<p>return {(/obj/item|/list&lt;/obj/item&gt;)} result - Altered/configured instantiated item(s) (may not be same instance(s) as argument)</p>
+</li>
+</ul></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

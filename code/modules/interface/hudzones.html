@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../../"><link rel="stylesheet" href="dmdoc.css"><title>code/modules/interface/hudzones/README.md - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>HUDZones <aside>code/modules/interface/hudzones/README.md</aside> <img src="git.png" width="16" height="16" title="code/modules/interface/hudzones/README.md"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>HUDZones are a new way to manage HUD elements on a mob's screen.
+They're a rectangular region on a screen that registered elements will automatically position themselves in as you add more.</p>
+<p>This allows for wrapping around functionality, for example if you have hud elements that aren't always visible.</p>
+<p>If you are developing a new zone, it's recommended to take hud_layout_guide.png and color it in as you go.
+This makes it easier to see where things are in relation to each other.</p>
+<p><strong>It's important to keep in mind that coordinates are relative to the bottom left, with the corner being 1,1.</strong></p>
+<h2 id="only-supports-elements-that-are-32px-1-height-variable-width-is-fine"><strong>Only supports elements that are 32px/'1' height (variable width is fine).</strong></h2>
+<p><strong>Currently, only widescreen is supported.</strong></p>
+<h2 id="example">Example</h2>
+<pre><code class="language-ts">/mob/living/critter/small_animal/pig/feral_hog/vorbis/New(loc)
+	. = ..()
+	// Create a hud zone
+	var/list/zone_coords = list(x_low = 1, y_low = 1, x_high = 2, y_high = 5) // Lower left
+	var/datum/hud_zone/new_zone = src.hud.create_hud_zone(zone_coords, &quot;vorbis_abilities&quot;)
+
+	// Create hud elements to add to the zone
+	var/atom/movable/screen/hud/stoke = new
+	stoke.icon = 'icons/mob/hud_robot.dmi'
+	stoke.icon_state = &quot;charge1&quot;
+
+	var/atom/movable/screen/hud/guitar = new
+	guitar.icon = 'icons/obj/large/64x32.dmi'
+	guitar.icon_state = &quot;guitar&quot;
+
+	// Register the hud elements with the zone
+	new_zone.register_element(new/datum/hud_element(stoke), &quot;stoke&quot;)
+	new_zone.register_element(new/datum/hud_element(guitar, width = 2), &quot;sick_guitar&quot;)
+</code></pre>
+<p>This will produce the following:</p>
+<p><img src="/.github/assets/hudzones_example.png" alt="" /></p></td></tr></table></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

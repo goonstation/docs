@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>/datum/client_auth_provider/goonhub - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="datum/client_auth_provider/goonhub.html#proc">Proc Details</a></header><main><h1>Goonhub <aside>/<a href="datum.html">datum</a>/<a href="datum/client_auth_provider/goonhub.html">client_auth_provider/goonhub</a></aside> <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 1"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="datum/client_auth_provider/goonhub.html#proc/begin_auth">begin_auth</a></th><td>Begin auth</td></tr><tr><th><a href="datum/client_auth_provider/goonhub.html#proc/on_auth">on_auth</a></th><td>On auth</td></tr><tr><th><a href="datum/client_auth_provider/goonhub.html#proc/on_error">on_error</a></th><td>On error</td></tr><tr><th><a href="datum/client_auth_provider/goonhub.html#proc/on_timeout">on_timeout</a></th><td>On timeout</td></tr><tr><th><a href="datum/client_auth_provider/goonhub.html#proc/setup_logout">setup_logout</a></th><td>Setup logout</td></tr><tr><th><a href="datum/client_auth_provider/goonhub.html#proc/show_external">show_external</a></th><td>Show external</td></tr><tr><th><a href="datum/client_auth_provider/goonhub.html#proc/show_wrapper">show_wrapper</a></th><td>Show wrapper</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/begin_auth"><aside class="declaration">proc </aside>begin_auth<aside>()  <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 58"></aside></h3><p>Begin auth</p>
+<p>Begins the auth process for the client</p>
+<p>Returns TRUE if the auth process was successful, FALSE otherwise</p><h3 id="proc/on_auth">on_auth<aside>(verification)  <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 87"></aside></h3><p>On auth</p>
+<p>Called in world/Topic &quot;auth_callback&quot; route</p>
+<p>Arguments:</p>
+<ul>
+<li>verification (string) - The verification data</li>
+</ul><h3 id="proc/on_error"><aside class="declaration">proc </aside>on_error<aside>(error)  <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 38"></aside></h3><p>On error</p>
+<p>Called when the auth process errors</p>
+<p>Arguments:</p>
+<ul>
+<li>error (string) - The error message</li>
+</ul><h3 id="proc/on_timeout"><aside class="declaration">proc </aside>on_timeout<aside>()  <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 46"></aside></h3><p>On timeout</p>
+<p>Called when the auth process times out</p><h3 id="proc/setup_logout"><aside class="declaration">proc </aside>setup_logout<aside>()  <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 148"></aside></h3><p>Setup logout</p>
+<p>Sets up the logout page</p><h3 id="proc/show_external"><aside class="declaration">proc </aside>show_external<aside>(route)  <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 201"></aside></h3><p>Show external</p>
+<p>Shows the external auth page</p>
+<p>Arguments:</p>
+<ul>
+<li>route (string) - The route to show</li>
+</ul><h3 id="proc/show_wrapper"><aside class="declaration">proc </aside>show_wrapper<aside>()  <img src="git.png" width="16" height="16" title="code/client/providers/goonhub.dm 168"></aside></h3><p>Show wrapper</p>
+<p>Shows the wrapper UI for the auth process</p></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

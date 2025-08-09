@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../../../"><link rel="stylesheet" href="dmdoc.css"><title>code/modules/goonhub/api/apiGuide.md - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>code/modules/goonhub/api/apiGuide.md <img src="git.png" width="16" height="16" title="code/modules/goonhub/api/apiGuide.md"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2 id="about-the-dm-side-api">About the DM side API</h2>
+<p>This is written from the understanding of Tyrant, who is not an API developer. Some things may be slightly wrong.</p>
+<p>Useful links:
+Goonhub API docs: https://goonhub.com/docs/api#/
+Event tracking docs: https://goonhub.com/docs/events/1.0/overview</p>
+<h3 id="endpoints-and-apiroutes">Endpoints and apiRoutes</h3>
+<p>Endpoints are the ways that the API communicates, and they contain routes. The routes contain several vars:</p>
+<p>A route can have one of four method types:</p>
+<ul>
+<li><code>GET</code> Which checks information.</li>
+<li><code>POST</code> Which adds new information.</li>
+<li><code>PUT</code> Which updates/overwrites existing information.</li>
+<li><code>DELETE</code> Which removes information.
+These are specified in the <code>method</code> var using defines.</li>
+</ul>
+<p>Each route has a path which it connects to as well, for instance https://goonhub.com/api
+<strong>/bans</strong>. This is specified in the form of a string in the <code>path</code> var.</p>
+<p>Path parameters are stored in the <code>routeParams</code> var. These are used when the path ends with a variable, for instance, <code>https://goonhub.com/api/bans/{ban}</code>, which has the path parameter <code>{ban}</code>.</p>
+<p>Query parameters send extra information when connecting, stored in <code>queryParams</code>. This is usually a list of strings, for instance, <code>queryParams = list(&quot;filters&quot;, &quot;sort_by&quot;, &quot;descending&quot;, &quot;per_page&quot;)</code>.</p>
+<p>The request body (<code>body</code> var) is what is sent through the connection. These are usually in the form of a <code>/datum/apiBody</code>, which are in the requests folder in the repo. More information is in the following sections.</p>
+<p>The response model (<code>correct_response</code> var) is what is sent back. These are in the form of a <code>/datum/apiModel</code>, which are in the models folder in the repo. More information is in the following sections.</p>
+<p>A Template for API endpoint routes:</p>
+<pre><code class="language-dm">/// [method type e.g. POST] [path e.g. /players/notes]
+/// [reference to the name of the file or what it does, e.g. Add]
+//datum/apiRoute/[path of route]
+	method = RUSTG_HTTP_METHOD_[method type]
+	path = &quot;[the path of the endpoint it connects to]&quot;
+	routeParams = list([list of parameter items, separated by commas]) // [the primitive type of each parameter]
+	queryParams = list([list of parameter items, separated by commas]) // [the primitive type of each parameter]
+	body = [the datum of the body, under /datum/apiBody]
+	correct_response = [the datum of the model, under datum/apiModel]
+
+	buildBody(	// check the apiBody section below to understand what this means
+		field1,
+		field2,
+		field3
+	)
+		. = ..(args)
+
+// A proper example:
+
+/// PUT /bans/{ban}
+/// Update
+/datum/apiRoute/bans/update
+	method = RUSTG_HTTP_METHOD_PUT
+	path = &quot;/bans&quot;
+	routeParams = list(&quot;ban&quot;)	// integer
+	body = /datum/apiBody/bans/add
+	correct_response = /datum/apiModel/Tracked/BanResource
+
+	buildBody(
+		game_admin_ckey,
+		round_id,
+		server_id,
+		ckey,
+		comp_id,
+		ip,
+		reason,
+		duration
+	)
+		. = ..(args)
+</code></pre>
+<p>The reason why the API files are formatted this way is so that &quot;it's optimized so you can just copypaste stuff and change it via column/vertical select&quot; ~ZeWaka.</p>
+<p>Other notes:</p>
+<ul>
+<li>the path should start with slash.</li>
+<li>not all methods require all the vars. In fact, some are mutually exclusive.</li>
+<li>If the apiBody or apiModel doesn't exist, make it. Don't try to just shove a list of strings in; it won't work.</li>
+</ul>
+<h4 id="making-your-own-apiroutes">Making your own apiRoute's</h4>
+<p>The list of what to make and how it works is at https://goonhub.com/docs/api, along with the request body and response model needed. They need to match the <code>apiRoute</code> in order for the API to work correctly.</p>
+<ul>
+<li>Under request, the parameters should match in the form of a list of strings matching the parameter names. If it says query parameters, use <code>queryParams</code>, if it says path parameters, use <code>routeParams</code>.</li>
+<li>If the path ends with something like <code>/{kind of routeParam}</code>, you don't include it in <code>src.path</code>. It gets appended automatically later on by the routeParams.</li>
+<li>The request body should match an <code>apiBody</code>.</li>
+<li>The response body should match an <code>apiModel</code>.</li>
+<li>If the above two don't have matching ones, you have to make them.</li>
+<li>If you're making new files, follow the format of existing names.</li>
+</ul>
+<h3 id="request-bodies-and-apibody">Request bodies and apiBody</h3>
+<p>A <code>/datum/apiBody</code> is a type of request which gets sent through a route and provides information. These are typically used on <code>POST</code> and <code>PUT</code> method using routes.
+The Goonhub api, while it lists what's needed in the body of the request for each route, doesn't actually give fixed names for each body. You can check what's required in the body under &quot;request&quot; -&gt; &quot;Body&quot;.</p>
+<p>This body will need to then be &quot;built&quot; by calling <code>buildBody()</code> on the routes that use them, as shown in the example in the above <code>/datum/apiRoute</code> section. This way, autocomplete works better. It's a bit silly but will help overall.</p>
+<p>The default format for making them is as follows:</p>
+<pre><code class="language-dm">/datum/apiBody/[path]
+	fields = list(
+		&quot;field1&quot;, // [type]
+		&quot;field2&quot;, // [type]
+		&quot;field3&quot; // [type]
+	)
+
+/datum/apiBody/[path]/VerifyIntegrity(
+	. = ..()
+	if (
+		isnull(src.values[&quot;field1&quot;]) \
+		|| isnull(src.values[&quot;field2&quot;]) \
+	)	// note that this means field1 and field2 can't be null, but field3 can.
+)
+
+// a real example:
+/datum/apiBody/bans/add
+	fields = list(
+		&quot;game_admin_ckey&quot;, // string
+		&quot;round_id&quot;, // integer
+		&quot;server_id&quot;, // string
+		&quot;ckey&quot;, // string
+		&quot;comp_id&quot;, // string
+		&quot;ip&quot;, // string
+		&quot;reason&quot;, // string
+		&quot;duration&quot; // integer
+	)
+
+/datum/apiBody/bans/add/VerifyIntegrity()
+	. = ..()
+	if (
+		isnull(src.values[&quot;game_admin_ckey&quot;]) \
+		|| isnull(src.values[&quot;round_id&quot;]) \
+		|| isnull(src.values[&quot;server_id&quot;]) \
+		|| isnull(src.values[&quot;reason&quot;]) \
+	)
+		return FALSE
+</code></pre>
+<h3 id="response-models-and-apimodel">Response models and apiModel</h3>
+<p>A <code>/datum/apiModel</code> is a response that is sent back after the task is complete. They are sometimes called resources. The Goonhub API guide lists what kind is required and what they contain. You can check what is required under &quot;Responses&quot; -&gt; &quot;Body&quot;. They're typically used in <code>GET</code> method routes.</p>
+<p>Note that there are certain parents, which have built in fields. For instance, the abstract type <code>/datum/apiModel/Tracked</code> has three fields: <code>id</code>, <code>created_at</code> and <code>updated_at</code>. Anything that needs these three should usually be a subtype and won't have to redefine them.</p>
+<p>Similarly, <code>/datum/apiModel/Tracked/PlayerRes</code> includes the tracked vars and one more: <code>player_id</code>. Meanwhile <code>/datum/apiModel/Paginated</code> is usually used in <code>RUSTG_HTTP_METHOD_GET</code> methods and includes three vars: <code>data</code> (which is another apiModel, nested inside), <code>links</code> and <code>meta</code>.</p>
+<p>The usual format is below:</p>
+<pre><code class="language-dm">/// [Name]
+/datum/apiModel/[path]
+	var/field1	= null // [type]
+	var/field2	= null // [type]
+	var/field3	= null // [type]
+
+/datum/apiModel/[path]/SetupFromResponse(response)
+	. = ..()
+	src.field1 = response[&quot;field1&quot;]
+	src.field2 = response[&quot;field2&quot;]
+	src.field3 = response[&quot;field3&quot;]
+
+/datum/apiModel/[path]/VerifyIntegrity()
+	. = ..()
+	if (
+		isnull(src.[field1]) \	// assuming that field1 and 2 cannot be null and field3 can
+		|| isnull(src.[field2])
+	)
+		return FALSE
+
+/datum/apiModel/[path]/ToString()
+	. = list()
+	.[&quot;field1&quot;] = src.field1
+	.[&quot;field2&quot;] = src.field2
+	.[&quot;field3&quot;] = src.field3
+	return json_encode(.)
+
+//A real example:
+/// Error
+/datum/apiModel/Error
+	var/message	= null // string
+	var/errors	= null // null or list
+
+/datum/apiModel/Error/SetupFromResponse(response)
+	. = ..()
+	src.message = response[&quot;message&quot;]
+	src.errors = response[&quot;errors&quot;]
+
+/datum/apiModel/Error/VerifyIntegrity()
+	. = ..()
+	if (
+		isnull(src.message) \
+	)
+		return FALSE
+
+/datum/apiModel/Error/ToString()
+	. = list()
+	.[&quot;message&quot;] = src.message
+	.[&quot;errors&quot;] = src.errors
+	return json_encode(.)
+</code></pre></td></tr></table></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

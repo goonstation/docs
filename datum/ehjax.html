@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>/datum/ehjax - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="datum/ehjax.html#proc">Proc Details</a></header><main><h1>/<a href="datum.html">datum</a>/<a href="datum/ehjax.html">ehjax</a> <img src="git.png" width="16" height="16" title="code/datums/ehjax.dm 9"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="datum/ehjax.html#proc/topic">topic</a></th><td>Calls a proc from a javascript source and callsback with any data</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/topic"><aside class="declaration">proc </aside>topic<aside>(type, href_list, /<a href="client.html">client</a>/C)  <img src="git.png" width="16" height="16" title="code/datums/ehjax.dm 46"></aside></h3><p>Calls a proc from a javascript source and callsback with any data</p>
+<ul>
+<li>
+<p>href_list -&gt; &quot;proc&quot; (string) The proc to call (no paths included)</p>
+</li>
+<li>
+<p>href_list -&gt; &quot;window&quot; (string) The browser window name to send return data to (required for callback)</p>
+</li>
+<li>
+<p>href_list -&gt; &quot;param&quot; (string) A url-encoded array of arguments to pass to the proc (e.g. <code>param[foo]=bar&amp;param[bar]=foo</code>)</p>
+</li>
+<li>
+<p>href_list -&gt; &quot;type&quot; (string) Type of proc to call. If none, assumes global proc.</p>
+</li>
+<li>
+<p>href_list -&gt; &quot;datum&quot; (string) Requires type=datum. Name of the datum the proc belongs to (/datum/ path not required) Note: datum is relative to client ONLY.</p>
+</li>
+<li>
+<p>href_list -&gt; &quot;passClient&quot; (boolean) Whether or not to send the client to the called proc</p>
+</li>
+<li>
+<ul>
+<li>return (string) If the call proc returns data and window is set, will send the proc return string to ehjaxCallback javascript function.</li>
+</ul>
+</li>
+</ul></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

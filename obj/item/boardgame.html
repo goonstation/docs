@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>/obj/item/boardgame - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="obj/item/boardgame.html#var">Var Details</a> - <a href="obj/item/boardgame.html#proc">Proc Details</a></header><main><h1>board game <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/boardgame.html">boardgame</a></aside> <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 35"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr><tr><th><a href="obj/item/boardgame.html#var/active_users">active_users</a></th><td></td></tr><tr><th><a href="obj/item/boardgame.html#var/board_width">board_width</a></th><td>Designate the size of the board
+Don't forget to update styling[&quot;aspectRatio&quot;]
+if you want to keep the board autoscaling</td></tr><tr><th><a href="obj/item/boardgame.html#var/boardstyle">boardstyle</a></th><td>Used by TGUI to render a board design</td></tr><tr><th><a href="obj/item/boardgame.html#var/lock_pieces_to_tile">lock_pieces_to_tile</a></th><td>If true, pieces will be locked to the center of the tile they're on, otherwise they'll be free to move around</td></tr><tr><th><a href="obj/item/boardgame.html#var/styling">styling</a></th><td></td></tr><tr><th><a href="obj/item/boardgame.html#var/typeinfo_type">typeinfo_type</a></th><td></td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="obj/item/boardgame.html#proc/resetColorStyling">resetColorStyling</a></th><td>Reset the board to its color scheme, in case it has been changed</td></tr></table><h2 id="var">Var Details</h2><h3 id="var/active_users"><aside class="declaration">var </aside>active_users <aside>– /list</aside> <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 130"></h3><h1 id="boardgame-data-and-state">Boardgame Data and State</h1><h3 id="var/board_width"><aside class="declaration">var </aside>board_width <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 65"></h3><p>Designate the size of the board
+Don't forget to update styling[&quot;aspectRatio&quot;]
+if you want to keep the board autoscaling</p><h3 id="var/boardstyle"><aside class="declaration">var </aside>boardstyle <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 57"></h3><p>Used by TGUI to render a board design</p><h3 id="var/lock_pieces_to_tile"><aside class="declaration">var </aside>lock_pieces_to_tile <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 69"></h3><p>If true, pieces will be locked to the center of the tile they're on, otherwise they'll be free to move around</p><h3 id="var/styling"><aside class="declaration">var </aside>styling <aside>– /list</aside> <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 116"></h3><h2 id="boardgame-styling">Boardgame styling</h2>
+<pre><code class="language-dm">src.styling[key] = value
+</code></pre>
+<p>Give the boardgame a custom look by using these key value pairs.</p>
+<pre><code class="language-dm">// Sets color of first tile
+[STYLING_TILECOLOR1] = &quot;#FFFFFF&quot; or rgb(255, 255, 255)
+</code></pre>
+<pre><code class="language-dm">// Sets color of second tile
+[STYLING_TILECOLOR2] = &quot;#FFFFFF&quot; or rgb(255, 255, 255)
+</code></pre>
+<pre><code class="language-dm">// Sets color of the border
+[STYLING_BORDER] = &quot;#FFFFFF&quot; or rgb(255, 255, 255)
+</code></pre>
+<pre><code class="language-dm">// Aspect ratio of the board. This is the ratio of the width to the height.
+1 = 1:1, 2 = 2:1, 0.5 = 1:2
+[STYLING_ASPECT] = NUMBER
+```dm
+
+</code></pre>
+<p>// Whether to use chess-like notation around the board.
+...
+[STYLING_NOTATIONS] = TRUE/FALSE</p>
+<pre><code>The following keys are used by the boardgame itself and changes itself.
+```dm
+// Sets original color of first tile
+[STYLING_OLDTILECOLOR1] = &quot;#FFFFFF&quot; or rgb(255, 255, 255)
+```
+
+```dm
+// Sets original color of first tile
+[STYLING_OLDTILECOLOR2] = &quot;#FFFFFF&quot; or rgb(255, 255, 255)
+```
+</code></pre><h3 id="var/typeinfo_type">typeinfo_type <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 32"></h3><h1 id="boardgame">Boardgame</h1><h2 id="proc">Proc Details</h2><h3 id="proc/resetColorStyling"><aside class="declaration">proc </aside>resetColorStyling<aside>()  <img src="git.png" width="16" height="16" title="code/obj/item/boardgame/boardgame.dm 148"></aside></h3><p>Reset the board to its color scheme, in case it has been changed</p></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../"><link rel="stylesheet" href="dmdoc.css"><title>/datum/antagWeighter - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="datum/antagWeighter.html#proc">Proc Details</a></header><main><h1>/<a href="datum.html">datum</a>/<a href="datum/antagWeighter.html">antagWeighter</a> <img src="git.png" width="16" height="16" title="code/datums/antag_weighting.dm 8"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="datum/antagWeighter.html#proc/calculateWeightings">calculateWeightings</a></th><td>Queries the goonhub API for hisorical antag rounds for the pool of minds given</td></tr><tr><th><a href="datum/antagWeighter.html#proc/choose">choose</a></th><td>Queries the goonhub API for hisorical antag rounds for the pool of minds given
+Returns a list of minds that haevn't played up to the percentage of antag rounds defined in config</td></tr><tr><th><a href="datum/antagWeighter.html#proc/record">record</a></th><td>Records an antag selection for a single player</td></tr><tr><th><a href="datum/antagWeighter.html#proc/simulateHistory">simulateHistory</a></th><td>Queries the goonhub API for hisorical antag rounds for a single target
+NOTE: Currently unused</td></tr></table><h2 id="proc">Proc Details</h2><h3 id="proc/calculateWeightings"><aside class="declaration">proc </aside>calculateWeightings<aside>(role, /list/history)  <img src="git.png" width="16" height="16" title="code/datums/antag_weighting.dm 104"></aside></h3><p>Queries the goonhub API for hisorical antag rounds for the pool of minds given</p>
+<p>@param string role Name of the antag role we're picking for (e.g. traitor, spy_thief)
+@param list history List of historical antag data returned by the goonhub API
+@return list List ckeys sorted by weight (highest weight first)</p><h3 id="proc/choose"><aside class="declaration">proc </aside>choose<aside>(/list/pool, role, amount, recordChosen)  <img src="git.png" width="16" height="16" title="code/datums/antag_weighting.dm 171"></aside></h3><p>Queries the goonhub API for hisorical antag rounds for the pool of minds given
+Returns a list of minds that haevn't played up to the percentage of antag rounds defined in config</p>
+<p>@param list pool List of minds under consideration for antag picking
+@param string role Name of the antag role we're picking for (e.g. traitor, spy_thief)
+@param int amount Max amount of players to choose for this role
+@param boolean recordChosen When true, triggers a src.record() for the chosen players
+@return list List of minds chosen</p><h3 id="proc/record"><aside class="declaration">proc </aside>record<aside>(role, /<a href="datum.html">datum</a>/<a href="datum/player.html">player</a>/P, latejoin)  <img src="git.png" width="16" height="16" title="code/datums/antag_weighting.dm 299"></aside></h3><p>Records an antag selection for a single player</p>
+<p>@param string role Name of the antag role we're recording a selection for
+@param string P The player being recorded
+@param boolean latejoin Whether this record is a latejoin antag selection
+@return null</p><h3 id="proc/simulateHistory"><aside class="declaration">proc </aside>simulateHistory<aside>(role, /list/ckeyMinds)  <img src="git.png" width="16" height="16" title="code/datums/antag_weighting.dm 82"></aside></h3><p>Queries the goonhub API for hisorical antag rounds for a single target
+NOTE: Currently unused</p>
+<p>@param string role Name of the antag role we're looking up (e.g. traitor, spy_thief)
+@param string ckey Ckey of the person we're looking up
+@return list List of history details</p>
+<p>Get the entire antag selection history for a player (all roles, all modes)</p>
+<p>@param string ckey Ckey of the person we're looking up
+@return list List of history details</p>
+<p>Simulates a history response from the API, so local development doesn't fuck up</p>
+<p>@param string role Name of the antag role we're looking up (e.g. traitor, spy_thief)
+@param list ckeyMinds List of minds keyed by ckeys
+@return list Simulated response</p></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

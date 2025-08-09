@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="dmdoc.css"><title>/datum - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="datum.html#var">Var Details</a> - <a href="datum.html#proc">Proc Details</a></header><main><h1>/<a href="datum.html">datum</a> <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 1"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr><tr><th><a href="datum.html#var/comp_lookup">comp_lookup</a></th><td>Any datum registered to receive signals from this datum is in this list</td></tr><tr><th><a href="datum.html#var/datum_components">datum_components</a></th><td>Components attached to this datum</td></tr><tr><th><a href="datum.html#var/open_uis">open_uis</a></th><td>Open uis owned by this datum
+Lazy, since this case is semi rare</td></tr><tr><th><a href="datum.html#var/signal_procs">signal_procs</a></th><td>Lazy associated list in the structure of <code>signals:proctype</code> that are run when the datum receives that signal</td></tr><tr><th><a href="datum.html#var/tgui_shared_states">tgui_shared_states</a></th><td>global</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="datum.html#proc/GetComponent">GetComponent</a></th><td>Return any component assigned to this datum of the given type</td></tr><tr><th><a href="datum.html#proc/GetComponents">GetComponents</a></th><td>Get all components of a given type that are attached to this datum</td></tr><tr><th><a href="datum.html#proc/GetExactComponent">GetExactComponent</a></th><td>Return any component assigned to this datum of the exact given type</td></tr><tr><th><a href="datum.html#proc/RegisterSignal">RegisterSignal</a></th><td></td></tr><tr><th><a href="datum.html#proc/RegisterSignals">RegisterSignals</a></th><td>Registers multiple signals to the same proc.</td></tr><tr><th><a href="datum.html#proc/RemoveComponentsOfType">RemoveComponentsOfType</a></th><td>Calls RemoveComponent on all components of a given type that are attached to this datum</td></tr><tr><th><a href="datum.html#proc/TakeComponent">TakeComponent</a></th><td>Transfer this component to another parent</td></tr><tr><th><a href="datum.html#proc/TransferComponents">TransferComponents</a></th><td>Transfer all components to target</td></tr><tr><th><a href="datum.html#proc/UnregisterSignal">UnregisterSignal</a></th><td>Stop listening to a given signal from target</td></tr><tr><th><a href="datum.html#proc/_AddComponent">_AddComponent</a></th><td>Creates an instance of <code>new_type</code> in the datum and attaches to it as parent</td></tr><tr><th><a href="datum.html#proc/_LoadComponent">_LoadComponent</a></th><td>Get existing component of type, or create it and return a reference to it</td></tr><tr><th><a href="datum.html#proc/_SendSignal">_SendSignal</a></th><td>Internal proc to handle most all of the signaling procedure</td></tr><tr><th><a href="datum.html#proc/onProcCalled">onProcCalled</a></th><td>called when a proc is admin-called</td></tr><tr><th><a href="datum.html#proc/onVarChanged">onVarChanged</a></th><td>called when a variable is admin-edited</td></tr><tr><th><a href="datum.html#proc/safe_delete">safe_delete</a></th><td>Used when you need to record a proc call to delete something (see spawn_rules.dm)</td></tr><tr><th><a href="datum.html#proc/ui_act">ui_act</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/ui_assets">ui_assets</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/ui_close">ui_close</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/ui_data">ui_data</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/ui_host">ui_host</a></th><td>private</td></tr><tr><th><a href="datum.html#proc/ui_interact">ui_interact</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/ui_state">ui_state</a></th><td>private</td></tr><tr><th><a href="datum.html#proc/ui_static_data">ui_static_data</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/ui_status">ui_status</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/update_static_data">update_static_data</a></th><td>public</td></tr><tr><th><a href="datum.html#proc/update_static_data_for_all_viewers">update_static_data_for_all_viewers</a></th><td>public</td></tr></table><h2 id="var">Var Details</h2><h3 id="var/comp_lookup"><aside class="declaration">var </aside>comp_lookup <aside>– /tmp/list</aside> <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 13"></h3><p>Any datum registered to receive signals from this datum is in this list</p>
+<p>Lazy associated list in the structure of <code>signal:registree/list of registrees</code></p><h3 id="var/datum_components"><aside class="declaration">var </aside>datum_components <aside>– /list</aside> <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 7"></h3><p>Components attached to this datum</p>
+<p>Lazy associated list in the structure of <code>type:component/list of components</code></p><h3 id="var/open_uis"><aside class="declaration">var </aside>open_uis <aside>– /list/<a href="datum.html">datum</a>/<a href="datum/tgui.html">tgui</a></aside> <img src="git.png" width="16" height="16" title="code/modules/tgui/subsystem.dm 12"></h3><p>Open uis owned by this datum
+Lazy, since this case is semi rare</p><h3 id="var/signal_procs"><aside class="declaration">var </aside>signal_procs <aside>– /tmp/list/list/<a href="datum.html">datum</a>/callback</aside> <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 15"></h3><p>Lazy associated list in the structure of <code>signals:proctype</code> that are run when the datum receives that signal</p><h3 id="var/tgui_shared_states"><aside class="declaration">var </aside>tgui_shared_states <aside>– /list</aside> <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 129"></h3><p>global</p>
+<p>Associative list of JSON-encoded shared states that were set by
+tgui clients.</p><h2 id="proc">Proc Details</h2><h3 id="proc/GetComponent"><aside class="declaration">proc </aside>GetComponent<aside>(/<a href="datum.html">datum</a>/<a href="datum/component.html">component</a>/c_type)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 392"></aside></h3><p>Return any component assigned to this datum of the given type</p>
+<p>This will throw an error if it's possible to have more than one component of that type on the parent</p>
+<p>Arguments:</p>
+<ul>
+<li>datum/component/c_type The typepath of the component you want to get a reference to</li>
+</ul><h3 id="proc/GetComponents"><aside class="declaration">proc </aside>GetComponents<aside>(c_type)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 434"></aside></h3><p>Get all components of a given type that are attached to this datum</p>
+<p>Arguments:</p>
+<ul>
+<li>c_type The component type path</li>
+</ul><h3 id="proc/GetExactComponent"><aside class="declaration">proc </aside>GetExactComponent<aside>(/<a href="datum.html">datum</a>/<a href="datum/component.html">component</a>/c_type)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 412"></aside></h3><p>Return any component assigned to this datum of the exact given type</p>
+<p>This will throw an error if it's possible to have more than one component of that type on the parent</p>
+<p>Arguments:</p>
+<ul>
+<li>datum/component/c_type The typepath of the component you want to get a reference to</li>
+</ul><h3 id="proc/RegisterSignal"><aside class="declaration">proc </aside>RegisterSignal<aside>(/<a href="datum.html">datum</a>/target, signal_type, proctype, override, ...)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 202"></aside></h3><ul>
+<li>
+<p>Register to listen for a signal from the passed in target</p>
+</li>
+<li>
+<p>This sets up a listening relationship such that when the target object emits a signal</p>
+</li>
+<li>
+<p>the source datum this proc is called upon, will receive a callback to the given proctype</p>
+</li>
+<li>
+<p>Return values from procs registered must be a bitfield</p>
+</li>
+<li>
+<p>Arguments:</p>
+</li>
+<li>
+<ul>
+<li>datum/target The target to listen for signals from</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>signal_type A signal name</li>
+<li>
+<pre><code>  Complex signals (of the form list(component_type, string) can also be used.)
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>proctype The proc to call back when the signal is emitted</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>override If a previous registration exists you must explicitly set this</li>
+<li>
+<ul>
+<li>other arguments get passed to complexsignal/register in the case of a complex signal</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3 id="proc/RegisterSignals"><aside class="declaration">proc </aside>RegisterSignals<aside>(/<a href="datum.html">datum</a>/target, /list/signal_types, proctype, override, ...)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 243"></aside></h3><p>Registers multiple signals to the same proc.</p><h3 id="proc/RemoveComponentsOfType"><aside class="declaration">proc </aside>RemoveComponentsOfType<aside>(c_type)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 447"></aside></h3><p>Calls RemoveComponent on all components of a given type that are attached to this datum</p>
+<p>Arguments:</p>
+<ul>
+<li>c_type The component type path</li>
+</ul><h3 id="proc/TakeComponent"><aside class="declaration">proc </aside>TakeComponent<aside>(/<a href="datum.html">datum</a>/<a href="datum/component.html">component</a>/target)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 569"></aside></h3><p>Transfer this component to another parent</p>
+<p>Component is taken from source datum</p>
+<p>Arguments:</p>
+<ul>
+<li>datum/component/target Target datum to transfer to</li>
+</ul><h3 id="proc/TransferComponents"><aside class="declaration">proc </aside>TransferComponents<aside>(/<a href="datum.html">datum</a>/target)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 593"></aside></h3><p>Transfer all components to target</p>
+<p>All components from source datum are taken</p>
+<p>Arguments:</p>
+<ul>
+<li>/datum/target the target to move the components to</li>
+</ul><h3 id="proc/UnregisterSignal"><aside class="declaration">proc </aside>UnregisterSignal<aside>(/<a href="datum.html">datum</a>/target, sig_type_or_types)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 258"></aside></h3><p>Stop listening to a given signal from target</p>
+<p>Breaks the relationship between target and source datum, removing the callback when the signal fires</p>
+<p>Doesn't care if a registration exists or not</p>
+<p>Arguments:</p>
+<ul>
+<li>datum/target Datum to stop listening to signals from</li>
+<li>sig_typeor_types Signal string key or list of signal keys to stop listening to specifically</li>
+</ul><h3 id="proc/_AddComponent"><aside class="declaration">proc </aside>_AddComponent<aside>(/list/raw_args)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 463"></aside></h3><p>Creates an instance of <code>new_type</code> in the datum and attaches to it as parent</p>
+<p>Sends the <a href="_std/defines/component_defines/component_defines_datum.html#define/COMSIG_COMPONENT_ADDED" title="COMSIG_COMPONENT_ADDED">COMSIG_COMPONENT_ADDED</a> signal to the datum</p>
+<p>Returns the component that was created. Or the old component in a dupe situation where <a href="_std/defines/component_defines/_component_defines_integral.html#define/COMPONENT_DUPE_UNIQUE" title="COMPONENT_DUPE_UNIQUE">COMPONENT_DUPE_UNIQUE</a> was set</p>
+<p>If this tries to add an component to an incompatible type, the component will be deleted and the result will be <code>null</code>. This is very unperformant, try not to do it</p>
+<p>Properly handles duplicate situations based on the <code>dupe_mode</code> var</p><h3 id="proc/_LoadComponent"><aside class="declaration">proc </aside>_LoadComponent<aside>(/list/arguments)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 544"></aside></h3><p>Get existing component of type, or create it and return a reference to it</p>
+<p>Use this if the item needs to exist at the time of this call, but may not have been created before now</p>
+<p>Arguments:</p>
+<ul>
+<li>component_type The typepath of the component to create or return</li>
+<li>... additional arguments to be passed when creating the component if it does not exist</li>
+</ul><h3 id="proc/_SendSignal"><aside class="declaration">proc </aside>_SendSignal<aside>(sigtype, /list/arguments)  <img src="git.png" width="16" height="16" title="code/datums/components/_component.dm 366"></aside></h3><p>Internal proc to handle most all of the signaling procedure</p>
+<p>Will runtime if used on datums with an empty component list</p>
+<p>Use the <a href="_std/defines/component_defines/_component_defines_integral.html#define/SEND_SIGNAL" title="SEND_SIGNAL">SEND_SIGNAL</a> define instead</p><h3 id="proc/onProcCalled"><aside class="declaration">proc </aside>onProcCalled<aside>(procname, /list/arglist)  <img src="git.png" width="16" height="16" title="code/datum.dm 38"></aside></h3><p>called when a proc is admin-called</p><h3 id="proc/onVarChanged"><aside class="declaration">proc </aside>onVarChanged<aside>(variable, oldval, newval)  <img src="git.png" width="16" height="16" title="code/datum.dm 33"></aside></h3><p>called when a variable is admin-edited</p><h3 id="proc/safe_delete"><aside class="declaration">proc </aside>safe_delete<aside>()  <img src="git.png" width="16" height="16" title="code/datum.dm 43"></aside></h3><p>Used when you need to record a proc call to delete something (see spawn_rules.dm)</p><h3 id="proc/ui_act"><aside class="declaration">proc </aside>ui_act<aside>(action, /list/params, /<a href="datum.html">datum</a>/<a href="datum/tgui.html">tgui</a>/ui, /<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/state)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 87"></aside></h3><p>public</p>
+<p>Called on a UI when the UI receieves a href.
+Think of this as Topic().</p>
+<p>required action string The action/button that has been invoked by the user.
+required params list A list of parameters attached to the button.</p>
+<p>return bool If the UI should be updated or not.</p><h3 id="proc/ui_assets"><aside class="declaration">proc </aside>ui_assets<aside>(/<a href="mob.html">mob</a>/user)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 101"></aside></h3><p>public</p>
+<p>Called on an object when a tgui object is being created, allowing you to
+push various assets to tgui, for examples spritesheets.</p>
+<p>return list List of asset datums or file paths.</p><h3 id="proc/ui_close"><aside class="declaration">proc </aside>ui_close<aside>(/<a href="mob.html">mob</a>/user)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 158"></aside></h3><p>public</p>
+<p>Called on a UI's object when the UI is closed, not to be confused with
+client/verb/uiclose(), which closes the ui window</p><h3 id="proc/ui_data"><aside class="declaration">proc </aside>ui_data<aside>(/<a href="mob.html">mob</a>/user)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 30"></aside></h3><p>public</p>
+<p>Data to be sent to the UI.
+This must be implemented for a UI to work.</p>
+<p>required user mob The mob interacting with the UI.</p>
+<p>return list Data to be sent to the UI.</p><h3 id="proc/ui_host"><aside class="declaration">proc </aside>ui_host<aside>(/<a href="mob.html">mob</a>/user)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 111"></aside></h3><p>private</p>
+<p>The UI's host object (usually src_object).
+This allows modules/datums to have the UI attached to them,
+and be a part of another object.</p><h3 id="proc/ui_interact"><aside class="declaration">proc </aside>ui_interact<aside>(/<a href="mob.html">mob</a>/user, /<a href="datum.html">datum</a>/<a href="datum/tgui.html">tgui</a>/ui)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 17"></aside></h3><p>public</p>
+<p>Used to open and update UIs.
+If this proc is not implemented properly, the UI will not update correctly.</p>
+<p>required user mob The mob who opened/is using the UI.
+optional ui datum/tgui The UI to be updated, if it exists.</p><h3 id="proc/ui_state"><aside class="declaration">proc </aside>ui_state<aside>(/<a href="mob.html">mob</a>/user)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 120"></aside></h3><p>private</p>
+<p>The UI's state controller to be used for created uis
+This is a proc over a var for memory reasons</p><h3 id="proc/ui_static_data"><aside class="declaration">proc </aside>ui_static_data<aside>(/<a href="mob.html">mob</a>/user)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 47"></aside></h3><p>public</p>
+<p>Static Data to be sent to the UI.</p>
+<p>Static data differs from normal data in that it's large data that should be
+sent infrequently. This is implemented optionally for heavy uis that would
+be sending a lot of redundant data frequently. Gets squished into one
+object on the frontend side, but the static part is cached.</p>
+<p>required user mob The mob interacting with the UI.</p>
+<p>return list Statuic Data to be sent to the UI.</p><h3 id="proc/ui_status"><aside class="declaration">proc </aside>ui_status<aside>(/<a href="mob.html">mob</a>/user, /<a href="datum.html">datum</a>/<a href="datum/ui_state.html">ui_state</a>/state)  <img src="git.png" width="16" height="16" title="code/modules/tgui/states.dm 21"></aside></h3><p>public</p>
+<p>Checks the UI state for a mob.</p>
+<p>required user mob The mob who opened/is using the UI.
+required state datum/ui_state The state to check.</p>
+<p>return UI_state The state of the UI.</p><h3 id="proc/update_static_data"><aside class="declaration">proc </aside>update_static_data<aside>(/<a href="mob.html">mob</a>/user, /<a href="datum.html">datum</a>/<a href="datum/tgui.html">tgui</a>/ui)  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 59"></aside></h3><p>public</p>
+<p>Forces an update on static data. Should be done manually whenever something
+happens to change static data.</p>
+<p>required user the mob currently interacting with the ui
+optional ui ui to be updated</p><h3 id="proc/update_static_data_for_all_viewers"><aside class="declaration">proc </aside>update_static_data_for_all_viewers<aside>()  <img src="git.png" width="16" height="16" title="code/modules/tgui/external.dm 72"></aside></h3><p>public</p>
+<p>Will force an update on static data for all viewers.
+Should be done manually whenever something happens to
+change static data.</p></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

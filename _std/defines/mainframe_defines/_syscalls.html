@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../../"><link rel="stylesheet" href="dmdoc.css"><title>_std/defines/mainframe_defines/_syscalls.dm - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="_std/defines/mainframe_defines/_syscalls.html#define">Define Details</a></header><main><h1>_std/defines/mainframe_defines/_syscalls.dm <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm"></h1><table class="summary" cellspacing="0"><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_MSG_TERM">DWAINE_COMMAND_MSG_TERM</a></th><td>Send a message or file to a connected terminal device.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_ULOGIN">DWAINE_COMMAND_ULOGIN</a></th><td>Send a log in request to the kernel.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_UGROUP">DWAINE_COMMAND_UGROUP</a></th><td>Update the user's group.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_ULIST">DWAINE_COMMAND_ULIST</a></th><td>List all current users.
+No applicable data fields.</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_UMSG">DWAINE_COMMAND_UMSG</a></th><td>Send message to a connected user terminal. Cannot send messages to non-user terminals.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_UINPUT">DWAINE_COMMAND_UINPUT</a></th><td>Acts as an alternate path for user input.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_DMSG">DWAINE_COMMAND_DMSG</a></th><td>Send message to a specified driver.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_DLIST">DWAINE_COMMAND_DLIST</a></th><td>List all drivers of a specific terminal type.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_DGET">DWAINE_COMMAND_DGET</a></th><td>Get the ID of a specific driver.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_DSCAN">DWAINE_COMMAND_DSCAN</a></th><td>Instruct the mainframe to recheck for devices now instead of waiting for the full timeout.
+No applicable data fields.</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_EXIT">DWAINE_COMMAND_EXIT</a></th><td>Instruct the caller_prog to exit the current running program.
+No applicable data fields.</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_TSPAWN">DWAINE_COMMAND_TSPAWN</a></th><td>Run a task located at a specified filepath.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_TFORK">DWAINE_COMMAND_TFORK</a></th><td>Run a new child task of the calling program's type.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_TKILL">DWAINE_COMMAND_TKILL</a></th><td>Terminate a child task of the calling program.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_TLIST">DWAINE_COMMAND_TLIST</a></th><td>List all child tasks of the calling program.
+No applicable data fields.</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_TEXIT">DWAINE_COMMAND_TEXIT</a></th><td>Instruct a program to exit the current running task.
+No applicable data fields.</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_FGET">DWAINE_COMMAND_FGET</a></th><td>Get the computer file at the specified filepath.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_FKILL">DWAINE_COMMAND_FKILL</a></th><td>Delete the computer file at the specified filepath.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_FMODE">DWAINE_COMMAND_FMODE</a></th><td>Adjust the permissions of the computer file at the specified filepath.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_FOWNER">DWAINE_COMMAND_FOWNER</a></th><td>Adjust the owner and group of the computer file at the specified filepath.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_FWRITE">DWAINE_COMMAND_FWRITE</a></th><td>Write a provided computer file to the specified path.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_CONFGET">DWAINE_COMMAND_CONFGET</a></th><td>Get the config file of the specified name.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_MOUNT">DWAINE_COMMAND_MOUNT</a></th><td>Set up a mountpoint for a device driver.
+Accepted data fields:</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_RECVFILE">DWAINE_COMMAND_RECVFILE</a></th><td>Instruct a program to receive and handle a file.
+No applicable data fields.</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_BREAK">DWAINE_COMMAND_BREAK</a></th><td>Instruct a program to halt processing a script.
+No applicable data fields.</td></tr><tr><th><a href="_std/defines/mainframe_defines/_syscalls.html#define/DWAINE_COMMAND_REPLY">DWAINE_COMMAND_REPLY</a></th><td>Reply to a request for information.
+Has unique data fields for each implementation, depending on the data requested.</td></tr></table><h2 id="define">Define Details</h2><h3 id="define/DWAINE_COMMAND_BREAK"><aside class="declaration">#define </aside>DWAINE_COMMAND_BREAK <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 192"></h3><p>Instruct a program to halt processing a script.
+No applicable data fields.</p><h3 id="define/DWAINE_COMMAND_CONFGET"><aside class="declaration">#define </aside>DWAINE_COMMAND_CONFGET <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 172"></h3><p>Get the config file of the specified name.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;fname&quot;</code>: The name of the config file.</li>
+</ul><h3 id="define/DWAINE_COMMAND_DGET"><aside class="declaration">#define </aside>DWAINE_COMMAND_DGET <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 77"></h3><p>Get the ID of a specific driver.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;dtag&quot;</code>: The terminal type of the drivers to search for.</li>
+<li><code>&quot;dnetid&quot;</code>: If <code>&quot;dtag&quot;</code> is not specified, the driver name to search for. Driver names correspond to the net ID of their respective device, excluding the &quot;pnet_&quot; prefix.</li>
+</ul><h3 id="define/DWAINE_COMMAND_DLIST"><aside class="declaration">#define </aside>DWAINE_COMMAND_DLIST <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 69"></h3><p>List all drivers of a specific terminal type.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;dtag&quot;</code>: The terminal type of the drivers to search for.</li>
+<li><code>&quot;mode&quot;</code>: If <code>1</code>, omit empty or invalid indexes, if <code>0</code>, do not.</li>
+</ul><h3 id="define/DWAINE_COMMAND_DMSG"><aside class="declaration">#define </aside>DWAINE_COMMAND_DMSG <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 61"></h3><p>Send message to a specified driver.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;target&quot;</code>: The name or ID of the target driver.</li>
+<li><code>&quot;mode&quot;</code>: If <code>1</code>, search for drivers by name, if <code>0</code>, search by ID.</li>
+<li><code>&quot;dcommand&quot;</code>: The <code>&quot;command&quot;</code> field to pass to the driver.</li>
+<li><code>&quot;dtarget&quot;</code>: The <code>&quot;target&quot;</code> field to pass to the driver.</li>
+</ul><h3 id="define/DWAINE_COMMAND_DSCAN"><aside class="declaration">#define </aside>DWAINE_COMMAND_DSCAN <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 83"></h3><p>Instruct the mainframe to recheck for devices now instead of waiting for the full timeout.
+No applicable data fields.</p><h3 id="define/DWAINE_COMMAND_EXIT"><aside class="declaration">#define </aside>DWAINE_COMMAND_EXIT <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 89"></h3><p>Instruct the caller_prog to exit the current running program.
+No applicable data fields.</p><h3 id="define/DWAINE_COMMAND_FGET"><aside class="declaration">#define </aside>DWAINE_COMMAND_FGET <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 131"></h3><p>Get the computer file at the specified filepath.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;path&quot;</code>: The filepath at which the computer file is located.</li>
+</ul><h3 id="define/DWAINE_COMMAND_FKILL"><aside class="declaration">#define </aside>DWAINE_COMMAND_FKILL <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 138"></h3><p>Delete the computer file at the specified filepath.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;path&quot;</code>: The filepath at which the computer file is located.</li>
+</ul><h3 id="define/DWAINE_COMMAND_FMODE"><aside class="declaration">#define </aside>DWAINE_COMMAND_FMODE <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 146"></h3><p>Adjust the permissions of the computer file at the specified filepath.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;path&quot;</code>: The filepath at which the computer file is located.</li>
+<li><code>&quot;permission&quot;</code>: The desired permission level of the computer file.</li>
+</ul><h3 id="define/DWAINE_COMMAND_FOWNER"><aside class="declaration">#define </aside>DWAINE_COMMAND_FOWNER <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 155"></h3><p>Adjust the owner and group of the computer file at the specified filepath.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;path&quot;</code>: The filepath at which the computer file is located.</li>
+<li><code>&quot;owner&quot;</code>: The desired owner of the computer file.</li>
+<li><code>&quot;group&quot;</code>: The desired group value of the computer file.</li>
+</ul><h3 id="define/DWAINE_COMMAND_FWRITE"><aside class="declaration">#define </aside>DWAINE_COMMAND_FWRITE <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 165"></h3><p>Write a provided computer file to the specified path.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;path&quot;</code>: The filepath at which the computer file should be written to.</li>
+<li><code>&quot;mkdir&quot;</code>: Whether to create the filepath if it does not exist.</li>
+<li><code>&quot;replace&quot;</code>: If the computer file already exists, whether to overwrite it.</li>
+<li><code>&quot;append&quot;</code>: If the computer file already exists, whether to append the contents of the new file to it.</li>
+</ul><h3 id="define/DWAINE_COMMAND_MOUNT"><aside class="declaration">#define </aside>DWAINE_COMMAND_MOUNT <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 180"></h3><p>Set up a mountpoint for a device driver.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;id&quot;</code>: The name of the device driver to set up a mountpoint for.</li>
+<li><code>&quot;link&quot;</code>: If set, the name of the symbolic link folder to set up for the mountpoint.</li>
+</ul><h3 id="define/DWAINE_COMMAND_MSG_TERM"><aside class="declaration">#define </aside>DWAINE_COMMAND_MSG_TERM <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 12"></h3><p>Send a message or file to a connected terminal device.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;term&quot;</code>: The net ID of the target terminal.</li>
+<li><code>&quot;data&quot;</code>: If sending a message, the content of that message. Otherwise acts as file data.</li>
+<li><code>&quot;render&quot;</code>: If sending a message, determines how that message should be displayed. Values may be combined using <code>|</code>.
+Accepted values:
+<ul>
+<li><code>&quot;clear&quot;</code>: The screen should be cleared before the message is displayed.</li>
+<li><code>&quot;multiline&quot;</code>: <code>|n</code> should be interpreted as a line break.</li>
+</ul>
+</li>
+</ul><h3 id="define/DWAINE_COMMAND_RECVFILE"><aside class="declaration">#define </aside>DWAINE_COMMAND_RECVFILE <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 186"></h3><p>Instruct a program to receive and handle a file.
+No applicable data fields.</p><h3 id="define/DWAINE_COMMAND_REPLY"><aside class="declaration">#define </aside>DWAINE_COMMAND_REPLY <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 198"></h3><p>Reply to a request for information.
+Has unique data fields for each implementation, depending on the data requested.</p><h3 id="define/DWAINE_COMMAND_TEXIT"><aside class="declaration">#define </aside>DWAINE_COMMAND_TEXIT <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 124"></h3><p>Instruct a program to exit the current running task.
+No applicable data fields.</p><h3 id="define/DWAINE_COMMAND_TFORK"><aside class="declaration">#define </aside>DWAINE_COMMAND_TFORK <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 105"></h3><p>Run a new child task of the calling program's type.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;args&quot;</code>: The arguments to pass to the task.</li>
+</ul><h3 id="define/DWAINE_COMMAND_TKILL"><aside class="declaration">#define </aside>DWAINE_COMMAND_TKILL <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 112"></h3><p>Terminate a child task of the calling program.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;target&quot;</code>: The ID of the target task.</li>
+</ul><h3 id="define/DWAINE_COMMAND_TLIST"><aside class="declaration">#define </aside>DWAINE_COMMAND_TLIST <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 118"></h3><p>List all child tasks of the calling program.
+No applicable data fields.</p><h3 id="define/DWAINE_COMMAND_TSPAWN"><aside class="declaration">#define </aside>DWAINE_COMMAND_TSPAWN <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 98"></h3><p>Run a task located at a specified filepath.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;path&quot;</code>: The filepath at which the task is located.</li>
+<li><code>&quot;passusr&quot;</code>: Whether to pass the user to the task.</li>
+<li><code>&quot;args&quot;</code>: The arguments to pass to the task.</li>
+</ul><h3 id="define/DWAINE_COMMAND_UGROUP"><aside class="declaration">#define </aside>DWAINE_COMMAND_UGROUP <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 29"></h3><p>Update the user's group.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;group&quot;</code>: The desired value of the <code>group</code> field on the user's record file.</li>
+</ul><h3 id="define/DWAINE_COMMAND_UINPUT"><aside class="declaration">#define </aside>DWAINE_COMMAND_UINPUT <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 51"></h3><p>Acts as an alternate path for user input.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;term&quot;</code>: The net ID of the user terminal.</li>
+<li><code>&quot;data&quot;</code>: If a file is not provided, the content of the input.</li>
+</ul><h3 id="define/DWAINE_COMMAND_ULIST"><aside class="declaration">#define </aside>DWAINE_COMMAND_ULIST <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 35"></h3><p>List all current users.
+No applicable data fields.</p><h3 id="define/DWAINE_COMMAND_ULOGIN"><aside class="declaration">#define </aside>DWAINE_COMMAND_ULOGIN <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 22"></h3><p>Send a log in request to the kernel.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;name&quot;</code>: The username of the user attempting to log in. Set to <code>&quot;TEMP&quot;</code> if attempting to login as a temporary user.</li>
+<li><code>&quot;sysop&quot;</code>: Whether the user is a superuser.</li>
+<li><code>&quot;service&quot;</code>: Whether the user connecting is a service terminal.</li>
+<li><code>&quot;data&quot;</code>: If attempting to login as a temporary user, the net ID of the user terminal.</li>
+</ul><h3 id="define/DWAINE_COMMAND_UMSG"><aside class="declaration">#define </aside>DWAINE_COMMAND_UMSG <img src="git.png" width="16" height="16" title="_std/defines/mainframe_defines/_syscalls.dm 43"></h3><p>Send message to a connected user terminal. Cannot send messages to non-user terminals.
+Accepted data fields:</p>
+<ul>
+<li><code>&quot;term&quot;</code>: The net ID of the target user terminal.</li>
+<li><code>&quot;data&quot;</code>: The content of the message.</li>
+</ul></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

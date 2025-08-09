@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>_std/macros/actions.dm - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="_std/macros/actions.html#define">Define Details</a></header><main><h1>_std/macros/actions.dm <img src="git.png" width="16" height="16" title="_std/macros/actions.dm"></h1><table class="summary" cellspacing="0"><tr><th><a href="_std/macros/actions.html#define/SETUP_GENERIC_ACTIONBAR">SETUP_GENERIC_ACTIONBAR</a></th><td>Creates an actionbar that calls the specified <code>proc_path</code> on -either- owner or target if the duration passes without interruption.</td></tr><tr><th><a href="_std/macros/actions.html#define/SETUP_GENERIC_PRIVATE_ACTIONBAR">SETUP_GENERIC_PRIVATE_ACTIONBAR</a></th><td>The same thing but only the owner can see it</td></tr></table><h2 id="define">Define Details</h2><h3 id="define/SETUP_GENERIC_ACTIONBAR"><aside class="declaration">#define </aside>SETUP_GENERIC_ACTIONBAR<aside>(owner, target, duration, proc_path, proc_args, action_icon, action_icon_state, end_message, interrupt_flags)</aside> <img src="git.png" width="16" height="16" title="_std/macros/actions.dm 25"></h3><p>Creates an actionbar that calls the specified <code>proc_path</code> on -either- owner or target if the duration passes without interruption.</p>
+<p><code>icon</code> / <code>icon_state</code> can also be set. <code>duration</code> should be in seconds. <code>end_message</code> is a string that displays once the action succeeds.</p>
+<p>You can also directly instantiate a <a href="datum/action/bar/icon/callback.html" title="/datum/action/bar/icon/callback">callback actionbar</a> if you need to modify variables on it that the macro doesnt easily let you do.
+For instance, callback actionbars have an <code>args</code> variable you can modify to call the callback proc with arguements. Just make sure to start it once its been made!</p>
+<p>Example:</p>
+<pre><code>/obj/item/foo
+	name = &quot;foo&quot;
+	icon = 'icons/obj/foo.dmi'
+	icon_state = &quot;foo&quot;
+
+	attack_self(var/mob/M)
+		M.visible_message(&quot;[M] starts fiddling with \the [src].&quot;)
+		SETUP_GENERIC_ACTIONBAR(M, src, 5 SECONDS, /obj/item/foo/proc/cool_proc, list(M, src), src.icon, src.icon_state,\
+		&quot;[M] finishes fiddling with \the [src]&quot;, null)
+
+	proc/cool_proc(var/mob/arg_1, var/obj/item/arg_2)
+		boutput(world, &quot;[arg_1.name] farted, [arg_2.name]!&quot;)
+</code></pre><h3 id="define/SETUP_GENERIC_PRIVATE_ACTIONBAR"><aside class="declaration">#define </aside>SETUP_GENERIC_PRIVATE_ACTIONBAR<aside>(owner, target, duration, proc_path, proc_args, action_icon, action_icon_state, end_message, interrupt_flags)</aside> <img src="git.png" width="16" height="16" title="_std/macros/actions.dm 30"></h3><p>The same thing but only the owner can see it</p></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

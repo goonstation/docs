@@ -1,0 +1,37 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../../"><link rel="stylesheet" href="dmdoc.css"><title>code/modules/status_system/status_system.md - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>Status System <aside>code/modules/status_system/status_system.md</aside> <img src="git.png" width="16" height="16" title="code/modules/status_system/status_system.md"></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>The status system is a robust system Goonstation has to manage any kind of effect on an atom.</p>
+<p>Examples of effects:</p>
+<ul>
+<li>Burning</li>
+<li>Cloaked</li>
+<li>Drunk</li>
+<li>Inside someome's pocket</li>
+<li>Gang Member</li>
+<li>Mutiny buff</li>
+</ul>
+<p>Most status effects are intended to be applied on mobs, but they can be applied to any atom.</p>
+<p>Status effects do not need to have their behaivor defined within them, they can also be checked externally with <a href="atom.html#proc/hasStatus" title="/atom">hasStatus</a> or similar procs.</p>
+<p>Example of a basic status effect:</p>
+<pre><code class="language-js">/datum/statusEffect/bababooey
+	id = &quot;bababooey&quot;
+	name = &quot;Bababooyed&quot;
+	desc = &quot;You've been bababooyed!&quot;
+	icon_state = &quot;baba&quot;
+	unique = 1
+	maxDuration = 5 SECONDS
+
+	getTooltip()
+		return &quot;Your brain feels like it's melting!&quot;
+</code></pre>
+<p>This can then be applied like:</p>
+<pre><code class="language-js">var/mob/living/carbon/human/H = new
+H.changeStatus(&quot;bababooey&quot;, 2 SECONDS)
+</code></pre>
+<h3 id="additional-notes">Additional notes</h3>
+<p>Non-unique status effects (effects that can be applied several times to the same atom) can not be changed by normal means after they are added. Keep a reference if you need to change them.</p>
+<p>Status effect procs have comments in their base definition below. Check there if you want to know more about what they do.</p>
+<p>Status effects with a duration of <a href="_std/defines/status_effects.html#define/INFINITE_STATUS" title="INFINITE_STATUS">INFINITE_STATUS</a> (null) last indefinitely. (Shows as a duration of * in the UI) ((Keep in mind that null is distinct from 0))</p>
+<h2 id="food-status-effects">Food Status Effects</h2>
+<p>Food status effects are a special subclass of status effects.
+They are intended to apply special effects to mobs based on the eaten food. Duration of the effects are determined by the quality of the food and reagent contents.</p>
+<p>There exists a special wrapper to handle these, <a href="mob/living.html#proc/add_food_bonus" title="/mob/living">/mob/living/proc/add_food_bonus</a>.</p>
+<p>You can only have 4 food status effects active at once, determined by <a href="datum/statusEffect.html#var/exclusiveGroup" title="/datum/statusEffect">exclusiveGroup = &quot;Food&quot;</a> and <a href="global.html#var/statusGroupLimits" title="/global">statusGroupLimits</a>.</p></td></tr></table></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

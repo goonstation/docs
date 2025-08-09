@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>code/datums/cloud_saves.dm - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="code/datums/cloud_saves.html#define">Define Details</a></header><main><h1>code/datums/cloud_saves.dm <img src="git.png" width="16" height="16" title="code/datums/cloud_saves.dm"></h1><table class="summary" cellspacing="0"><tr><th><a href="code/datums/cloud_saves.html#define/CLOUD_SAVES_SIMULATED_CLOUD">CLOUD_SAVES_SIMULATED_CLOUD</a></th><td>Manage cloud save files and data for a player</td></tr><tr><th>/proc/<a href="global.html#proc/cloud_saves_put_data_bulk">cloud_saves_put_data_bulk</a></th><td>Mass save a collection of cloud data for various players
+Input format:
+list(
+list(
+&quot;player_id&quot; = 1,
+&quot;key&quot; = &quot;foo&quot;,
+&quot;value&quot; = &quot;bar&quot;
+),
+list(
+&quot;player_id&quot; = 2,
+&quot;key&quot; = &quot;foo2&quot;,
+&quot;value&quot; = &quot;bar2&quot;
+)
+)</td></tr><tr><th>/proc/<a href="global.html#proc/cloud_saves_transfer">cloud_saves_transfer</a></th><td>Transfer all cloud save files from one player to another
+WARNING: This overwrites all the saves for the target</td></tr></table><h2 id="define">Define Details</h2><h3 id="define/CLOUD_SAVES_SIMULATED_CLOUD"><aside class="declaration">#define </aside>CLOUD_SAVES_SIMULATED_CLOUD <img src="git.png" width="16" height="16" title="code/datums/cloud_saves.dm 6"></h3><p>Manage cloud save files and data for a player</p></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

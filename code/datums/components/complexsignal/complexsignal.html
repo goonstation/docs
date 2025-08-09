@@ -1,0 +1,8 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../../../"><link rel="stylesheet" href="dmdoc.css"><title>code/datums/components/complexsignal/complexsignal.dm - Goonstation 13</title></head><body><header><a href="index.html">Goonstation 13</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>code/datums/components/complexsignal/complexsignal.dm <img src="git.png" width="16" height="16" title="code/datums/components/complexsignal/complexsignal.dm"></h1><table class="summary" cellspacing="0"><tr><th><a href="datum/component/complexsignal.html">/datum/component/complexsignal</a></th><td>Handler for a complex singal, that is a signal that requires some additional handling.
+You define such signal for example as:
+<code>#define XSIG_OUTERMOST_MOVABLE_CHANGED list(/datum/component/complexsignal/outermost_movable, &quot;mov_outermost_changed&quot;)</code>
+When this signal gets registered at least once once to a datum the appropriate complex signal component will get registered to it.
+When all instances of this signal get unregistered then the component will qdel itself unless [qdel_when_unneeded] is unset.
+The intended use is for this component to keep some more complex and resource intensive handling (possibly using other signals) and then send the
+actual complex signal when some conditions are met. That signal should be set to <code>src</code> like this:
+<code>SEND_COMPLEX_SIGNAL(src, X_OUTERMOST_MOVABLE_CHANGED, old_outermost, new_outermost)</code></td></tr></table></main><footer>goonstation.dme e18c4efa8a3ab2e13df0a169b767dbc7355e7294 — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>
