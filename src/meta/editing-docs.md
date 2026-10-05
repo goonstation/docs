@@ -1,6 +1,6 @@
 # Editing These Docs
 
-These docs are plain Markdown built with [mdBook](https://rust-lang.github.io/mdBook/) and published to <https://docs.goonhub.com> on every push to `master` of [goonstation/docs](https://github.com/goonstation/docs).
+These docs are Markdown built with [mdBook](https://rust-lang.github.io/mdBook/) and published to <https://docs.goonhub.com> on every push to `master` of [goonstation/docs](https://github.com/goonstation/docs).
 
 ## Quick edits
 

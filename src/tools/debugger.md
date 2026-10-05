@@ -32,7 +32,7 @@ Let's go through these one at a time.
 		- *Arguments*
 			- ![](https://i.imgur.com/RUEMpQ1.png)
 			- These are arguments to the proc, along with two 'special' arguments.
-			- `usr`: A special variable which is set to whatever mob 'caused' the proc. It's generally unreliable. Further discussion [here](https://hackmd.io/KqcvmL-PQPSYCwfvwn9HYw#The-usr-keyword).
+			- `usr`: A special variable which is set to whatever mob 'caused' the proc. It's generally unreliable. Further discussion [here](../guidelines/code.md#the-usr-keyword).
 			- `src`: The thing the proc is being called 'on'- whatever object owns the proc. `src` is null for global procs.
 		- *Globals*
 			- These are global variables, variables which are visible to everything everywhere. There's a million of them and you shouldn't need to worry about them (if you do, something is probably very wrong).
