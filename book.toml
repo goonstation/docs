@@ -1,0 +1,22 @@
+[book]
+title = "Goonstation Development Docs"
+description = "Guides and guidelines for contributing to Goonstation."
+authors = ["Goonstation Contributors"]
+language = "en"
+src = "src"
+
+[output.html]
+default-theme = "navy"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/goonstation/docs"
+edit-url-template = "https://github.com/goonstation/docs/edit/master/{path}"
+site-url = "/"
+cname = "docs.goonhub.com"
+no-section-label = true
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.playground]
+runnable = false
