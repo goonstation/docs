@@ -14,9 +14,9 @@ If you are creating a new map for Goonstation, we have the following mapping gui
 
 ## Goonstation Mapping Guidelines
 
-## ❗Required❗
+### ❗Required❗
 
-###### These are fundamental map features that need to be checked to be working prior to submission.
+*These are fundamental map features that need to be checked to be working prior to submission.*
 
 If these features do not work in the current codebase then your map PR will be **rejected** and ineligible for resubmission for a full calendar month.
 
@@ -37,8 +37,10 @@ If these features do not work in the current codebase then your map PR will be *
 - **Firedoors** should be placed using the `obj/firedoor_spawn` spawners.
 - **Drains** scattered around, the path is `/obj/machinery/drainage`.
 
-## Recommended
-###### These are generally recommended map features that should probably be present in your map. If they are present, please ensure they work as intended.
+### Recommended
+
+*These are generally recommended map features that should probably be present in your map. If they are present, please ensure they work as intended.*
+
 - An owlery or aviary.
 - Monkeys spawn landmarks (including a place for Stirstir in the brig)
 - Functioning buddy-paths. Including a tour guide written for Murray/Tour Buddy.
@@ -51,7 +53,8 @@ If these features do not work in the current codebase then your map PR will be *
 - If you use random item spawners, try using the types of them that create specific numbers of items. This way you don't risk accidentally overloading rooms with items because RNG decided it to be so.
 - Spacemas ornaments are now automatically generated as appropriate. You must only manually add the tree somewhere, specifically the ephemeral subtype.
 
-## Less critical but still important
+### Less critical but still important
+
 - **Make departments easily recognisable!** Use unique floor designs, wall signs, colored tiles, lines, and "doormats" to highlight to players where they are. Try to avoid big plain floors: spice things up with some checkered patterns or symbols. Different departments have different colours that they generally go by, so try to stick to those (blue for medbay (with black accents in robotics, and purple in pharmacy), purple for science and research, yellow for engineering, mining and mechanics and so on). Inside departments, use unique floor designs, coloured tiles, lines, and "doormats" (little spots of a department's colour outside their door). It just makes everything look nicer and more organised.
 - Break up empty hallways with things that seem realistic to have on that station. Donut2 is kind of old, so it has random tables and chairs, food and writing things. Things that make it feel lived in, stuff that adds flavour.
 - **Keep some crime in mind!** Maybe make some areas with less camera coverage, back rooms that are a little odd and musty. Maintainence especially should have little to no camera coverage. Give antags places to play with. Toilets and shower rooms in particular should not have cameras.
@@ -62,8 +65,10 @@ If these features do not work in the current codebase then your map PR will be *
 - At the moment, admins are not really accepting maps unless they offer a big gameplay change (like Nadir). If you do decide to make a full map anyway, make sure you have dev support as early as possible. They like to have input on the way maps are made, and ones they had a hand in making are much, *much* more likely to get added to rotation than ones that pop up, fully made and realised, with not much room for changing. If you feel like your map does fill a niche, you still have to check with admins to see whether they think so too. And to be honest, if they needed a niche to be filled, they'd ask for map submissions outright, so... yeah.
 - That said, it's good habit to start out by making smaller rooms in order to get used to wiring, APC placement, pipe placement, door permissions and such before tackling a larger project. A lot goes into even small rooms, and they're still important.
 
-## Tips and Tricks
-###### These aren't one hundred percent necessary to make maps, but they might make your life a bit easier
+### Tips and Tricks
+
+*These aren't one hundred percent necessary to make maps, but they might make your life a bit easier.*
+
 - **Cable spawners** `/obj/cables/auto` autoconnect to neighbouring cables pointing at that tile and other auto cables, placing multiple cables if necessary. It has reinforced and coloured variants and if you want to make it create nodes for terminal connections and whatnot, you can use the `/node` subtype. When needing something pretty and/or handcrafted (like cable art, or two non connected but crossing networks) it's probably best to just use regular cables placed manually; cablespawners are for convenience in places where you don't care.
 - **Pipe spawners** are similar to cable spawners. There's different spawners for junctions and segments (segment pipe spawners can make trunks too, misleadingly). They're handy for drawing very long stretches of disposal/mail/cargo/morgue/transport pipe quickly, without having to manually var edit things. Warning: you'll have to use the `/obj/disposalpipe/segment/auto/regular` for ordinary disposal pipes, otherwise it'll try to connect itself to ALL subtypes.
 - **Auto Catwalks** and **Auto lattices** similarly are useful. Auto catwalks are now the default placement method of catwalks, and auto lattices are stored under `/obj/lattice/auto` (Like cable spawners and pipe spawners, auto lattices will break if placed alone). There's different connection options too, for auto connection with turfs or just walls.

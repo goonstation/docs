@@ -14,9 +14,9 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 ![](https://i.imgur.com/L1qXFuB.png)
 
 * The above human base is useful for drawing clothing items or in-hands by layering them over the base to ensure sprites line-up.
-# Basic Style 😎
+## Basic Style 😎
 
-## Perspective ⬜
+### Perspective ⬜
 
 * Sprites should generally be in three-quarter perspective (3/4 perspective for short), with few exceptions. 3/4 perspective essentially means that objects have one face and the top visible, facing head on. This includes item sprites for most cases.
 
@@ -26,7 +26,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 * Further examples [here](https://i.imgur.com/tU8mmeR.png).
 
-## Colors 🎨
+### Colors 🎨
 
 * Keep color palettes small and generally higher-contrast when possible. If an existing item is similar to your sprite, for example if it contains matching departmental colors, pull palettes from existing sprites to maintain consistency.
 
@@ -42,7 +42,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 ![](https://i.imgur.com/oHMg5gg.png)
 
-## Outlines 🖋
+### Outlines 🖋
 
 * All sprites should make use of colored outlines. This means that sprites should have outlines consisting of darker shades of the colors it connects to, instead of having a single color outline. 
 
@@ -50,7 +50,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 * Outlines should also be subject to the shading on the sprite, getting darker in darker parts of the sprites and lighter when outlining lighter parts.
 
-## In-hand Sprites ✋
+### In-hand Sprites ✋
 
 * In-hand sprites are sprites that appear over character sprites when they're holding an item. Unique in hand sprites are encouraged for every new item, this is especially true for items that need to be visually identified in combat.
 
@@ -62,7 +62,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 ![](https://i.imgur.com/450lqQX.png)
 
-## Other Details 👁️
+### Other Details 👁️
 
 * Referencing popular culture is allowed, but try to be subtle about it. Commonly available content should be original. 🍰 
 * Sprites should generally be centered on the middle of the canvas, especially if you can pick them up. 
@@ -73,7 +73,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 * Avoid violently flashing lights in large spaces when making animations.
 * If you just shrink a jpeg and submit that, you're fired. ![](https://wiki.ss13.co/images/a/af/FoodPancakes.png)
 
-# Implementation 🔧
+## Implementation 🔧
 
 * Sprites in Byond are kept in **.dmi files**, which are essentially modified .png files. You can find these files in the code in the 'icons' folder.
 
@@ -88,7 +88,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 ![](https://i.imgur.com/QeOiR96.png)
 
 
-# Meta 🗨️ 
+## Meta 🗨️ 
 * Do not be precious about your work. Be open to criticism and change both from other developers and players. 
 * Most untrained people can visually identify when something looks wrong or bad, it's your responsibility as the artist to parse that criticism and find a solution. 
 * If you'd like more feedback on your sprites or pointers on spriting, check out the #imspriter channel on the [Goonstation discord.](https://discord.gg/zd8t6pY)
