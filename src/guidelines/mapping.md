@@ -44,7 +44,7 @@ If these features do not work in the current codebase then your map PR will be *
 - An owlery or aviary.
 - Monkeys spawn landmarks (including a place for Stirstir in the brig)
 - Functioning buddy-paths. Including a tour guide written for Murray/Tour Buddy.
-- If you are using perspective walls, try to minimize placing objects on the south side of rooms.
+- Try to minimize placing objects on the south side of rooms, it's awkward with perspective walls.
 - Blobstart, peststart, and halloweenspawn landmarks.
 - Medbay and Security should be well-thought out, daresay more so than other departments.
 - Arrivals should have more than one exit, to prevent people from being unable to join the game.
