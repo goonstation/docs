@@ -22,6 +22,7 @@
 - [Sprites](guidelines/sprites.md)
 - [Audio](guidelines/audio.md)
 - [Mapping](guidelines/mapping.md)
+- [TGUI](guidelines/tgui.md)
 - [Help Messages](guidelines/help-messages.md)
 - [Design Docs](guidelines/design-docs.md)
 
