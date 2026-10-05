@@ -7,6 +7,7 @@ Sometimes you make changes you'd really like another player to help you test. Ob
 - Log out of your Byond account (or if you weren't logged in when you started the server, log *into* your Byond account)
 - Click the blue cog at the top right of the Byond pager
 - Select "Open Location" and enter `localhost:<portnumber>` where `<portnumber>` is the port you entered earlier.
+
 Tadaa, you now have a local server with a debugger attached and two clients connected.
 
 ## FAQs

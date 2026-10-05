@@ -85,6 +85,7 @@ Alright, maybe not. I can use breakpoints and the call stack to find what's maki
 Instead, I can take something that I know will happen **after** the person explodes, and put a breakpoint there. Then, the call stack leading to that point will show me exactly where the calling proc is!
 
 I know that when a human gibs, they die, so I'll put a breakpoint in the `death()` proc of humans.
+
 Running the code, and moving, we hit that death breakpoint and see...
 
 ![](https://i.imgur.com/0eosynI.png)

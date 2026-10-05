@@ -110,6 +110,7 @@ obj/test/proc/coolstuff()
 Our codebase uses the latter, the `length(foo)` syntax.
 
 The `.len` syntax runtimes on a null `foo`, whereas the `length()` syntax will not.
+
 It's also faster (~6%), for internal bytecode reasons (which don't really matter).
 
 ### Abstract types and typesof
@@ -170,6 +171,7 @@ var/whatever3 = 3 + 4 - whatever2
 
 ### Very long lines
 For long lines, use `\` at the end of the line to split onto multiple lines.
+
 With the recommended extension pack, a vertical line will appear in the editor; if your code goes far beyond this line, it's time to split the code into multiple lines. Put a space before `\`.
 
 When doing this, indent each line past the first to 1 tab past the start of the right side of the definition (or whatever is similar- for proc calls, 1 tab past the proc name, etc).
@@ -331,7 +333,9 @@ Almost all of the time when iterating through lists, we use the `for (var/i in s
 Internally, BYOND copies the `some_list` for this operation, so that when you are iterating through the list, you don't skip items or run into things twice if you modify the list inside the loop.
 
 However, this can cause performance issues with large lists of *complex* objects, generally greater than ~5000.
+
 There exists a performance optimization, but bear in mind it's **only applicable if you are traversing less than half of the list**.
+
 Perhaps you are breaking after a found item that's randomly in the list, or you only want to process the first 20 entries or something.
 
 Code that avoids this list copying would look like:
@@ -474,6 +478,7 @@ You can check out a guide on using the debugger in the guide located in the [Dev
 If you're tired of having to constantly add & remove `#define IM_REALLY_IN_A_FUCKING_HURRY_HERE` and similar from `__build.dm`, along with stashing and re-stashing your own development tools, there's a solution!
  
 Create a file named `__build.local.dm` right next to it. Named exactly that.
+
 This file will not get picked up by Git, and will let you keep whatever defines you want in there.
  
 There is additional support for a file called `__development.local.dm`, which is included in `goonstation.dme` after the build defines so that you can add new testing tools for yourself there. *Be sure to create this file in the right directory!*
@@ -490,6 +495,7 @@ The Debug-Overlays verb ingame is your friend. It offers many modes to debug man
 ### Profiler
 
 The Open-Profiler verb ingame is also your friend. Be sure to literally type `.debug profile` in the second box.
+
 Once you refresh once, you'll get detailed performance measurements on all running procs.
 
 Guide to the categories:

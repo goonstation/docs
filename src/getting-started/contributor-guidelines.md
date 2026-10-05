@@ -9,6 +9,7 @@ Essentially, this is more of a FAQ section.
 ### Maintainers / Developers
 
 The Goonstation codebase maintainers/developers are a part of the general admin team for the Goonstation servers. They are The People Who Decide What Goes In The Game. You can identify these people on the Discord by their red/amaranth name.
+
 On GitHub, they'll also show up as a member of the Goonstation organization: ![](https://i.imgur.com/xcWNk5p.png).
 
 Please do not unnecessarily ping us directly unless someone explicitly says it's ok. If you have a question for developers, you can generally reach us (or perhaps a fellow contributor can answer your question) in the #imXYZ discord channels, like #imcoder.
@@ -31,6 +32,7 @@ As far as a timeline on getting your PR merged, there is none. This is a volunte
 
 ### Large scale PRs
 Large scale feature or rework PRs should be discussed **before** being written, so that feedback can be given at an early stage and to avoid wasted effort and frustration if the proposed content wouldn't pass review at a later stage.
+
 Examples of these kinds of PR include, but are not limited to:
 - Adding a new antagonist/gamemode or majorly reworking an old one
 - Adding a major department feature, like a new engine type
@@ -51,6 +53,7 @@ Writing and submitting a large scale PR without seeking feedback first may resul
 ### Issues
 
 As this is a purely volunteer open-source game, you may notice we have hundreds of unresolved issues. This is just how it is. Feel free to fix as many bugs as your heart desires - ideally [linking them as closed](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) with `Fixes #1234` in your fix PR. If you are a member of the triage team (which is very easy to join, [it's a *tiny* form](#triage-team)) you can feel free to close duplicate or not-actually-a-bug issues.
+
 More information about issues can be found [here](#reviewing-issues)
 
 ### Unwanted Contributions
@@ -75,6 +78,7 @@ Here's the general criteria for people to apply:
 * Are comfortable with following the [Triage Team Guidelines](https://bit.ly/goontriageguidelines).
 
 If you think these apply to (likely so if you're reading this), feel free to fill out the [Triage Team Form](https://bit.ly/goontriageform).
+
 It's __very very basic__, and we accept basically anyone who asks, so don't hesitate if you are interested!
 
 Note: If you don't use Discord, contact a dev about being added, as the form requires a Discord account.

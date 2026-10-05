@@ -13,6 +13,7 @@ Guidelines:
 5. Do not create milestones without consulting with a dev.
 
 Relevant info:
+
 [Github's info on the triage role.](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization) 
 
 Excerpt from the above page outlining the permissions granted to the triage role. 

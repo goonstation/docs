@@ -121,6 +121,7 @@ All changes you make should be done on branches. But first, what is a branch?
 Put simply, a branch is an alternative version of a codebase. Their lifecycle usually consists of being created, being committed, then being re-merged into the main codebase.
 
 A commit is an update you make to a branch. Think of it a saved version of said branch, or a batch of changes you make with an associated timestamp. 
+
 The lovely thing about Github is that each individual merge and commit you make is reversible. so if you make a horrible mistake and are plagued with thousands of errors, you can simply revert the changes. There will be more on that in the Git Graph section.
 
 By now, hopefully you've thought of what you actually want to do. First thing to do is to make a new branch on your fork. This is important because you should **never** make changes to the default(master) branch of your fork. It should remain as a clean slate.
@@ -134,6 +135,7 @@ To make a new branch, open up the source control sidebar (looks like a Y). Navig
 ![](https://i.imgur.com/C1EeNQm.png)
 
 Then, click `Create new branch`.
+
 For this guide, I'll be creating a new hat, so I'll name my branch `hat-landia`. If you look at the bottom left hand corner, you'll see that VS Code has automatically checked out our branch: ![](https://i.imgur.com/Ut0trn2.png)
 
 **Remember, never commit changes to your master branch!** You can work on any branch as much as you want, as long as you **commit** the changes to the proper branch.
