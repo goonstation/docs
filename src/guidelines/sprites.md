@@ -11,7 +11,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 * The Byond sprite editor is usable but doesn't have layers and can be pretty clunky. Some free editors include piskel, paint.net, and GIMP. Aseprite is also good and free if compiled yourself, it otherwise costs money. Even photoshop can be used if you're already comfortable with it. 
 
 ## Human Base 🧍
-![](https://i.imgur.com/L1qXFuB.png)
+![](https://file.house/f/nDqfj6SFfIu4QsUgcEZGabCpfL6ZbGdwR1awBRy8kCo=.png)
 
 * The above human base is useful for drawing clothing items or in-hands by layering them over the base to ensure sprites line-up.
 ## Basic Style 😎
@@ -20,7 +20,7 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 * Sprites should generally be in three-quarter perspective (3/4 perspective for short), with few exceptions. 3/4 perspective essentially means that objects have one face and the top visible, facing head on. This includes item sprites for most cases.
 
-![](https://i.imgur.com/8TEclNH.png)
+![](https://file.house/f/juH-IpIK_d_chWxCHgyQyXBlcUXcS9NT0_r1I1j_CsA=.png)
 
 * Avoid cabinet projection, where sprites are tilted, with their side visible.
 
@@ -30,23 +30,25 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 * Keep color palettes small and generally higher-contrast when possible. If an existing item is similar to your sprite, for example if it contains matching departmental colors, pull palettes from existing sprites to maintain consistency.
 
-![](https://i.imgur.com/MquHC45.png)
+![](https://file.house/f/vWPMziPPkNp6NECQS43WE-Gn_nAw_yAbfuiyJdFW0L0=.png)
 
 * Avoid low contrast palettes or palettes with unnecessarily large amounts of colors, they make sprites look muddier and less clean. A lot can be done with a little if you use a good color palette.
 
 * Hue shift your shadows and highlights. Hue shifting is when you linearly change the hue of colors in a color scheme based on their value. A basic example of that would be darker colors getting bluer as they get darker, and lighter colors being slightly more yellow. You want this effect to be subtle, but still have an impact. Useful tutorial [here](https://i.imgur.com/fsTkpWQ.gif). Examples:
-    ![](http://i.imgur.com/9iGrBo9.png) <-- Bad
-    ![](http://i.imgur.com/gB8u1zp.png) <-- Good
+  
+    ![](https://file.house/f/-QrqkeB2XHiyZD9p4l8ZqkH1Ol-_oClkahdJDoGwoQk=.png) <-- Bad
+  
+    ![](https://file.house/f/L-bMr-24R8uJCFHz40NPdw83ZFZu220DOSXPmFDMW0A=.png) <-- Good
 
 * Consider using the palette provided here if you're having trouble creating a palette: 
 
-![](https://i.imgur.com/oHMg5gg.png)
+![](https://file.house/f/BZWGD5tajEl80qe4ScDk1eD4WAG39DQtUmTx2cI0jJQ=.png)
 
 ### Outlines 🖋
 
 * All sprites should make use of colored outlines. This means that sprites should have outlines consisting of darker shades of the colors it connects to, instead of having a single color outline. 
 
-![](https://i.imgur.com/ymhWAP2.png)
+![](https://file.house/f/8iI8bVM270EVQJq0AKUzl4oNehVPu96Pmu35JlYSK4A=.png)
 
 * Outlines should also be subject to the shading on the sprite, getting darker in darker parts of the sprites and lighter when outlining lighter parts.
 
@@ -56,11 +58,11 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 * For one-handed items, you'll need 8 total in-hand sprites, four for each cardinal direction for both hands. For two-handed items, you'll only need four. An example of in-hand sprites overlaid on the human sprite:
 
-![](https://i.imgur.com/3HMGXsN.png)
+![](https://file.house/f/3EbOqzMBrwf0xyOr_FunVMWx7XUGoH5T4U-GLsVEL14=.png)
 
 * The finished sprites should just be on their own though, so they're more like this:
 
-![](https://i.imgur.com/450lqQX.png)
+![](https://file.house/f/76qD4iLa1fN5Sx0TQDHkkME71DAuwnZJeOlLsv5NE2I=.png)
 
 ### Other Details 👁️
 
@@ -79,13 +81,13 @@ So, you want to contribute sprite art to Goonstation. Great! This set of guideli
 
 * These files are made up of various named sprites called 'icon_states'. These names are used in code, and should be kept simple but descriptive.
 
-![](https://i.imgur.com/dlRyBOZ.png)
+![](https://file.house/f/pjeIY2QYKEF-3AJxTQL4DDDiLcXBdqmGCyGDEbA68Do=.png)
 
 * If an existing .dmi file is suitable for your sprite, use that instead of making a new one.
 
 * For sprites larger than 32x32, use the designated `widthXheight` files (ex: 120x120).
 
-![](https://i.imgur.com/QeOiR96.png)
+![](https://file.house/f/DhBC-4WsTUk-Lr6s3wD-XlDEsjeVKMNL98gHu5t8wpc=.png)
 
 
 ## Meta 🗨️ 
