@@ -75,9 +75,9 @@ These people can close and label issues/PRs but do not have merge rights or any 
 Here's the general criteria for people to apply:
 * Have actively engaged with Goonstation development (Example: making or reviewing a PR).
 * Have demonstrated themselves to be polite and welcoming representatives of the project.
-* Are comfortable with following the [Triage Team Guidelines](https://bit.ly/goontriageguidelines).
+* Are comfortable with following the [Triage Team Guidelines](https://docs.goonhub.com/team/triage.html).
 
-If you think these apply to (likely so if you're reading this), feel free to fill out the [Triage Team Form](https://bit.ly/goontriageform).
+If you think these apply to (likely so if you're reading this), feel free to fill out the [Triage Team Form](	https://goonhub.com/r/triage).
 
 It's __very very basic__, and we accept basically anyone who asks, so don't hesitate if you are interested!
 
