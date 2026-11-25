@@ -22,7 +22,7 @@ Help and support is *not offered whatsoever* if you skip portions of the guide.
 
 Visual Studio Code (VSCode/VSC) is a free program you can use to edit and manage your code, as well as connect with GitHub to publish it. You can also use BYOND's built-in DreamMaker software to edit, though you'll probably still find VSCode useful.
 
-Visit https://code.visualstudio.com/ to download the appropriate installation for your operating system. Then, run the installer.
+Visit [code.visualstudio.com](https://code.visualstudio.com) to download the appropriate installation for your operating system. Then, run the installer.
 
 You should be greeted with a screen that looks like this:![](https://i.imgur.com/HjDKDqj.png)
 
