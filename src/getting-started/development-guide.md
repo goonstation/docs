@@ -110,7 +110,7 @@ git branch -u upstream/master
 After doing this you can synchronize your master branch with the main Goonstation one simply by pressing the ![](https://i.imgur.com/WFbG8w3.png) button at the bottom left.
 
 > [!NOTE]
-> If you're a Goonstation Developer (Admin), run `git submodule update --init` at this point.
+> If you're a Goonstation Admin, run `git submodule update --init` at this point.
 
 That's it! Your local codebase is all set up to contribute now.
 
